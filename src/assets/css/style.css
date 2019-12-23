@@ -7197,9 +7197,11 @@ h3.cart-page-title {
   -ms-flex-pack: center;
   justify-content: center;
   margin-bottom: 40px; }
-  .login-register-wrapper .login-register-tab-list a {
-    position: relative; }
-    .login-register-wrapper .login-register-tab-list a::before {
+  .login-register-wrapper .login-register-tab-list span {
+    position: relative;
+    cursor: pointer;
+   }
+    .login-register-wrapper .login-register-tab-list span::before {
       background-color: #454545;
       bottom: 5px;
       content: "";
@@ -7211,7 +7213,7 @@ h3.cart-page-title {
       -o-transition: all 0.4s ease 0s;
       transition: all 0.4s ease 0s;
       width: 1px; }
-    .login-register-wrapper .login-register-tab-list a h4 {
+    .login-register-wrapper .login-register-tab-list span h4 {
       font-size: 25px;
       font-weight: 700;
       margin: 0 20px;
@@ -7219,9 +7221,9 @@ h3.cart-page-title {
       -webkit-transition: all 0.3s ease 0s;
       -o-transition: all 0.3s ease 0s;
       transition: all 0.3s ease 0s; }
-    .login-register-wrapper .login-register-tab-list a:last-child::before {
+    .login-register-wrapper .login-register-tab-list span:last-child::before {
       display: none; }
-  .login-register-wrapper .login-register-tab-list a.active h4 {
+  .login-register-wrapper .login-register-tab-list span.active h4 {
     color: #00a651; }
 
 .login-register-wrapper .login-form-container {
