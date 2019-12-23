@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
     module: {
@@ -18,5 +19,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './public/index.html'
         })
-    ]
+    ],
+    output: {
+        path: path.join(__dirname, '/bundle'),
+        filename: 'index_bundle.js',
+        publicPath: '/'
+    },
+    devServer: {
+        historyApiFallback: true,
+    }
 }

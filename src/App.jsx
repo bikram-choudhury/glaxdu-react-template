@@ -1,20 +1,19 @@
-import React from 'react';
-import './assets/css/style.css'; // Main Style CSS
+import React, { Component } from 'react';
+import { Router, Switch, Route, Redirect } from 'react-router-dom';
+import { createBrowserHistory, createHashHistory } from 'history';
+import Admin from './layout/Admin.jsx';
 
-import Header from './components/Header.jsx';
-import Footer from './components/Footer.jsx';
-import Home from './components/Home.jsx';
+const hist = createBrowserHistory();
 
-class App extends React.Component {
+export default class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header />
-        <Home />
-        <Footer />
-      </div>
+      <Router history={hist}>
+        <Switch>
+          <Route path="/admin" component={Admin} />
+          <Redirect from="/" to="/admin/home" />
+        </Switch>
+      </Router>
     );
   }
 }
-
-export default App;
