@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import headershape from './../../assets/img/icon-img/header-shape.png';
 
 export default class TopHeader extends Component {
@@ -19,8 +20,12 @@ export default class TopHeader extends Component {
                         <div className="col-lg-6 col-md-5 col-12 col-sm-4">
                             <div className="login-register">
                                 <ul>
-                                    <li><a href="login-register.html">Login</a></li>
-                                    <li><a href="login-register.html">Register</a></li>
+                                    <li>
+                                        <Link to="/sign-in">Login</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/sign-up">Register</Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

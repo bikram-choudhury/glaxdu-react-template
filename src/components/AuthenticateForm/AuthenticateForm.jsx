@@ -21,11 +21,20 @@ class AuthenticationContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            templateType: props.templateType
+            templateType: ''
+        }
+    }
+    static getDerivedStateFromProps(nextProps, prevState) {
+        // getDerivedStateFromProps(nextProps, prevState) : Returns new state
+        
+        if(prevState.templateType !== nextProps.templateType) {
+            return { templateType: nextProps.templateType }
+        } else {
+            return null;
         }
     }
     goToRoute = (routeType) => {
-        this.setState({ templateType: routeType });
+        this.props.history.push(routeType);
     }
     render() {
         let { templateType } = this.state;
@@ -36,10 +45,10 @@ class AuthenticationContainer extends Component {
                         <div className="col-lg-7 col-md-12 ml-auto mr-auto">
                             <div className="login-register-wrapper">
                                 <div className="login-register-tab-list nav">
-                                    <span className={templateType === 'signin' ? "active" : ''} onClick={() => this.goToRoute('signin')}>
+                                    <span className={templateType === 'signin' ? "active" : ''} onClick={() => this.goToRoute('sign-in')}>
                                         <h4> login </h4>
                                     </span>
-                                    <span className={templateType === 'signup' ? "active" : ''} onClick={() => this.goToRoute('signup')}>
+                                    <span className={templateType === 'signup' ? "active" : ''} onClick={() => this.goToRoute('sign-up')}>
                                         <h4> register </h4>
                                     </span>
                                 </div>
