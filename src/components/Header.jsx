@@ -13,14 +13,17 @@ export default class Header extends Component {
     }
     handleScroll = (event) => {
         var scroll = window.scrollY;
-        if (scroll < 200) {
-            this.stickyHeaderRef.classList.remove('stick');
-        } else {
-            this.stickyHeaderRef.classList.add('stick');
+        if (this.stickyHeaderRef) {
+
+            if (scroll < 200) {
+                this.stickyHeaderRef.classList.remove('stick');
+            } else {
+                this.stickyHeaderRef.classList.add('stick');
+            }
         }
     }
     render() {
-        
+
         return (
             <header className="header-area">
                 <TopHeader />

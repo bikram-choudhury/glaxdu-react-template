@@ -3,6 +3,10 @@ import TopHeader from '../TopHeader/TopHeader.jsx';
 import BrnadLogoArea from '../BrnadLogo/BrnadLogoArea.jsx';
 import Footer from '../Footer.jsx';
 
+import { Formik, Field } from 'formik';
+import Axios from 'axios';
+import { JSON_PLACEHOLDER_API } from '../../glaxdu-settings';
+
 export default class AuthenticateForm extends Component {
     render() {
         return (
@@ -26,8 +30,8 @@ class AuthenticationContainer extends Component {
     }
     static getDerivedStateFromProps(nextProps, prevState) {
         // getDerivedStateFromProps(nextProps, prevState) : Returns new state
-        
-        if(prevState.templateType !== nextProps.templateType) {
+
+        if (prevState.templateType !== nextProps.templateType) {
             return { templateType: nextProps.templateType }
         } else {
             return null;
@@ -70,22 +74,45 @@ class AuthenticationContainer extends Component {
 }
 
 class LoginForm extends Component {
+
+    handleLogin = (formData, { setSubmitting }) => {
+        setSubmitting(true);
+        console.log(formData);
+        if (formData && Object.keys(formData).length) {
+            const URL = `${JSON_PLACEHOLDER_API}/users`;
+            Axios.post(URL, formData)
+                .then(response => {
+                    console.log(response);
+                    setSubmitting(false);
+                })
+                .catch(error => console.error(error))
+        }
+    }
     render() {
+        const initialLoginFormValue = { username: '', password: '', rememberUser: false };
         return (
             <div className="login-form-container">
                 <div className="login-register-form">
-                    <form action="#" method="post">
-                        <input type="text" name="user-name" placeholder="Username" />
-                        <input type="password" name="user-password" placeholder="Password" />
-                        <div className="button-box">
-                            <div className="login-toggle-btn">
-                                <input type="checkbox" />
-                                <label>Remember me</label>
-                                <a href="#">Forgot Password?</a>
-                            </div>
-                            <button className="default-btn" type="submit"><span>Login</span></button>
-                        </div>
-                    </form>
+                    <Formik initialValues={initialLoginFormValue} onSubmit={this.handleLogin}>
+                        {({ isSubmitting, values, handleChange, handleBlur, handleSubmit }) => (
+                            <form onSubmit={handleSubmit}>
+                                <Field type="input" name="username" placeholder="Username" />
+                                <Field type="password" name="password" placeholder="Password" />
+                                {/* <input type="text" name="username" placeholder="Username"
+                                    value={values.username} onChange={handleChange} onBlur={handleBlur} /> */}
+                                <div className="button-box">
+                                    <div className="login-toggle-btn">
+                                        <Field type="checkbox" name="rememberUser" placeholder="Username" />
+                                        <label>Remember me</label>
+                                        <a href="#">Forgot Password?</a>
+                                    </div>
+                                    <button disabled={isSubmitting} className="default-btn" type="submit"><span>Login</span></button>
+                                </div>
+                                <pre>{JSON.stringify(values, '', 3)}</pre>
+                            </form>
+                        )}
+                    </Formik>
+
                 </div>
             </div>
         );

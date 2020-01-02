@@ -55,4 +55,6 @@ export const sliderSettings = {
             }
         ]
     }
-}
+};
+
+export const JSON_PLACEHOLDER_API = 'https://jsonplaceholder.typicode.com';
