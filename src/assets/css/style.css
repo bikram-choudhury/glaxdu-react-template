@@ -7238,7 +7238,8 @@ h3.cart-page-title {
   @media only screen and (max-width: 767px) {
     .login-register-wrapper .login-form-container {
       padding: 40px 15px; } }
-  .login-register-wrapper .login-form-container .login-register-form form input {
+  .login-register-wrapper .login-form-container .login-register-form form input,
+  .login-register-wrapper .login-form-container .login-register-form form select {
     background-color: transparent;
     border: 1px solid #ebebeb;
     color: #333;
