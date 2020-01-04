@@ -122,11 +122,9 @@ function RegisterForm() {
                             <div className="button-box">
                                 <button disabled={isSubmitting} className="default-btn" type="submit"><span>Register</span></button>
                             </div>
-                            <pre>{JSON.stringify(values, '', 3)}</pre>
                         </Form>
                     )}
                 </Formik>
-
             </div>
         </div>
     );
