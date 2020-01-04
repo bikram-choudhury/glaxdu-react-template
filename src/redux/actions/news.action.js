@@ -16,11 +16,12 @@ export function setNewsErrorAction(errorMessage) {
     }
 }
 
-export const fetchNewsAction = (dispatch) => {
-    return function () {
+export const fetchNewsAction = () => {
+    return function (dispatch, getState) {
         const url = `${NEWSAPI}/top-headlines?country=in&apiKey=${NEWSAPI_KEY}`;
         Axios.get(url)
-        .then(response => setNewsAction(response.data))
-        .catch(error => setNewsErrorAction(error.message))
+            .then(response => response.data)
+            .then(response => response && dispatch(setNewsAction(response.articles)))
+            .catch(error => dispatch(setNewsErrorAction(error.message)))
     }
 }
