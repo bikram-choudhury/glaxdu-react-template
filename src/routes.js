@@ -1,7 +1,7 @@
 import Home from './components/Home.jsx';
 import AboutUs from './components/AboutUs/AboutUs.jsx';
-import Blogs from './components/Blogs/Blogs.jsx';
 import Contact from './components/Contact/ContactUs.jsx';
+import News from './components/News/News.jsx';
 
 export const AdminRoutes = [{
     path: '/home',
@@ -14,10 +14,10 @@ export const AdminRoutes = [{
     name: 'About Us',
     component: AboutUs
 }, {
-    path: '/blogs',
+    path: '/news',
     layout: '/admin',
-    name: 'Blogs',
-    component: Blogs
+    name: 'News',
+    component: News
 }, {
     path: '/contact-us',
     layout: '/admin',

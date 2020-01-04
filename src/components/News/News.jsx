@@ -3,8 +3,15 @@ import Breadcrumb from '../Breadcrumb/Breadcrumb.jsx';
 
 /*
     1. Create Blogs template
-    2. Integrate with newsAPI.com API for getting blogs
+    2. Integrate with newsAPI.org API for getting blogs
     3. Do with client-side pagination
+
+    newsAPI APIKey: ba634665e5fc4a9ba409bacb1ef1f862
+    // https://newsapi.org/v2/everything?q=bitcoin&from=2019-12-04&sortBy=publishedAt&apiKey=API_KEY
+    // https://newsapi.org/v2/everything?q=apple&from=2020-01-03&to=2020-01-03&sortBy=popularity&apiKey=API_KEY
+    // https://newsapi.org/v2/everything?domains=wsj.com&apiKey=API_KEY
+    // https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=API_KEY
+    // https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=API_KEY
 
     4. On click of any Blog navigate to blog-details view with Blog id
     5. Show Blog details as per the Blog id
@@ -15,12 +22,12 @@ import Breadcrumb from '../Breadcrumb/Breadcrumb.jsx';
         (or) generate some random images and add into this
 */
 
-export default class Blogs extends Component {
+export default class News extends Component {
     render() {
         const breadcrumbConfig = {
-            title: 'Blog Grid',
+            title: 'News Grid',
             subTitle: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore .`,
-            templateName: 'Blog Grid',
+            templateName: 'News Grid',
             bgImage: 'breadcrumb-bg-5.jpg'
         };
         return (
