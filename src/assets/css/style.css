@@ -1443,7 +1443,7 @@ textarea:focus {
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
     visibility: visible; }
-  > .main-menu nav ul li:first-child {
+   .main-menu nav ul li:first-child {
     margin-left: 0px; }
   .main-menu nav ul li:hover a {
     color: #00a651; }
@@ -3812,7 +3812,8 @@ textarea:focus {
 .pro-pagination-style ul li {
   display: inline-block;
   margin: 0 4px; }
-  .pro-pagination-style ul li a {
+  .pro-pagination-style ul li span {
+    cursor: pointer;
     display: inline-block;
     width: 48px;
     height: 48px;
@@ -3823,25 +3824,25 @@ textarea:focus {
     color: #00a651;
     -webkit-box-shadow: 0 0px 12px 0.8px rgba(0, 166, 81, 0.1);
     box-shadow: 0 0px 12px 0.8px rgba(0, 166, 81, 0.1); }
-    .pro-pagination-style ul li a:hover {
+    .pro-pagination-style ul li span:hover {
       background-color: #00a651;
       color: #fff; }
-  .pro-pagination-style ul li a.active {
+  .pro-pagination-style ul li span.active {
     background-color: #00a651;
     color: #fff;
     -webkit-box-shadow: none;
     box-shadow: none; }
-    .pro-pagination-style ul li a.active:hover {
+    .pro-pagination-style ul li span.active:hover {
       background-color: #333; }
-  .pro-pagination-style ul li a.prev,
-  .pro-pagination-style ul li a.next {
+  .pro-pagination-style ul li span.prev,
+  .pro-pagination-style ul li span.next {
     background-color: #f6f6f6;
     color: #00a651;
     font-size: 17px;
     -webkit-box-shadow: none;
     box-shadow: none; }
-    .pro-pagination-style ul li a.prev:hover,
-    .pro-pagination-style ul li a.next:hover {
+    .pro-pagination-style ul li span.prev:hover,
+    .pro-pagination-style ul li span.next:hover {
       background-color: #00a651;
       color: #fff; }
 
