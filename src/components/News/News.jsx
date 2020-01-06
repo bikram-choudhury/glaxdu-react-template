@@ -2,13 +2,11 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import Breadcrumb from '../Breadcrumb/Breadcrumb.jsx';
 import Pagination from '../Pagination/Pagination.jsx';
+import NewsSideBar from './NewsSidebar.jsx';
 import { fetchNewsAction } from '../../redux/actions/news.action';
 import { Image_not_found } from '../../glaxdu-settings';
 
 /*
-    1. Create Blogs template
-    2. Integrate with newsAPI.org API for getting blogs
-    3. Do with client-side pagination
 
     newsAPI APIKey: ba634665e5fc4a9ba409bacb1ef1f862
     // https://newsapi.org/v2/everything?q=bitcoin&from=2019-12-04&sortBy=publishedAt&apiKey=API_KEY
@@ -17,13 +15,15 @@ import { Image_not_found } from '../../glaxdu-settings';
     // https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=API_KEY
     // https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=API_KEY
 
-    4. On click of any Blog navigate to blog-details view with Blog id
-    5. Show Blog details as per the Blog id
+    1. create a separate component for right side section
+    2. On click of any Blog navigate to blog-details view with Blog id
+    3. Show Blog details as per the Blog id
+    4. implement news search functionality and the url should navigate back to news grid view
+        - take the search query from URL and give result as per that
+        - If search query is not found then give result for top-headlines 
     6. Show the associated comments
     7. Provide a section for adding comments
 
-    8. For everything keep same image as newsAPI.com doesn't provide any image
-        (or) generate some random images and add into this
 */
 
 class News extends Component {
@@ -95,74 +95,7 @@ class EventsArea extends Component {
                             </div>
                         </div>
                         <div className="col-xl-3 col-lg-4">
-                            <div className="sidebar-style">
-                                <div className="sidebar-search mb-40">
-                                    <div className="sidebar-title mb-40">
-                                        <h4>Search</h4>
-                                    </div>
-                                    <form>
-                                        <input type="text" placeholder="Search" />
-                                        <button><i className="fa fa-search"></i></button>
-                                    </form>
-                                </div>
-                                <div className="sidebar-about mb-40">
-                                    <div className="sidebar-title mb-15">
-                                        <h4>About Us</h4>
-                                    </div>
-                                    <p>quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolors eos qui ratione voluptatem sad.</p>
-                                    <a href="#"><img src={require('./../../assets/img/banner/banner-4.jpg')} alt="" /></a>
-                                    <div className="sidebar-social">
-                                        <ul>
-                                            <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a></li>
-                                            <li><a className="youtube" href="#"><i className="fa fa-youtube-play"></i></a></li>
-                                            <li><a className="twitter" href="#"><i className="fa fa-twitter"></i></a></li>
-                                            <li><a className="google" href="#"><i className="fa fa-google-plus"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="sidebar-recent-post mb-35">
-                                    <div className="sidebar-title mb-40">
-                                        <h4>Recent Post</h4>
-                                    </div>
-                                    <div className="recent-post-wrap">
-                                        <div className="single-recent-post">
-                                            <div className="recent-post-img">
-                                                <a href="#"><img src={require('./../../assets/img/blog/recent-post-1.jpg')} alt="" /></a>
-                                            </div>
-                                            <div className="recent-post-content">
-                                                <h5><a href="#">Blog title will be here.</a></h5>
-                                                <span>Blog Category</span>
-                                                <p>Datat non proident qui offici.hafw adec qart.</p>
-                                            </div>
-                                        </div>
-                                        <div className="single-recent-post">
-                                            <div className="recent-post-img">
-                                                <a href="#"><img src={require('./../../assets/img/blog/recent-post-2.jpg')} alt="" /></a>
-                                            </div>
-                                            <div className="recent-post-content">
-                                                <h5><a href="#">Blog title will be here.</a></h5>
-                                                <span>Blog Category</span>
-                                                <p>Datat non proident qui offici.hafw adec qart.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="sidebar-tag-wrap">
-                                    <div className="sidebar-title mb-40">
-                                        <h4>Tag</h4>
-                                    </div>
-                                    <div className="sidebar-tag">
-                                        <ul>
-                                            <li><a href="#">Loremsite</a></li>
-                                            <li><a href="#">Loreipsum</a></li>
-                                            <li><a href="#">Dolar</a></li>
-                                            <li><a href="#">Site ament dollar</a></li>
-                                            <li><a href="#">Loremsite</a></li>
-                                            <li><a href="#">Dummy Text</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            <NewsSideBar />
                         </div>
                     </div>
                 </div>
