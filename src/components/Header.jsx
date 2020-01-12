@@ -44,11 +44,15 @@ export default class Header extends Component {
                                             <ul>
                                                 {
                                                     AdminRoutes.map((route, index) => {
-                                                        return (
-                                                            <li key={index}>
-                                                                <Link to={route.layout + route.path}>{route.name}</Link>
-                                                            </li>
-                                                        )
+                                                        if (route.name) {
+                                                            return (
+                                                                <li key={index}>
+                                                                    <Link to={route.layout + route.path}>{route.name}</Link>
+                                                                </li>
+                                                            );
+                                                        } else {
+                                                            return null;
+                                                        }
                                                     })
                                                 }
                                             </ul>

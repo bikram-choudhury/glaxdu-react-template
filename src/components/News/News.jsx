@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Breadcrumb from '../Breadcrumb/Breadcrumb.jsx';
 import Pagination from '../Pagination/Pagination.jsx';
+import BrnadLogoArea from '../BrnadLogo/BrnadLogoArea.jsx';
 import NewsSideBar from './NewsSidebar.jsx';
 import { fetchNewsAction } from '../../redux/actions/news.action';
 import { Image_not_found } from '../../glaxdu-settings';
@@ -44,6 +46,7 @@ class News extends Component {
             <Fragment>
                 <Breadcrumb {...breadcrumbConfig} />
                 <EventsArea newsList={this.props.newsList} />
+                <BrnadLogoArea />
             </Fragment>
         )
     }
@@ -107,10 +110,11 @@ class EventsArea extends Component {
 
 function SingleNews(props) {
     const report = props.news;
+    const encodedTitle = encodeURIComponent(report.title);
     return (
         <div className="single-blog mb-30">
             <div className="blog-img">
-                <a href="blog-details.html">
+                <Link to={`/admin/news-details/${encodedTitle}`}>
                     {
                         report.urlToImage ? (
                             <img src={report.urlToImage} alt="" />
@@ -118,11 +122,11 @@ function SingleNews(props) {
                                 <img src={Image_not_found} alt="" />
                             )
                     }
-                </a>
+                </Link>
             </div>
             <div className="blog-content-wrap">
                 <div className="blog-content">
-                    <h4><a href="blog-details.html">{report.title}</a></h4>
+                    <h4><Link to={`/admin/news-details/${encodedTitle}`}>{report.title}</Link></h4>
                     <p className="block-with-text">{report.description}</p>
                     <div className="blog-meta">
                         <ul>
