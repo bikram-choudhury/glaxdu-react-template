@@ -1,12 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import queryString from 'query-string';
 import { connect } from 'react-redux';
 import Breadcrumb from '../Breadcrumb/Breadcrumb.jsx';
-import Pagination from '../Pagination/Pagination.jsx';
+import NewsList from './NewsList.jsx';
 import BrnadLogoArea from '../BrnadLogo/BrnadLogoArea.jsx';
 import NewsSideBar from './NewsSidebar.jsx';
 import { fetchNewsAction } from '../../redux/actions/news.action';
-import { Image_not_found } from '../../glaxdu-settings';
 
 /*
 
@@ -32,9 +31,6 @@ class News extends Component {
     constructor(props) {
         super(props);
     }
-    componentDidMount() {
-        this.props.getNews();
-    }
     render() {
         const breadcrumbConfig = {
             title: 'News Grid',
@@ -45,128 +41,33 @@ class News extends Component {
         return (
             <Fragment>
                 <Breadcrumb {...breadcrumbConfig} />
-                <EventsArea newsList={this.props.newsList} />
+                <div className="event-area pt-130 pb-130" >
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xl-9 col-lg-8">
+                                <NewsList searchCategory={this.props.newsCategory} />
+                            </div>
+                            <div className="col-xl-3 col-lg-4">
+                                <NewsSideBar />
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <BrnadLogoArea />
             </Fragment>
         )
     }
 }
 
-class EventsArea extends Component {
-    constructor() {
-        super();
-        this.state = {
-            currentPage: 1,
-            itemsPerPage: 5
-        }
-    }
-    updateCurrentPageNumber = (pageNumber) => {
-        this.setState({ currentPage: Number(pageNumber) });
-    }
-    render() {
-        const { currentPage, itemsPerPage } = this.state;
-        const totalPageCount = Math.ceil(this.props.newsList.length / this.state.itemsPerPage);
-        const indexOfLastItem = currentPage * itemsPerPage;
-        const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-
-        const currentPageItems = this.props.newsList.slice(indexOfFirstItem, indexOfLastItem);
-        return (
-            <div className="event-area pt-130 pb-130" >
-                <div className="container">
-                    <div className="row">
-                        <div className="col-xl-9 col-lg-8">
-                            <div className="blog-all-wrap mr-40">
-                                <div className="row">
-                                    {
-                                        currentPageItems.map((news, index) => {
-                                            return (
-                                                <div className="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12" key={index}>
-                                                    <SingleNews news={news} />
-                                                </div>
-                                            )
-                                        })
-                                    }
-
-                                </div>
-                                <div className="pro-pagination-style text-center mt-25">
-                                    <Pagination
-                                        changePageNumber={this.updateCurrentPageNumber}
-                                        itemsPerPage={this.state.itemsPerPage}
-                                        currentPage={this.state.currentPage}
-                                        totalPageCount={totalPageCount} />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4">
-                            <NewsSideBar />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        )
-    }
-
+const getNewsCategory = (location) => {
+    const searchQuery = queryString.parse(location.search);
+    return searchQuery && searchQuery.category;
 }
 
-function SingleNews(props) {
-    const report = props.news;
-    const encodedTitle = encodeURIComponent(report.title);
-    return (
-        <div className="single-blog mb-30">
-            <div className="blog-img">
-                <Link to={`/admin/news-details/${encodedTitle}`}>
-                    {
-                        report.urlToImage ? (
-                            <img src={report.urlToImage} alt="" />
-                        ) : (
-                                <img src={Image_not_found} alt="" />
-                            )
-                    }
-                </Link>
-            </div>
-            <div className="blog-content-wrap">
-                <div className="blog-content">
-                    <h4><Link to={`/admin/news-details/${encodedTitle}`}>{report.title}</Link></h4>
-                    <p className="block-with-text">{report.description}</p>
-                    <div className="blog-meta">
-                        <ul>
-                            <li>
-                                <a href="#"><i className="fa fa-user"></i>
-                                    {
-                                        report.author ? report.author : report.source.name
-                                    }
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="blog-date">
-                    <a href="#">
-                        <i className="fa fa-calendar-o"></i>
-                        {new Intl.DateTimeFormat('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: '2-digit'
-                        }).format(new Date(report.publishedAt))}
-                    </a>
-                </div>
-            </div>
-        </div>
-    )
-}
-
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
     return {
-        newsList: state.news && state.news.list || []
+        newsCategory: getNewsCategory(ownProps.location)
     };
 }
 
-function dispatchToProps(dispatch) {
-    return {
-        getNews: () => {
-            dispatch(fetchNewsAction());
-        }
-    }
-}
-
-export default connect(mapStateToProps, dispatchToProps)(News)
+export default connect(mapStateToProps)(News)

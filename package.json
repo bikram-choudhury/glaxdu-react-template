@@ -16,6 +16,7 @@
     "formik": "^2.0.8",
     "history": "^4.10.1",
     "jquery": "^3.4.1",
+    "query-string": "^6.9.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-owl-carousel": "^2.3.1",
