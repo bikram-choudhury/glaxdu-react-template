@@ -1,21 +1,32 @@
-import { SET_NEWS, SET_NEWS_ERROR } from "../action.type.constants";
+import { SET_NEWS, SET_NEWS_ERROR, SET_TAG, REPLACE_NEWS } from "../action.type.constants";
 
 const initialState = {
     list: [],
+    tag: '',
     error: ''
 }
 
-export const NewsReducer = (state = initialState, action) => {
-    switch (action.type) {
+export const NewsReducer = (state = initialState, { type, payload }) => {
+    switch (type) {
         case SET_NEWS:
             return {
                 ...state,
-                list: [...state.list, ...action.payload]
+                list: [...state.list, ...payload.list]
+            }
+        case SET_TAG:
+            return {
+                ...state,
+                tag: payload.tag
             }
         case SET_NEWS_ERROR:
             return {
                 ...state,
-                error: action.payload
+                error: payload.error
+            }
+        case REPLACE_NEWS:
+            return {
+                ...state,
+                list: [...payload.list]
             }
         default: return state;
     }

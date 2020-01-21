@@ -7471,14 +7471,15 @@ textarea:focus {
     margin: 0 3px 20px 0;
 }
 
-.sidebar-tag ul li a {
+.sidebar-tag ul li a, .sidebar-tag ul li span {
+    cursor: pointer;
     display: inline-block;
     line-height: 1;
     border: 1px solid #bbbbbb;
     padding: 11px 15px 10px;
 }
 
-.sidebar-tag ul li a:hover {
+.sidebar-tag ul li a:hover, .sidebar-tag ul li span:hover {
     background-color: #00a651;
     color: #fff;
     border: 1px solid #00a651;

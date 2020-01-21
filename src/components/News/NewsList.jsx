@@ -9,35 +9,31 @@ class NewsList extends Component {
         super(props);
         this.state = {
             currentPage: 1,
-            itemsPerPage: 5
+            itemsPerPage: 6
         }
     }
     componentDidMount() {
-        console.log("componentDidMount: ", this.props);
-        this.props.getNews(this.props.searchCategory);
-    }
-    shouldComponentUpdate(nextProps, nextState) {
-        return (
-            nextProps.searchCategory !== this.props.searchCategory 
-            // nextProps.newsList.length !== this.props.newsList.length
-        );
-    }
-    componentDidUpdate() {
-        console.log("componentDidUpdate: ", this.props);
-        this.props.getNews(this.props.searchCategory);
+        const { newsTag } = this.props;
+        this.props.getNews(newsTag);
     }
     updateCurrentPageNumber = (pageNumber) => {
         this.setState({ currentPage: Number(pageNumber) });
     }
     render() {
         const { currentPage, itemsPerPage } = this.state;
-        const totalPageCount = Math.ceil(this.props.newsList.length / this.state.itemsPerPage);
+        const { newsList, newsTag } = this.props;
+        const totalPageCount = Math.ceil(newsList.length / itemsPerPage);
         const indexOfLastItem = currentPage * itemsPerPage;
         const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
-        const currentPageItems = this.props.newsList.slice(indexOfFirstItem, indexOfLastItem);
+        const currentPageItems = newsList.slice(indexOfFirstItem, indexOfLastItem);
         return (
             <div className="blog-all-wrap mr-40">
+                {
+                    newsTag && (
+                        <span>Result Searched for <b>{newsTag}</b></span>
+                    )
+                }
                 <div className="row">
                     {
                         currentPageItems.map((news, index) => {
@@ -62,15 +58,16 @@ class NewsList extends Component {
     }
 }
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
     return {
+        newsTag: state.news && state.news.tag || '',
         newsList: state.news && state.news.list || []
     };
 }
 
 function dispatchToProps(dispatch) {
     return {
-        getNews: (category = "") => {
+        getNews: (category) => {
             dispatch(fetchNewsAction(category));
         }
     }

@@ -59,15 +59,4 @@ class News extends Component {
     }
 }
 
-const getNewsCategory = (location) => {
-    const searchQuery = queryString.parse(location.search);
-    return searchQuery && searchQuery.category;
-}
-
-function mapStateToProps(state, ownProps) {
-    return {
-        newsCategory: getNewsCategory(ownProps.location)
-    };
-}
-
-export default connect(mapStateToProps)(News)
+export default News;

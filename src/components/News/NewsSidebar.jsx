@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
-import { NavLink } from "react-router-dom";
 import { Formik, Field } from "formik";
+
+import NewsTags from "./NewsTags.jsx";
 
 export default class NewsSideBar extends PureComponent {
     render() {
@@ -89,26 +90,4 @@ function RecentNews(props) {
             </div>
         </div>
     )
-}
-
-function NewsTags(props) {
-    const tags = props.tags;
-    return (
-        <div className="sidebar-tag-wrap">
-            <div className="sidebar-title mb-40">
-                <h4>Tag</h4>
-            </div>
-            <div className="sidebar-tag">
-                <ul>
-                    {
-                        tags.map((tag, index) => (
-                            <li key={index}>
-                                <NavLink to={`news?category=${tag}`}>{tag}</NavLink>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
-        </div>
-    );
 }
