@@ -7479,7 +7479,7 @@ textarea:focus {
     padding: 11px 15px 10px;
 }
 
-.sidebar-tag ul li a:hover, .sidebar-tag ul li span:hover {
+.sidebar-tag ul li a:hover, .sidebar-tag ul li span:hover, .sidebar-tag ul li span.active {
     background-color: #00a651;
     color: #fff;
     border: 1px solid #00a651;

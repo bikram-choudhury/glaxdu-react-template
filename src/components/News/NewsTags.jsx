@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { setAndFetchNewsOnTag } from "../../redux/actions/news.action";
 
 function NewsTags(props) {
-    const tags = props.tags;
+    const { tags, selectedTag } = props;
 
     const getUpdatedNewsListAsTag = (tag) => {
         props.updateNewsTag(tag);
@@ -19,7 +19,7 @@ function NewsTags(props) {
                     {
                         tags.map((tag, index) => (
                             <li key={index} onClick={() => getUpdatedNewsListAsTag(tag)}>
-                                <span>{tag}</span>
+                                <span className={`${selectedTag === tag ? 'active': ''}`}>{tag}</span>
                             </li>
                         ))
                     }
@@ -31,7 +31,7 @@ function NewsTags(props) {
 
 function mapStateToProps(state, ownProps) {
     return {
-        tag: state.news && state.news.category || ''
+        selectedTag: state.news && state.news.tag || ''
     }
 }
 
