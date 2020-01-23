@@ -9,5 +9,12 @@ const allReducers = combineReducers({ news: NewsReducer });
 export const store = createStore(allReducers, persistedState, composeWithDevTools(applyMiddleware(thunk)));
 
 store.subscribe(() => {
-    saveState(store.getState());
+    const applicationState = store.getState();
+    const newsstate = applicationState && applicationState.news;
+    saveState({
+        news: {
+            ...newsstate,
+            error: ''
+        }
+    });
 });
