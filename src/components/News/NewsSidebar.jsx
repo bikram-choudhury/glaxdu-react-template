@@ -5,7 +5,7 @@ import NewsTags from "./NewsTags.jsx";
 
 export default class NewsSideBar extends PureComponent {
     render() {
-        const tags = ['business', 'education', 'technology', 'cricket', 'football'];
+        const tags = ['business', 'entertainment', 'health', 'science', 'sports', 'technology'];
         return (
             <div className="sidebar-style">
                 <SearchNews />

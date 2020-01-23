@@ -51,7 +51,7 @@ export default connect(mapStateToProps)(NewsDetails);
 function EventArea(props) {
 
     const { newsDetail, relatedNews } = props;
-    const { urlToImage, publishedAt, source, title, description, content } = newsDetail;
+    const { urlToImage, publishedAt, source, title, description, content, url } = newsDetail;
 
     return (
         <div className="event-area pt-130 pb-130">
@@ -127,13 +127,7 @@ function EventArea(props) {
                                         <div className="blog-tag">
                                             <ul>
                                                 <li>
-                                                    <a href="#">Loremsite</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Loreipsum</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Dolar</a>
+                                                    <a target="_blank" href={url}>Go to Source >></a>
                                                 </li>
                                             </ul>
                                         </div>
