@@ -2,11 +2,10 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { loadState, saveState } from './storage';
 import thunk from 'redux-thunk';
-import { NewsReducer } from './reducers/news.reducer';
+import { reducers } from './reducers';
 
 const persistedState = loadState();
-const allReducers = combineReducers({ news: NewsReducer });
-export const store = createStore(allReducers, persistedState, composeWithDevTools(applyMiddleware(thunk)));
+export const store = createStore(reducers, persistedState, composeWithDevTools(applyMiddleware(thunk)));
 
 store.subscribe(() => {
     const applicationState = store.getState();

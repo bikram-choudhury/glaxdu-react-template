@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Pagination from '../Pagination/Pagination.jsx';
 import SingleNews from './SingleNews.jsx';
 import { fetchNewsAction } from '../../redux/actions/news.action';
+import { getNewsTag, getNewsList } from '../../redux/reducers';
 
 class NewsList extends Component {
     constructor(props) {
@@ -60,8 +61,8 @@ class NewsList extends Component {
 
 function mapStateToProps(state) {
     return {
-        newsTag: state.news && state.news.tag || '',
-        newsList: state.news && state.news.list || []
+        newsTag: getNewsTag(state),
+        newsList: getNewsList(state)
     };
 }
 

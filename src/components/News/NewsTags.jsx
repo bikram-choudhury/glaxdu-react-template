@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { setAndFetchNewsOnTag } from "../../redux/actions/news.action";
+import { getNewsTag } from "../../redux/reducers";
 
 function NewsTags(props) {
     const { tags, selectedTag } = props;
@@ -31,7 +32,7 @@ function NewsTags(props) {
 
 function mapStateToProps(state, ownProps) {
     return {
-        selectedTag: state.news && state.news.tag || ''
+        selectedTag: getNewsTag(state)
     }
 }
 

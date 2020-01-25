@@ -31,3 +31,6 @@ export const NewsReducer = (state = initialState, { type, payload }) => {
         default: return state;
     }
 }
+
+export const getNewsTag = (state) => state.tag;
+export const getNewsList = (state) => state.list;
