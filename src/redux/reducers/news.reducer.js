@@ -1,8 +1,9 @@
-import { SET_NEWS, SET_NEWS_ERROR, SET_TAG, REPLACE_NEWS } from "../action.type.constants";
+import { SET_NEWS, SET_NEWS_ERROR, SET_TAG, REPLACE_NEWS, SET_TITLE } from "../action.type.constants";
 
 const initialState = {
     list: [],
     tag: '',
+    selctedNewsTitle: '',
     error: ''
 }
 
@@ -17,6 +18,11 @@ export const NewsReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 tag: payload.tag
+            }
+        case SET_TITLE:
+            return {
+                ...state,
+                selctedNewsTitle: payload.title
             }
         case SET_NEWS_ERROR:
             return {
@@ -34,3 +40,4 @@ export const NewsReducer = (state = initialState, { type, payload }) => {
 
 export const getNewsTag = (state) => state.tag;
 export const getNewsList = (state) => state.list;
+export const getSelectedNewsTitle = (state) => state.selctedNewsTitle;

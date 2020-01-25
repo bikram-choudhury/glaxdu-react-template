@@ -14,8 +14,8 @@ class NewsList extends Component {
         }
     }
     componentDidMount() {
-        const { newsTag } = this.props;
-        this.props.getNews(newsTag);
+        const { newsList, newsTag } = this.props;
+        newsList.length === 0 && this.props.getNews(newsTag);
     }
     updateCurrentPageNumber = (pageNumber) => {
         this.setState({ currentPage: Number(pageNumber) });

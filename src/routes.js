@@ -20,7 +20,7 @@ export const AdminRoutes = [{
     name: 'News',
     component: News
 }, {
-    path: '/news-details/:newsTitle',
+    path: '/news-details',
     layout: '/admin',
     name: '',
     component: NewsDetails

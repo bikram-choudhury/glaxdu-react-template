@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import BrnadLogoArea from '../BrnadLogo/BrnadLogoArea.jsx';
 import NewsSideBar from './NewsSidebar.jsx';
 import Breadcrumb from '../Breadcrumb/Breadcrumb.jsx';
+import { getSelectedNews, getReletedNewsList } from '../../redux/reducers';
 
 class NewsDetails extends Component {
     constructor() {
@@ -36,13 +37,8 @@ class NewsDetails extends Component {
 
 const mapStateToProps = (state, ownProps) => {
 
-    const { news } = state;
-    const { match } = ownProps;
-    const escapedNewsTitle = match.params && match.params.newsTitle;
-    const title = decodeURIComponent(escapedNewsTitle);
-    const newsDetail = news.list.find(adhoc => adhoc.title === title);
-    const relatedNewsList = news.list.filter(adhoc => adhoc.source.name === newsDetail.source.name);
-    const relatedNews = relatedNewsList.slice(0, 5);
+    const newsDetail = getSelectedNews(state);
+    const relatedNews = getReletedNewsList(state);
     return { newsDetail, relatedNews };
 }
 
