@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import BrnadLogoArea from '../BrnadLogo/BrnadLogoArea.jsx';
 import NewsSideBar from './NewsSidebar.jsx';
 import Breadcrumb from '../Breadcrumb/Breadcrumb.jsx';
+import SocialButtons from '../SocialButtons/SocialButtons.jsx';
 import { getSelectedNews, getReletedNewsList } from '../../redux/reducers';
 
 class NewsDetails extends Component {
@@ -87,7 +88,7 @@ function EventArea(props) {
                                         {description}
                                         <i className="quote-bottom fa fa-quote-right"></i>
                                     </blockquote>
-                                    <p>{content}</p>
+                                    <p dangerouslySetInnerHTML={{ __html: content }}></p>
                                     <div className="blog-share-tags">
                                         <div className="blog-share">
                                             <div className="blog-btn">
@@ -95,30 +96,12 @@ function EventArea(props) {
                                                     <i className="fa fa-share-alt"></i>
                                                 </a>
                                             </div>
-                                            <div className="blog-social">
-                                                <ul>
-                                                    <li>
-                                                        <a className="facebook" href="#">
-                                                            <i className="fa fa-facebook"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className="instagram" href="#">
-                                                            <i className="fa fa-instagram"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className="twitter" href="#">
-                                                            <i className="fa fa-twitter"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a className="google" href="#">
-                                                            <i className="fa fa-google-plus"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            <SocialButtons
+                                                title={title}
+                                                sharedUrl={url}
+                                                description={description}
+                                                sourceName={source.name}
+                                            />
                                         </div>
                                         <div className="blog-tag">
                                             <ul>

@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import { Formik, Field } from "formik";
 
 import NewsTags from "./NewsTags.jsx";
+import SocialButtons from "../SocialButtons/SocialButtons.jsx";
 
 export default class NewsSideBar extends PureComponent {
     render() {
@@ -41,20 +42,26 @@ function SearchNews(props) {
 }
 
 function ConnectWithUs(props) {
+    const introduction = `quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolors eos qui ratione voluptatem sad.`;
+    const image = 'banner/banner-4.jpg';
+
+    const title = document.title;
+    const origin = location.origin;
+
     return (
         <div className="sidebar-about mb-40">
             <div className="sidebar-title mb-15">
                 <h4>About Us</h4>
             </div>
-            <p>quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolors eos qui ratione voluptatem sad.</p>
-            <a href="#"><img src={require('./../../assets/img/banner/banner-4.jpg')} alt="" /></a>
+            <p>{introduction}</p>
+            <a href="#"><img src={require(`./../../assets/img/${image}`)} alt="glaxdu" /></a>
             <div className="sidebar-social">
-                <ul>
-                    <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a></li>
-                    <li><a className="youtube" href="#"><i className="fa fa-youtube-play"></i></a></li>
-                    <li><a className="twitter" href="#"><i className="fa fa-twitter"></i></a></li>
-                    <li><a className="google" href="#"><i className="fa fa-google-plus"></i></a></li>
-                </ul>
+                <SocialButtons
+                    title={title}
+                    sharedUrl={origin}
+                    description={introduction}
+                    sourceName={'Glaxdu'}
+                />
             </div>
         </div>
     );

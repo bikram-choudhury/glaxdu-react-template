@@ -8275,6 +8275,10 @@ textarea:focus {
     margin-right: 14px;
 }
 
+.blog-share-tags .blog-share .blog-btn a .fa {
+    font-size: 25px;
+}
+
 .blog-share-tags .blog-share .blog-btn a:hover {
     background-color: #00a651;
     color: #fff;
