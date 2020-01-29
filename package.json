@@ -9,6 +9,7 @@
   "main": "./src/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --port 3000",
+    "start-server": "json-server --watch src/fake/DB.json --port 3004",
     "build": "webpack --mode production"
   },
   "dependencies": {
@@ -43,6 +44,7 @@
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.9.0",
+    "json-server": "^0.15.1"
   }
 }

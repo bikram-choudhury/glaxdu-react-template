@@ -1,0 +1,528 @@
+{
+    "products": [
+        {
+            "name": "Marker Pen",
+            "images": [
+                "pro-1.jpg"
+            ],
+            "saleType": "sale",
+            "rating": 4,
+            "categories": [
+                "Drawing"
+            ],
+            "price": 100,
+            "reviews": [],
+            "like": 0,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "availableColors": [
+                "blue",
+                "maroon active",
+                "gray",
+                "green",
+                "yellow",
+                "white"
+            ],
+            "availableSizes": [
+                "s",
+                "m",
+                "l",
+                "xl",
+                "xxl",
+                "free size"
+            ],
+            "sku": "00010001",
+            "tags": [
+                "clothing",
+                "summer"
+            ],
+            "weight": 400,
+            "dimensions": "10 x 10 x 15 cm",
+            "materials": [
+                "60% cotton",
+                "40% polyester"
+            ],
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Color Pencil",
+            "images": [
+                "pro-2.jpg"
+            ],
+            "saleType": "",
+            "rating": 4,
+            "categories": [
+                "Drawing"
+            ],
+            "price": 20,
+            "reviews": [],
+            "like": 0,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "availableColors": [
+                "blue",
+                "maroon active",
+                "gray",
+                "green",
+                "yellow",
+                "white"
+            ],
+            "sku": "00010002",
+            "tags": [
+                "drawing"
+            ],
+            "weight": 10,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Color Box",
+            "images": [
+                "pro-3.jpg"
+            ],
+            "saleType": "New",
+            "rating": 4,
+            "categories": [
+                "Drawing"
+            ],
+            "price": 30,
+            "reviews": [],
+            "like": 0,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "availableColors": [
+                "blue",
+                "maroon active",
+                "gray",
+                "green",
+                "yellow",
+                "white"
+            ],
+            "sku": "00010003",
+            "tags": [
+                "drawing"
+            ],
+            "weight": 10,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Toy mobile",
+            "images": [
+                "pro-4.jpg"
+            ],
+            "saleType": "New",
+            "rating": 4,
+            "categories": [
+                "Electronics"
+            ],
+            "price": 40,
+            "reviews": [],
+            "like": 0,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "availableColors": [
+                "blue",
+                "maroon active",
+                "gray",
+                "green",
+                "yellow",
+                "white"
+            ],
+            "sku": "00010005",
+            "tags": [
+                "mobile",
+                "toy"
+            ],
+            "weight": 30,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Ceramic vase",
+            "images": [
+                "pro-6.jpg"
+            ],
+            "saleType": "Sale",
+            "rating": 4,
+            "categories": [
+                "Electronics"
+            ],
+            "price": 50,
+            "reviews": [],
+            "like": 0,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "sku": "00010006",
+            "tags": [
+                "vase"
+            ],
+            "weight": 30,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Smart Watch",
+            "images": [
+                "pro-7.jpg"
+            ],
+            "saleType": "",
+            "rating": 4,
+            "categories": [
+                "Watch"
+            ],
+            "price": 100,
+            "reviews": [],
+            "like": 3,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "sku": "00010007",
+            "tags": [
+                "Electronics",
+                "watch"
+            ],
+            "weight": 200,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "History Book",
+            "images": [
+                "pro-8.jpg"
+            ],
+            "saleType": "",
+            "rating": 4,
+            "categories": [
+                "Book"
+            ],
+            "price": 70,
+            "reviews": [],
+            "like": 5,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "sku": "00010008",
+            "tags": [
+                "book",
+                "history"
+            ],
+            "weight": 100,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Marker Pen",
+            "images": [
+                "pro-12.jpg"
+            ],
+            "saleType": "",
+            "rating": 4,
+            "categories": [
+                "Pen"
+            ],
+            "price": 70,
+            "reviews": [],
+            "like": 5,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "sku": "00010012",
+            "tags": [
+                "pen",
+                "marker"
+            ],
+            "weight": 10,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Softball Gloves",
+            "images": [
+                "pro-10.jpg"
+            ],
+            "saleType": "New",
+            "rating": 4,
+            "categories": [
+                "Gloves"
+            ],
+            "price": 20,
+            "reviews": [],
+            "like": 3,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "sku": "00010010",
+            "tags": [
+                "ball",
+                "gloves"
+            ],
+            "weight": 20,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Skating Shoes",
+            "images": [
+                "pro-11.jpg"
+            ],
+            "saleType": "New",
+            "rating": 4,
+            "categories": [
+                "Shoes"
+            ],
+            "price": 40,
+            "reviews": [],
+            "like": 3,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "sku": "00010011",
+            "tags": [
+                "skating",
+                "shoes"
+            ],
+            "weight": 300,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Marker Pen",
+            "images": [
+                "pro-1.jpg"
+            ],
+            "saleType": "sale",
+            "rating": 4,
+            "categories": [
+                "Drawing"
+            ],
+            "price": 100,
+            "reviews": [],
+            "like": 0,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "availableColors": [
+                "blue",
+                "maroon active",
+                "gray",
+                "green",
+                "yellow",
+                "white"
+            ],
+            "availableSizes": [
+                "s",
+                "m",
+                "l",
+                "xl",
+                "xxl",
+                "free size"
+            ],
+            "sku": "10011001",
+            "tags": [
+                "clothing",
+                "summer"
+            ],
+            "weight": 400,
+            "dimensions": "10 x 10 x 15 cm",
+            "materials": [
+                "60% cotton",
+                "40% polyester"
+            ],
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Color Pencil",
+            "images": [
+                "pro-2.jpg"
+            ],
+            "saleType": "",
+            "rating": 4,
+            "categories": [
+                "Drawing"
+            ],
+            "price": 20,
+            "reviews": [],
+            "like": 0,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "availableColors": [
+                "blue",
+                "maroon active",
+                "gray",
+                "green",
+                "yellow",
+                "white"
+            ],
+            "sku": "10010002",
+            "tags": [
+                "drawing"
+            ],
+            "weight": 10,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Color Box",
+            "images": [
+                "pro-3.jpg"
+            ],
+            "saleType": "New",
+            "rating": 4,
+            "categories": [
+                "Drawing"
+            ],
+            "price": 30,
+            "reviews": [],
+            "like": 0,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "availableColors": [
+                "blue",
+                "maroon active",
+                "gray",
+                "green",
+                "yellow",
+                "white"
+            ],
+            "sku": "10010003",
+            "tags": [
+                "drawing"
+            ],
+            "weight": 10,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Toy mobile",
+            "images": [
+                "pro-4.jpg"
+            ],
+            "saleType": "New",
+            "rating": 4,
+            "categories": [
+                "Electronics"
+            ],
+            "price": 40,
+            "reviews": [],
+            "like": 0,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "availableColors": [
+                "blue",
+                "maroon active",
+                "gray",
+                "green",
+                "yellow",
+                "white"
+            ],
+            "sku": "10010005",
+            "tags": [
+                "mobile",
+                "toy"
+            ],
+            "weight": 30,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Ceramic vase",
+            "images": [
+                "pro-6.jpg"
+            ],
+            "saleType": "Sale",
+            "rating": 4,
+            "categories": [
+                "Electronics"
+            ],
+            "price": 50,
+            "reviews": [],
+            "like": 0,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "sku": "10010006",
+            "tags": [
+                "vase"
+            ],
+            "weight": 30,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Smart Watch",
+            "images": [
+                "pro-7.jpg"
+            ],
+            "saleType": "",
+            "rating": 4,
+            "categories": [
+                "Watch"
+            ],
+            "price": 100,
+            "reviews": [],
+            "like": 3,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "sku": "10010007",
+            "tags": [
+                "Electronics",
+                "watch"
+            ],
+            "weight": 200,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "History Book",
+            "images": [
+                "pro-8.jpg"
+            ],
+            "saleType": "",
+            "rating": 4,
+            "categories": [
+                "Book"
+            ],
+            "price": 70,
+            "reviews": [],
+            "like": 5,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "sku": "10010008",
+            "tags": [
+                "book",
+                "history"
+            ],
+            "weight": 100,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Marker Pen",
+            "images": [
+                "pro-12.jpg"
+            ],
+            "saleType": "",
+            "rating": 4,
+            "categories": [
+                "Pen"
+            ],
+            "price": 70,
+            "reviews": [],
+            "like": 5,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "sku": "10010012",
+            "tags": [
+                "pen",
+                "marker"
+            ],
+            "weight": 10,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Softball Gloves",
+            "images": [
+                "pro-10.jpg"
+            ],
+            "saleType": "New",
+            "rating": 4,
+            "categories": [
+                "Gloves"
+            ],
+            "price": 20,
+            "reviews": [],
+            "like": 3,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "sku": "10010010",
+            "tags": [
+                "ball",
+                "gloves"
+            ],
+            "weight": 20,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        },
+        {
+            "name": "Skating Shoes",
+            "images": [
+                "pro-11.jpg"
+            ],
+            "saleType": "New",
+            "rating": 4,
+            "categories": [
+                "Shoes"
+            ],
+            "price": 40,
+            "reviews": [],
+            "like": 3,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
+            "sku": "10010011",
+            "tags": [
+                "skating",
+                "shoes"
+            ],
+            "weight": 300,
+            "otherInfo": "American heirloom jean shorts pug seitan letterpress"
+        }
+    ]
+}
