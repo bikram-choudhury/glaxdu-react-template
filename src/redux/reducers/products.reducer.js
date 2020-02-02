@@ -10,7 +10,7 @@ export const ProductReducer = (state = initialState, { type, payload }) => {
         case SET_PRODUCTS:
             return {
                 ...state,
-                list: [...state.list, ...payload.list]
+                list: [...payload.list]
             }
         case SET_PRODUCTS_ERROR:
             return {

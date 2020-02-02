@@ -4,15 +4,16 @@ import { getProductList } from "../../redux/reducers";
 import { fetchProducts } from "../../redux/actions/products.action";
 import SingleTableViewProduct from "./SingleTableViewProduct.jsx";
 import SingleListViewProduct from "./SingleListViewProduct.jsx";
+import Pagination from "../Pagination/Pagination.jsx";
+import { PRODUCTS_PER_PAGE } from "../../glaxdu-settings";
 
 function ProductListContainer(props) {
     const [productTabView, changeProductTabView] = useState('table-view');
+    const [currentPageNumber, updateCurrentPageNumber] = useState(1);
     const { productList } = props;
     useEffect(() => {
-        if (productList && productList.length === 0) {
-            props.getProductList();
-        }
-    }, [])
+        props.getProductList(currentPageNumber);
+    }, [currentPageNumber])
     return (
         <div className="event-area pt-130 pb-130">
             <div className="container">
@@ -75,12 +76,13 @@ function ProductListContainer(props) {
                     </div>
                 </div>
                 <div className="pro-pagination-style text-center mt-30">
-                    <ul>
-                        <li><a className="prev" href="#"><i className="fa fa-angle-double-left"></i></a></li>
-                        <li><a className="active" href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a className="next" href="#"><i className="fa fa-angle-double-right"></i></a></li>
-                    </ul>
+                    <Pagination
+                        changePageNumber={updateCurrentPageNumber}
+                        itemsPerPage={PRODUCTS_PER_PAGE}
+                        currentPage={currentPageNumber}
+                        totalPageCount={5} />
+                    {/* totalPageCount need to change with parallel call for 
+                        fetchingProducts & fetchingProductTotalCount */}
                 </div>
             </div>
         </div>
@@ -95,7 +97,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        getProductList: () => { dispatch(fetchProducts()) }
+        getProductList: (pageNumber) => dispatch(fetchProducts(pageNumber - 1))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ProductListContainer);

@@ -15,9 +15,9 @@ export const setProductsError = (message) => {
     }
 }
 
-export const fetchProducts = () => {
+export const fetchProducts = (pageNumber) => {
     return (dispatch, getState) => {
-        getProducts()
+        getProducts(pageNumber)
             .then(response => {
                 response && dispatch(setProducts(response))
             })
