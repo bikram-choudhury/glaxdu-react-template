@@ -1,4 +1,6 @@
 import React from 'react';
+import { Ratings } from '../Ratings/Ratings.jsx';
+import { MAXRATINGS } from '../../glaxdu-settings';
 
 export default function SingleListViewProduct(props) {
     const { images, name, rating, category, price, description } = props;
@@ -13,7 +15,7 @@ export default function SingleListViewProduct(props) {
                 <h4><a href="single-product.html">{name}</a></h4>
                 <span>${price}</span>
                 <p>{description}</p>
-                {/* Ratings */}
+                <Ratings rating={rating} maxRating={MAXRATINGS} />
                 <div className="product-action-list">
                     <ul>
                         <li>

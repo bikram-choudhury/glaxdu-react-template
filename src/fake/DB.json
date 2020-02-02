@@ -6,7 +6,7 @@
                 "pro-1.jpg"
             ],
             "saleType": "sale",
-            "rating": 4,
+            "rating": 5,
             "categories": [
                 "Drawing"
             ],
@@ -78,7 +78,7 @@
                 "pro-3.jpg"
             ],
             "saleType": "New",
-            "rating": 4,
+            "rating": 3,
             "categories": [
                 "Drawing"
             ],
@@ -107,7 +107,7 @@
                 "pro-4.jpg"
             ],
             "saleType": "New",
-            "rating": 4,
+            "rating": 2,
             "categories": [
                 "Electronics"
             ],
@@ -137,7 +137,7 @@
                 "pro-6.jpg"
             ],
             "saleType": "Sale",
-            "rating": 4,
+            "rating": 2,
             "categories": [
                 "Electronics"
             ],
@@ -158,7 +158,7 @@
                 "pro-7.jpg"
             ],
             "saleType": "",
-            "rating": 4,
+            "rating": 5,
             "categories": [
                 "Watch"
             ],
@@ -202,7 +202,7 @@
                 "pro-12.jpg"
             ],
             "saleType": "",
-            "rating": 4,
+            "rating": 1,
             "categories": [
                 "Pen"
             ],

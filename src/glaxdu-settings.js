@@ -63,3 +63,4 @@ export const NEWSAPI_KEY = 'ba634665e5fc4a9ba409bacb1ef1f862';
 export const Image_not_found = 'https://via.placeholder.com/260x171?text=Sorry+Not+Found';
 export const API_URL = 'http://localhost:3004';
 export const PRODUCTSAPI = `${API_URL}/products`;
+export const MAXRATINGS = 5;

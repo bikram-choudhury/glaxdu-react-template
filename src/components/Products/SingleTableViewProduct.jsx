@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Ratings } from '../Ratings/Ratings.jsx';
+import { MAXRATINGS } from '../../glaxdu-settings';
 
 export default function SingleTableViewProduct(props) {
     const { images, name, rating, category, price } = props;
@@ -31,7 +33,7 @@ export default function SingleTableViewProduct(props) {
                     <div className="product-title">
                         <h3><a href="single-product.html">{name}</a></h3>
                     </div>
-                    {/* Ratings */}
+                    <Ratings rating={rating} maxRating={MAXRATINGS} />
                 </div>
                 <div className="pro-category-price">
                     <span className="pro-category">{category}</span>
