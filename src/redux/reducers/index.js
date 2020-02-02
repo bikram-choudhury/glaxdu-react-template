@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
 import { createSelector } from 'reselect';
 import * as news from "./news.reducer";
+import * as products from "./products.reducer";
 
-export const reducers = combineReducers({ news: news.NewsReducer });
+export const reducers = combineReducers({ news: news.NewsReducer, products: products.ProductReducer });
 
 const getSelectedNewsTitle = (state) => news.getSelectedNewsTitle(state.news);
 
@@ -21,3 +22,5 @@ export const getReletedNewsList = createSelector(
         return relatedNewsList.slice(0, 5);
     }
 );
+
+export const getProductList = (state) => products.getProductList(state.products);

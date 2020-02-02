@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Breadcrumb(props) {
     const { title, subTitle, templateName, bgImage } = props;
-    // const backgroundImage = ;
     return (
         <div className="breadcrumb-area">
-            <div className="breadcrumb-top default-overlay bg-img breadcrumb-overly-3 pt-100 pb-95"
+            <div className="breadcrumb-top default-overlay bg-img breadcrumb-overly-4 pt-100 pb-95"
                 style={{ backgroundImage: `url(${require(`./../../assets/img/bg/${bgImage}`)})` }}>
                 <div className="container">
                     <h2>{title}</h2>
@@ -15,7 +15,7 @@ export default function Breadcrumb(props) {
             <div className="breadcrumb-bottom">
                 <div className="container">
                     <ul>
-                        <li><a href="#">Home</a> <span><i className="fa fa-angle-double-right"></i>{templateName}</span></li>
+                        <li><Link to={'/'}>Home</Link> <span><i className="fa fa-angle-double-right"></i>{templateName}</span></li>
                     </ul>
                 </div>
             </div>
