@@ -10,10 +10,12 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --port 3000",
     "start-server": "json-server --watch src/fake/DB.json --port 3004",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "start-client-server": "concurrently \"npm run start-server\" \"npm run start\""
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "concurrently": "^5.1.0",
     "formik": "^2.0.8",
     "history": "^4.10.1",
     "jquery": "^3.4.1",
