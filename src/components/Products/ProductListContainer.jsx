@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from 'react-redux';
-import { getProductList } from "../../redux/reducers";
+import { getProductList, getProductTotalCount } from "../../redux/reducers";
 import { fetchProducts } from "../../redux/actions/products.action";
 import SingleTableViewProduct from "./SingleTableViewProduct.jsx";
 import SingleListViewProduct from "./SingleListViewProduct.jsx";
@@ -10,7 +10,12 @@ import { PRODUCTS_PER_PAGE } from "../../glaxdu-settings";
 function ProductListContainer(props) {
     const [productTabView, changeProductTabView] = useState('table-view');
     const [currentPageNumber, updateCurrentPageNumber] = useState(1);
-    const { productList } = props;
+    const { productList, productTotalCount } = props;
+
+    const totalPageCount = Math.ceil(productTotalCount / PRODUCTS_PER_PAGE);
+    const productListShowsUpTo = currentPageNumber * PRODUCTS_PER_PAGE;
+    const productListShowsFrom = productListShowsUpTo - PRODUCTS_PER_PAGE + 1;
+
     useEffect(() => {
         props.getProductList(currentPageNumber);
     }, [currentPageNumber])
@@ -36,7 +41,16 @@ function ProductListContainer(props) {
                                         <i className="fa fa-list-ul"></i>
                                     </a>
                                 </div>
-                                <p>Showing 1–12 of 20 result</p>
+                                <p>
+                                    {
+                                        `Showing
+                                        ${productListShowsFrom} -
+                                        ${productListShowsUpTo > productTotalCount ? productTotalCount : productListShowsUpTo}
+                                        of ${productTotalCount} result
+                                        `
+                                    }
+
+                                </p>
                             </div>
                             <div className="shop-select">
                                 <select>
@@ -80,9 +94,7 @@ function ProductListContainer(props) {
                         changePageNumber={updateCurrentPageNumber}
                         itemsPerPage={PRODUCTS_PER_PAGE}
                         currentPage={currentPageNumber}
-                        totalPageCount={5} />
-                    {/* totalPageCount need to change with parallel call for 
-                        fetchingProducts & fetchingProductTotalCount */}
+                        totalPageCount={totalPageCount} />
                 </div>
             </div>
         </div>
@@ -92,7 +104,8 @@ function ProductListContainer(props) {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        productList: getProductList(state)
+        productList: getProductList(state),
+        productTotalCount: getProductTotalCount(state)
     }
 }
 const mapDispatchToProps = (dispatch) => {

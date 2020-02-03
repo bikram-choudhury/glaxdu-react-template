@@ -24,3 +24,4 @@ export const getReletedNewsList = createSelector(
 );
 
 export const getProductList = (state) => products.getProductList(state.products);
+export const getProductTotalCount = (state) => products.getProductTotalCount(state.products);
