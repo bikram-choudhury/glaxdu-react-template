@@ -4,6 +4,7 @@ import ScrollToTop from 'react-scroll-up';
 import Footer from '../components/Footer.jsx';
 import Header from '../components/Header.jsx';
 import { AdminRoutes } from './../routes.js';
+import AxiosInterceptor from '../interceptor/axios.interceptor.jsx';
 
 const adminRoutes = (
     <Switch>
@@ -19,6 +20,7 @@ export default class Admin extends Component {
     render() {
         return (
             <div className="App">
+                <AxiosInterceptor />
                 <Header />
                 <main>
                     {adminRoutes}
