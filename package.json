@@ -8,10 +8,10 @@
   },
   "main": "./src/index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --port 3000",
-    "start-server": "json-server --watch src/fake/DB.json --port 3004",
-    "build": "webpack --mode production",
-    "start-client-server": "concurrently \"npm run start-server\" \"npm run start\""
+    "start": "concurrently --kill-others-on-fail \"npm run start-server\" \"npm run start-client\"",
+    "start-client": "webpack-dev-server --mode development --port 3000",
+    "start-server": "nodemon src/server/app.js",
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "axios": "^0.19.0",
