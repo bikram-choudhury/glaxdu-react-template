@@ -67,3 +67,7 @@ export const NEWSAPI = 'https://newsapi.org/v2';
 export const NEWSAPI_KEY = 'ba634665e5fc4a9ba409bacb1ef1f862';
 export const API_URL = 'http://localhost:3004';
 export const PRODUCTSAPI = `${API_URL}/products`;
+
+// server
+export const PORT = 8000;
+export const AUTH_SERVER_URL = `http://localhost:${PORT}`;

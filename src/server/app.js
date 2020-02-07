@@ -4,10 +4,9 @@ const jwt = require('jsonwebtoken');
 const jsonServer = require('json-server');
 const path = require('path');
 const PORT = 8000;
+
 const userDbPath = path.resolve(__dirname, '../fake/users.json');
 const serverDbPath = path.resolve(__dirname, '../fake/DB.json');
-
-console.log(userDbPath);
 
 const server = jsonServer.create();
 const router = jsonServer.router(serverDbPath);
@@ -27,7 +26,7 @@ const verifyToken = (token) => {
     return jwt.verify(token, SECRET_KEY, (error, decode) => decode ? decode : error);
 }
 
-server.post('/auth/register', (requset, response) => {
+server.post('/auth/register', (request, response) => {
     const userData = request.body;
     fs.readFile(userDbPath, (error, data) => {
         if (error) {
@@ -37,17 +36,21 @@ server.post('/auth/register', (requset, response) => {
             const isExist = users.find(user => user.username === userData.username || user.email === userData.email);
 
             if (!!isExist) {
-                const message = 'username already exist';
+                const message = 'username/email already exist';
                 response.status(400).json({ message });
             } else {
-                users.push({ id: (users.length + 1), ...user });
+                users.push({ id: (users.length + 1), ...userData });
 
-                fs.watchFile(userDbPath, JSON.stringify(users), (error, result) => {
+                fs.writeFile(userDbPath, JSON.stringify(users), (error, result) => {
                     if (error) {
                         response.status(500).json({ message: 'No write access to User DB' });
                     } else {
-                        const accessToken = createToken(user);
-                        response.status(200).json({ access_token: accessToken });
+                        const accessToken = createToken(userData);
+                        response.status(200).json({
+                            access_token: accessToken,
+                            refresh_token: '',
+                            token_type: 'Bearer'
+                        });
                     }
                 });
             }

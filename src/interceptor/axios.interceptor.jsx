@@ -65,7 +65,7 @@ function AxiosInterceptor(props) {
 
 const mapStateToProps = (state) => {
     return {
-        auth: state.auth || { accessToken: 'aT', refreshToken: 'rT', tokenType: 'tT' }
+        auth: state.auth
     }
 }
 export default connect(mapStateToProps)(AxiosInterceptor);

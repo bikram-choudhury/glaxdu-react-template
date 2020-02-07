@@ -10,10 +10,14 @@ export const store = createStore(reducers, persistedState, composeWithDevTools(a
 store.subscribe(() => {
     const applicationState = store.getState();
     const newsstate = applicationState && applicationState.news;
+    const authState = applicationState && applicationState.auth;
     saveState({
         news: {
             ...newsstate,
             error: ''
+        },
+        auth: {
+            ...authState
         }
     });
 });

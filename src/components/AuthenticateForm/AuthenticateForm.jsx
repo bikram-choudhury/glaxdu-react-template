@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import TopHeader from '../TopHeader/TopHeader.jsx';
 import BrnadLogoArea from '../BrnadLogo/BrnadLogoArea.jsx';
 import Footer from '../Footer.jsx';
+import RegistrationForm from './RegistrationForm.jsx';
 
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field } from 'formik';
 import Axios from 'axios';
-import { JSON_PLACEHOLDER_API } from '../../glaxdu-settings';
 
 export default class AuthenticateForm extends Component {
     render() {
@@ -58,10 +58,10 @@ class AuthenticationContainer extends Component {
                                 </div>
                                 <div className="tab-content">
                                     <div className={`tab-pane ${templateType === 'signin' ? "active" : ''}`}>
-                                        <LoginForm />
+                                        <LoginForm {...this.props} />
                                     </div>
                                     <div className={`tab-pane ${templateType === 'signup' ? "active" : ''}`}>
-                                        <RegisterForm />
+                                        <RegistrationForm {...this.props} />
                                     </div>
                                 </div>
                             </div>
@@ -101,40 +101,12 @@ function LoginForm(props) {
     );
 }
 
-function RegisterForm() {
-    const initialRegisterFormValue = { username: '', password: '', email: '' };
-    return (
-        <div className="login-form-container">
-            <div className="login-register-form">
-                <Formik initialValues={initialRegisterFormValue} onSubmit={handleLoginAndRegistration}>
-                    {({ isSubmitting, values }) => (
-                        <Form>
-                            <Field type="input" name="username" placeholder="Username" />
-                            <Field type="password" name="password" placeholder="Password" />
-                            <Field type="email" name="email" placeholder="Email" />
-                            <Field as="select" name="country">
-                                <option value="">Choose ...</option>
-                                <option value="india">India</option>
-                                <option value="africa">Africa</option>
-                                <option value="england">England</option>
-                                <option value="australia">Australia</option>
-                            </Field>
-                            <div className="button-box">
-                                <button disabled={isSubmitting} className="default-btn" type="submit"><span>Register</span></button>
-                            </div>
-                        </Form>
-                    )}
-                </Formik>
-            </div>
-        </div>
-    );
-}
 
 function handleLoginAndRegistration(formData, { setSubmitting }) {
     setSubmitting(true);
     console.log(formData);
     if (formData && Object.keys(formData).length) {
-        const URL = `${JSON_PLACEHOLDER_API}/users`;
+        const URL = `${AUTH_SERVER_URL}/users`;
         Axios.post(URL, formData)
             .then(response => {
                 console.log(response);

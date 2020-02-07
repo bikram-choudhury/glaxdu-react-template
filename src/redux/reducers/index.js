@@ -2,8 +2,9 @@ import { combineReducers } from "redux";
 import { createSelector } from 'reselect';
 import * as news from "./news.reducer";
 import * as products from "./products.reducer";
+import * as auth from "./auth.reducer";
 
-export const reducers = combineReducers({ news: news.NewsReducer, products: products.ProductReducer });
+export const reducers = combineReducers({ news: news.NewsReducer, products: products.ProductReducer, auth: auth.AuthReducer });
 
 const getSelectedNewsTitle = (state) => news.getSelectedNewsTitle(state.news);
 
@@ -25,3 +26,7 @@ export const getReletedNewsList = createSelector(
 
 export const getProductList = (state) => products.getProductList(state.products);
 export const getProductTotalCount = (state) => products.getProductTotalCount(state.products);
+
+export const getAccessToken = (state) => auth.getAccessToken(state.auth);
+export const getRefreshToken = (state) => auth.getRefreshToken(state.auth);
+export const getTokenType = (state) => auth.getTokenType(state.auth);
