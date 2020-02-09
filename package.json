@@ -10,8 +10,11 @@
   "scripts": {
     "start": "concurrently \"npm run start-server\" \"npm run start-client\"",
     "start-client": "webpack-dev-server --mode development --port 3000",
-    "start-server": "nodemon src/server/app.js",
-    "build": "webpack --mode production"
+    "start-server": "nodemon server/app.js",
+    "build": "webpack --mode production",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --colors"
   },
   "dependencies": {
     "axios": "^0.19.0",
