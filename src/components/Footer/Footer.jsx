@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import bg4 from './../assets/img/bg/bg-4.jpg';
+import bg4 from './../../assets/img/bg/bg-4.jpg';
 
 export default class Footer extends Component {
     render() {
@@ -72,10 +72,10 @@ export default class Footer extends Component {
                                     </div>
                                     <div className="footer-gallery">
                                         <ul>
-                                            <li><a href="#"><img src={require('./../assets/img/gallery/gallery-1.png')} alt="" /></a></li>
-                                            <li><a href="#"><img src={require('./../assets/img/gallery/gallery-2.png')} alt="" /></a></li>
-                                            <li><a href="#"><img src={require('./../assets/img/gallery/gallery-3.png')} alt="" /></a></li>
-                                            <li><a href="#"><img src={require('./../assets/img/gallery/gallery-4.png')} alt="" /></a></li>
+                                            <li><a href="#"><img src={require('./../../assets/img/gallery/gallery-1.png')} alt="" /></a></li>
+                                            <li><a href="#"><img src={require('./../../assets/img/gallery/gallery-2.png')} alt="" /></a></li>
+                                            <li><a href="#"><img src={require('./../../assets/img/gallery/gallery-3.png')} alt="" /></a></li>
+                                            <li><a href="#"><img src={require('./../../assets/img/gallery/gallery-4.png')} alt="" /></a></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -1,4 +1,4 @@
-import Home from './components/Home.jsx';
+import Home from './components/Home/Home.jsx';
 import AboutUs from './components/AboutUs/AboutUs.jsx';
 import Contact from './components/Contact/ContactUs.jsx';
 import News from './components/News/News.jsx';

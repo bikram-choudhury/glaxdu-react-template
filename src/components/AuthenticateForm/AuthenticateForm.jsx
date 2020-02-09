@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TopHeader from '../TopHeader/TopHeader.jsx';
 import BrnadLogoArea from '../BrnadLogo/BrnadLogoArea.jsx';
-import Footer from '../Footer.jsx';
+import Footer from '../Footer/Footer.jsx';
 import RegistrationForm from './RegistrationForm.jsx';
 
 import { Formik, Field } from 'formik';

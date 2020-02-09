@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { sliderSettings } from './../glaxdu-settings';
+import { sliderSettings } from './../../glaxdu-settings';
 import OwlCarousel from 'react-owl-carousel';
 import Slider from "react-slick";
 
@@ -48,7 +48,7 @@ class SliderArea extends Component {
                         }
                     }}
                 >
-                    <div className="single-slider slider-height-1 bg-img" style={{ backgroundImage: `url(${require('./../assets/img/slider/slider-1.jpg')})` }}>
+                    <div className="single-slider slider-height-1 bg-img" style={{ backgroundImage: `url(${require('./../../assets/img/slider/slider-1.jpg')})` }}>
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-9 col-md-7 col-12 col-sm-12">
@@ -63,11 +63,11 @@ class SliderArea extends Component {
                                 </div>
                             </div>
                             <div className="slider-single-img slider-animated-1">
-                                <img className="animated" src={require('./../assets/img/slider/single-slide-1.png')} alt="" />
+                                <img className="animated" src={require('./../../assets/img/slider/single-slide-1.png')} alt="" />
                             </div>
                         </div>
                     </div>
-                    <div className="single-slider slider-height-1 bg-img" style={{ backgroundImage: `url(${require('./../assets/img/slider/slider-1.jpg')})` }}>
+                    <div className="single-slider slider-height-1 bg-img" style={{ backgroundImage: `url(${require('./../../assets/img/slider/slider-1.jpg')})` }}>
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-9 col-md-7 col-12 col-sm-12">
@@ -82,7 +82,7 @@ class SliderArea extends Component {
                                 </div>
                             </div>
                             <div className="slider-single-img slider-animated-1">
-                                <img className="animated" src={require('./../assets/img/slider/single-slide-1.png')} alt="" />
+                                <img className="animated" src={require('./../../assets/img/slider/single-slide-1.png')} alt="" />
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@ class ChooseUs extends Component {
                         <div className="col-lg-3 col-md-6">
                             <div className="single-choose-us choose-bg-light-blue">
                                 <div className="choose-img">
-                                    <img className="animated" src={require('./../assets/img/icon-img/service-1.png')} alt="" />
+                                    <img className="animated" src={require('./../../assets/img/icon-img/service-1.png')} alt="" />
                                 </div>
                                 <div className="choose-content">
                                     <h3>Scholarship Facility</h3>
@@ -113,7 +113,7 @@ class ChooseUs extends Component {
                         <div className="col-lg-3 col-md-6">
                             <div className="single-choose-us choose-bg-yellow">
                                 <div className="choose-img">
-                                    <img className="animated" src={require('./../assets/img/icon-img/service-2.png')} alt="" />
+                                    <img className="animated" src={require('./../../assets/img/icon-img/service-2.png')} alt="" />
                                 </div>
                                 <div className="choose-content">
                                     <h3>Scholarship Facility</h3>
@@ -124,7 +124,7 @@ class ChooseUs extends Component {
                         <div className="col-lg-3 col-md-6">
                             <div className="single-choose-us choose-bg-blue">
                                 <div className="choose-img">
-                                    <img className="animated" src={require('./../assets/img/icon-img/service-3.png')} alt="" />
+                                    <img className="animated" src={require('./../../assets/img/icon-img/service-3.png')} alt="" />
                                 </div>
                                 <div className="choose-content">
                                     <h3>Scholarship Facility</h3>
@@ -135,7 +135,7 @@ class ChooseUs extends Component {
                         <div className="col-lg-3 col-md-6">
                             <div className="single-choose-us choose-bg-green">
                                 <div className="choose-img">
-                                    <img className="animated" src={require('./../assets/img/icon-img/service-4.png')} alt="" />
+                                    <img className="animated" src={require('./../../assets/img/icon-img/service-4.png')} alt="" />
                                 </div>
                                 <div className="choose-content">
                                     <h3>Scholarship Facility</h3>
@@ -171,9 +171,9 @@ class AboutUs extends Component {
                         </div>
                         <div className="col-lg-6 col-md-6">
                             <div className="about-img default-overlay">
-                                <img src={require('./../assets/img/banner/banner-1.jpg')} alt="" />
+                                <img src={require('./../../assets/img/banner/banner-1.jpg')} alt="" />
                                 <a className="video-btn video-popup" href="https://www.youtube.com/watch?v=sv5hK4crIRc">
-                                    <img className="animated" src={require('./../assets/img/icon-img/video.png')} alt="" />
+                                    <img className="animated" src={require('./../../assets/img/icon-img/video.png')} alt="" />
                                 </a>
                             </div>
                         </div>
@@ -188,7 +188,7 @@ class AboutUs extends Component {
 class CourseArea extends Component {
     render() {
         return (
-            <div className="course-area bg-img pt-130 pb-10" style={{ backgroundImage: `url(${require('./../assets/img/bg/bg-1.jpg')})` }}>
+            <div className="course-area bg-img pt-130 pb-10" style={{ backgroundImage: `url(${require('./../../assets/img/bg/bg-1.jpg')})` }}>
                 <div className="container">
                     <div className="section-title mb-75">
                         <h2> <span>Our</span> Courses</h2>
@@ -221,7 +221,7 @@ class CourseArea extends Component {
                     >
                         <div className="single-course">
                             <div className="course-img">
-                                <a href="course-details.html"><img className="animated" src={require('./../assets/img/course/course-1.jpg')} alt="" /></a>
+                                <a href="course-details.html"><img className="animated" src={require('./../../assets/img/course/course-1.jpg')} alt="" /></a>
                                 <span>Addmission Going On</span>
                             </div>
                             <div className="course-content">
@@ -246,7 +246,7 @@ class CourseArea extends Component {
                         </div>
                         <div className="single-course">
                             <div className="course-img">
-                                <a href="course-details.html"><img className="animated" src={require('./../assets/img/course/course-2.jpg')} alt="" /></a>
+                                <a href="course-details.html"><img className="animated" src={require('./../../assets/img/course/course-2.jpg')} alt="" /></a>
                             </div>
                             <div className="course-content">
                                 <h4><a href="course-details.html">Grphic Design & Multimedia</a></h4>
@@ -270,7 +270,7 @@ class CourseArea extends Component {
                         </div>
                         <div className="single-course">
                             <div className="course-img">
-                                <a href="course-details.html"><img className="animated" src={require('./../assets/img/course/course-3.jpg')} alt="" /></a>
+                                <a href="course-details.html"><img className="animated" src={require('./../../assets/img/course/course-3.jpg')} alt="" /></a>
                             </div>
                             <div className="course-content">
                                 <h4><a href="course-details.html">Computer Engineering</a></h4>
@@ -294,7 +294,7 @@ class CourseArea extends Component {
                         </div>
                         <div className="single-course">
                             <div className="course-img">
-                                <a href="course-details.html"><img className="animated" src={require('./../assets/img/course/course-4.jpg')} alt="" /></a>
+                                <a href="course-details.html"><img className="animated" src={require('./../../assets/img/course/course-4.jpg')} alt="" /></a>
                                 <span>Post Graduation Course</span>
                             </div>
                             <div className="course-content">
@@ -319,7 +319,7 @@ class CourseArea extends Component {
                         </div>
                         <div className="single-course">
                             <div className="course-img">
-                                <a href="course-details.html"><img className="animated" src={require('./../assets/img/course/course-2.jpg')} alt="" /></a>
+                                <a href="course-details.html"><img className="animated" src={require('./../../assets/img/course/course-2.jpg')} alt="" /></a>
                             </div>
                             <div className="course-content">
                                 <h4><a href="course-details.html">Apparel Manufacturing</a></h4>
@@ -362,7 +362,7 @@ class AchivementArea extends Component {
                         <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                             <div className="single-count mb-30 count-one">
                                 <div className="count-img">
-                                    <img src={require('./../assets/img/icon-img/achieve-1.png')} alt="" />
+                                    <img src={require('./../../assets/img/icon-img/achieve-1.png')} alt="" />
                                 </div>
                                 <div className="count-content">
                                     <h2 className="count">890</h2>
@@ -373,7 +373,7 @@ class AchivementArea extends Component {
                         <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                             <div className="single-count mb-30 count-two">
                                 <div className="count-img">
-                                    <img src={require('./../assets/img/icon-img/achieve-2.png')} alt="" />
+                                    <img src={require('./../../assets/img/icon-img/achieve-2.png')} alt="" />
                                 </div>
                                 <div className="count-content">
                                     <h2 className="count">670</h2>
@@ -384,7 +384,7 @@ class AchivementArea extends Component {
                         <div className="col-xl-4 col-lg-3 col-md-6 col-sm-6">
                             <div className="single-count mb-30 count-three">
                                 <div className="count-img">
-                                    <img src={require('./../assets/img/icon-img/achieve-3.png')} alt="" />
+                                    <img src={require('./../../assets/img/icon-img/achieve-3.png')} alt="" />
                                 </div>
                                 <div className="count-content">
                                     <h2 className="count">160</h2>
@@ -395,7 +395,7 @@ class AchivementArea extends Component {
                         <div className="col-xl-2 col-lg-3 col-md-6 col-sm-6">
                             <div className="single-count mb-30 count-four">
                                 <div className="count-img">
-                                    <img src={require('./../assets/img/icon-img/achieve-4.png')} alt="" />
+                                    <img src={require('./../../assets/img/icon-img/achieve-4.png')} alt="" />
                                 </div>
                                 <div className="count-content">
                                     <h2 className="count">200</h2>
@@ -408,11 +408,11 @@ class AchivementArea extends Component {
                         <Slider {...sliderSettings.TextSlider}>
                             <div className="testi-content-wrap">
                                 <div className="testi-big-img">
-                                    <img alt="" src={require('./../assets/img/testimonial/testi-b1.jpg')} />
+                                    <img alt="" src={require('./../../assets/img/testimonial/testi-b1.jpg')} />
                                 </div>
                                 <div className="row no-gutters">
                                     <div className="ml-auto col-lg-6 col-md-12">
-                                        <div className="testi-content bg-img default-overlay" style={{ backgroundImage: `url(${require('./../assets/img/bg/testi.png')})` }}>
+                                        <div className="testi-content bg-img default-overlay" style={{ backgroundImage: `url(${require('./../../assets/img/bg/testi.png')})` }}>
                                             <div className="quote-style quote-left">
                                                 <i className="fa fa-quote-left"></i>
                                             </div>
@@ -425,7 +425,7 @@ class AchivementArea extends Component {
                                                 <i className="fa fa-quote-right"></i>
                                             </div>
                                             <div className="testi-arrow">
-                                                <img alt="" src={require('./../assets/img/icon-img/testi-icon.png')} />
+                                                <img alt="" src={require('./../../assets/img/icon-img/testi-icon.png')} />
                                             </div>
                                         </div>
                                     </div>
@@ -433,11 +433,11 @@ class AchivementArea extends Component {
                             </div>
                             <div className="testi-content-wrap">
                                 <div className="testi-big-img">
-                                    <img alt="" src={require('./../assets/img/testimonial/testi-b3.jpg')} />
+                                    <img alt="" src={require('./../../assets/img/testimonial/testi-b3.jpg')} />
                                 </div>
                                 <div className="row no-gutters">
                                     <div className="ml-auto col-lg-6 col-md-12">
-                                        <div className="testi-content bg-img default-overlay" style={{ backgroundImage: `url(${require('./../assets/img/bg/testi.png')})` }}>
+                                        <div className="testi-content bg-img default-overlay" style={{ backgroundImage: `url(${require('./../../assets/img/bg/testi.png')})` }}>
                                             <div className="quote-style quote-left">
                                                 <i className="fa fa-quote-left"></i>
                                             </div>
@@ -450,7 +450,7 @@ class AchivementArea extends Component {
                                                 <i className="fa fa-quote-right"></i>
                                             </div>
                                             <div className="testi-arrow">
-                                                <img alt="" src={require('./../assets/img/icon-img/testi-icon.png')} />
+                                                <img alt="" src={require('./../../assets/img/icon-img/testi-icon.png')} />
                                             </div>
                                         </div>
                                     </div>
@@ -458,11 +458,11 @@ class AchivementArea extends Component {
                             </div>
                             <div className="testi-content-wrap">
                                 <div className="testi-big-img">
-                                    <img alt="" src={require('./../assets/img/testimonial/testi-b2.jpg')} />
+                                    <img alt="" src={require('./../../assets/img/testimonial/testi-b2.jpg')} />
                                 </div>
                                 <div className="row no-gutters">
                                     <div className="ml-auto col-lg-6 col-md-12">
-                                        <div className="testi-content bg-img default-overlay" style={{ backgroundImage: `url(${require('./../assets/img/bg/testi.png')})` }}>
+                                        <div className="testi-content bg-img default-overlay" style={{ backgroundImage: `url(${require('./../../assets/img/bg/testi.png')})` }}>
                                             <div className="quote-style quote-left">
                                                 <i className="fa fa-quote-left"></i>
                                             </div>
@@ -475,7 +475,7 @@ class AchivementArea extends Component {
                                                 <i className="fa fa-quote-right"></i>
                                             </div>
                                             <div className="testi-arrow">
-                                                <img alt="" src={require('./../assets/img/icon-img/testi-icon.png')} />
+                                                <img alt="" src={require('./../../assets/img/icon-img/testi-icon.png')} />
                                             </div>
                                         </div>
                                     </div>
@@ -483,11 +483,11 @@ class AchivementArea extends Component {
                             </div>
                             <div className="testi-content-wrap">
                                 <div className="testi-big-img">
-                                    <img alt="" src={require('./../assets/img/testimonial/testi-b2.jpg')} />
+                                    <img alt="" src={require('./../../assets/img/testimonial/testi-b2.jpg')} />
                                 </div>
                                 <div className="row no-gutters">
                                     <div className="ml-auto col-lg-6 col-md-12">
-                                        <div className="testi-content bg-img default-overlay" style={{ backgroundImage: `url(${require('./../assets/img/bg/testi.png')})` }}>
+                                        <div className="testi-content bg-img default-overlay" style={{ backgroundImage: `url(${require('./../../assets/img/bg/testi.png')})` }}>
                                             <div className="quote-style quote-left">
                                                 <i className="fa fa-quote-left"></i>
                                             </div>
@@ -500,7 +500,7 @@ class AchivementArea extends Component {
                                                 <i className="fa fa-quote-right"></i>
                                             </div>
                                             <div className="testi-arrow">
-                                                <img alt="" src={require('./../assets/img/icon-img/testi-icon.png')} />
+                                                <img alt="" src={require('./../../assets/img/icon-img/testi-icon.png')} />
                                             </div>
                                         </div>
                                     </div>
@@ -510,22 +510,22 @@ class AchivementArea extends Component {
 
                         <Slider {...sliderSettings.ImageSlider}>
                             <div className="sin-testi-image">
-                                <img src={require('./../assets/img/testimonial/testi-s2.jpg')} alt="" />
+                                <img src={require('./../../assets/img/testimonial/testi-s2.jpg')} alt="" />
                             </div>
                             <div className="sin-testi-image">
-                                <img src={require('./../assets/img/testimonial/testi-s1.jpg')} alt="" />
+                                <img src={require('./../../assets/img/testimonial/testi-s1.jpg')} alt="" />
                             </div>
                             <div className="sin-testi-image">
-                                <img src={require('./../assets/img/testimonial/testi-s3.jpg')} alt="" />
+                                <img src={require('./../../assets/img/testimonial/testi-s3.jpg')} alt="" />
                             </div>
                             <div className="sin-testi-image">
-                                <img src={require('./../assets/img/testimonial/testi-s3.jpg')} alt="" />
+                                <img src={require('./../../assets/img/testimonial/testi-s3.jpg')} alt="" />
                             </div>
                         </Slider>
 
                     </div>
                     <div className="testimonial-text-img">
-                        <img alt="" src={require('./../assets/img/icon-img/testi-text.png')} />
+                        <img alt="" src={require('./../../assets/img/icon-img/testi-text.png')} />
                     </div>
                 </div>
             </div>
@@ -537,7 +537,7 @@ class AchivementArea extends Component {
 class RegisterArea extends Component {
     render() {
         return (
-            <div className="register-area bg-img pt-130 pb-130" style={{ backgroundImage: `url(${require('./../assets/img/bg/bg-2.jpg')})` }}>
+            <div className="register-area bg-img pt-130 pb-130" style={{ backgroundImage: `url(${require('./../../assets/img/bg/bg-2.jpg')})` }}>
                 <div className="container">
                     <div className="section-title-2 mb-75 white-text">
                         <h2>Register <span>Now</span></h2>
@@ -546,7 +546,7 @@ class RegisterArea extends Component {
                     <div className="register-wrap">
                         <div id="register-3" className="mouse-bg">
                             <div className="winter-banner">
-                                <img src={require('./../assets/img/banner/regi-1.png')} alt="" />
+                                <img src={require('./../../assets/img/banner/regi-1.png')} alt="" />
                                 <div className="winter-content">
                                     <span>WINTER </span>
                                     <h3>2019</h3>
@@ -613,7 +613,7 @@ class TeacherArea extends Component {
                         <div className="custom-col-5">
                             <div className="single-teacher mb-30">
                                 <div className="teacher-img">
-                                    <img src={require('./../assets/img/teacher/teacher-1.jpg')} alt="" />
+                                    <img src={require('./../../assets/img/teacher/teacher-1.jpg')} alt="" />
                                 </div>
                                 <div className="teacher-content-visible">
                                     <h4>Robi Khan</h4>
@@ -639,7 +639,7 @@ class TeacherArea extends Component {
                         <div className="custom-col-5">
                             <div className="single-teacher mb-30">
                                 <div className="teacher-img">
-                                    <img src={require('./../assets/img/teacher/teacher-2.jpg')} alt="" />
+                                    <img src={require('./../../assets/img/teacher/teacher-2.jpg')} alt="" />
                                 </div>
                                 <div className="teacher-content-visible">
                                     <h4>Jui Khan</h4>
@@ -665,7 +665,7 @@ class TeacherArea extends Component {
                         <div className="custom-col-5">
                             <div className="single-teacher mb-30">
                                 <div className="teacher-img">
-                                    <img src={require('./../assets/img/teacher/teacher-3.jpg')} alt="" />
+                                    <img src={require('./../../assets/img/teacher/teacher-3.jpg')} alt="" />
                                 </div>
                                 <div className="teacher-content-visible">
                                     <h4>Fawd Khan</h4>
@@ -691,7 +691,7 @@ class TeacherArea extends Component {
                         <div className="custom-col-5">
                             <div className="single-teacher mb-30">
                                 <div className="teacher-img">
-                                    <img src={require('./../assets/img/teacher/teacher-4.jpg')} alt="" />
+                                    <img src={require('./../../assets/img/teacher/teacher-4.jpg')} alt="" />
                                 </div>
                                 <div className="teacher-content-visible">
                                     <h4>Fawd Khan</h4>
@@ -717,7 +717,7 @@ class TeacherArea extends Component {
                         <div className="custom-col-5">
                             <div className="single-teacher mb-30">
                                 <div className="teacher-img">
-                                    <img src={require('./../assets/img/teacher/teacher-5.jpg')} alt="" />
+                                    <img src={require('./../../assets/img/teacher/teacher-5.jpg')} alt="" />
                                 </div>
                                 <div className="teacher-content-visible">
                                     <h4>Jui Khan</h4>
@@ -751,7 +751,7 @@ class TeacherArea extends Component {
 class EventArea extends Component {
     render() {
         return (
-            <div className="event-area bg-img default-overlay pt-130 pb-130" style={{ backgroundImage: `url(${require('./../assets/img/bg/bg-3.jpg')})` }}>
+            <div className="event-area bg-img default-overlay pt-130 pb-130" style={{ backgroundImage: `url(${require('./../../assets/img/bg/bg-3.jpg')})` }}>
                 <div className="container">
                     <div className="section-title mb-75">
                         <h2><span>Our</span> Event</h2>
@@ -785,7 +785,7 @@ class EventArea extends Component {
                     >
                         <div className="single-event event-white-bg">
                             <div className="event-img">
-                                <a href="event-details.html"><img src={require('./../assets/img/event/event-1.jpg')} alt="" /></a>
+                                <a href="event-details.html"><img src={require('./../../assets/img/event/event-1.jpg')} alt="" /></a>
                                 <div className="event-date-wrap">
                                     <span className="event-date">1st</span>
                                     <span>Dec</span>
@@ -808,7 +808,7 @@ class EventArea extends Component {
                         </div>
                         <div className="single-event event-white-bg">
                             <div className="event-img">
-                                <a href="event-details.html"><img src={require('./../assets/img/event/event-2.jpg')} alt="" /></a>
+                                <a href="event-details.html"><img src={require('./../../assets/img/event/event-2.jpg')} alt="" /></a>
                                 <div className="event-date-wrap">
                                     <span className="event-date">10th</span>
                                     <span>Dec</span>
@@ -831,7 +831,7 @@ class EventArea extends Component {
                         </div>
                         <div className="single-event event-white-bg">
                             <div className="event-img">
-                                <a href="event-details.html"><img src={require('./../assets/img/event/event-3.jpg')} alt="" /></a>
+                                <a href="event-details.html"><img src={require('./../../assets/img/event/event-3.jpg')} alt="" /></a>
                                 <div className="event-date-wrap">
                                     <span className="event-date">1st</span>
                                     <span>Dec</span>
@@ -854,7 +854,7 @@ class EventArea extends Component {
                         </div>
                         <div className="single-event event-white-bg">
                             <div className="event-img">
-                                <a href="event-details.html"><img src={require('./../assets/img/event/event-2.jpg')} alt="" /></a>
+                                <a href="event-details.html"><img src={require('./../../assets/img/event/event-2.jpg')} alt="" /></a>
                                 <div className="event-date-wrap">
                                     <span className="event-date">1st</span>
                                     <span>Dec</span>
@@ -896,7 +896,7 @@ class BlogArea extends Component {
                         <div className="col-lg-3 col-md-6">
                             <div className="single-blog mb-30">
                                 <div className="blog-img">
-                                    <a href="blog-details.html"><img src={require('./../assets/img/blog/blog-1.jpg')} alt="" /></a>
+                                    <a href="blog-details.html"><img src={require('./../../assets/img/blog/blog-1.jpg')} alt="" /></a>
                                 </div>
                                 <div className="blog-content-wrap">
                                     <span>Education</span>
@@ -919,7 +919,7 @@ class BlogArea extends Component {
                         <div className="col-lg-3 col-md-6">
                             <div className="single-blog mb-30">
                                 <div className="blog-img">
-                                    <a href="blog-details.html"><img src={require('./../assets/img/blog/blog-2.jpg')} alt="" /></a>
+                                    <a href="blog-details.html"><img src={require('./../../assets/img/blog/blog-2.jpg')} alt="" /></a>
                                 </div>
                                 <div className="blog-content-wrap">
                                     <span>Education</span>
@@ -942,7 +942,7 @@ class BlogArea extends Component {
                         <div className="col-lg-3 col-md-6">
                             <div className="single-blog mb-30">
                                 <div className="blog-img">
-                                    <a href="blog-details.html"><img src={require('./../assets/img/blog/blog-3.jpg')} alt="" /></a>
+                                    <a href="blog-details.html"><img src={require('./../../assets/img/blog/blog-3.jpg')} alt="" /></a>
                                 </div>
                                 <div className="blog-content-wrap">
                                     <span>Education</span>
@@ -965,7 +965,7 @@ class BlogArea extends Component {
                         <div className="col-lg-3 col-md-6">
                             <div className="single-blog mb-30">
                                 <div className="blog-img">
-                                    <a href="blog-details.html"><img src={require('./../assets/img/blog/blog-4.jpg')} alt="" /></a>
+                                    <a href="blog-details.html"><img src={require('./../../assets/img/blog/blog-4.jpg')} alt="" /></a>
                                 </div>
                                 <div className="blog-content-wrap">
                                     <span>Education</span>

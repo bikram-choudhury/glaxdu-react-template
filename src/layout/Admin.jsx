@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ScrollToTop from 'react-scroll-up';
-import Footer from '../components/Footer.jsx';
-import Header from '../components/Header.jsx';
+import Footer from '../components/Footer/Footer.jsx';
+import Header from '../components/Header/Header.jsx';
 import { AdminRoutes } from './../routes.js';
 import AxiosInterceptor from '../interceptor/axios.interceptor.jsx';
 

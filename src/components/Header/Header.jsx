@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import TopHeader from "./TopHeader/TopHeader.jsx";
-import { AdminRoutes } from './../routes.js';
+import TopHeader from "./../TopHeader/TopHeader.jsx";
+import { AdminRoutes } from './../../routes.js';
 
 export default class Header extends Component {
     constructor() {
@@ -33,7 +33,7 @@ export default class Header extends Component {
                             <div className="col-lg-2 col-md-6 col-4">
                                 <div className="logo">
                                     <a href="index.html">
-                                        <img alt="" src={require('./../assets/img/logo/logo.png')} />
+                                        <img alt="" src={require('./../../assets/img/logo/logo.png')} />
                                     </a>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@ export default class Header extends Component {
                                                 <ul>
                                                     <li className="single-shopping-cart">
                                                         <div className="shopping-cart-img">
-                                                            <a href="#"><img alt="" src={require('./../assets/img/cart/cart-1.png')} /></a>
+                                                            <a href="#"><img alt="" src={require('./../../assets/img/cart/cart-1.png')} /></a>
                                                         </div>
                                                         <div className="shopping-cart-title">
                                                             <h4><a href="#">Color Box </a></h4>
@@ -81,7 +81,7 @@ export default class Header extends Component {
                                                     </li>
                                                     <li className="single-shopping-cart">
                                                         <div className="shopping-cart-img">
-                                                            <a href="#"><img alt="" src={require('./../assets/img/cart/cart-2.png')} /></a>
+                                                            <a href="#"><img alt="" src={require('./../../assets/img/cart/cart-2.png')} /></a>
                                                         </div>
                                                         <div className="shopping-cart-title">
                                                             <h4><a href="#">Color Box </a></h4>
