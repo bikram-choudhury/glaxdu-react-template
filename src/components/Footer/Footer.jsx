@@ -112,10 +112,8 @@ export default class Footer extends Component {
                             <div className="col-lg-4 col-md-12">
                                 <div className="copyright">
                                     <p>
-                                        Copyright ©
-                            <a href="#">GLAXDU</a>
-                                        . All Right Reserved.
-                        </p>
+                                        Copyright © <a href="#">GLAXDU</a>. All Right Reserved.
+                                    </p>
                                 </div>
                             </div>
                             <div className="col-lg-8 col-md-12">
