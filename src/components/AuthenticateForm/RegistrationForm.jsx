@@ -5,7 +5,7 @@ import { Formik, Field, Form } from 'formik';
 import { saveUser } from '../../redux/actions/auth.action';
 
 function RegisterationForm(props) {
-    const initialRegisterFormValue = { username: 'test', password: 'test', email: 'test@gmail.com', country: 'india' };
+    const initialRegisterFormValue = { username: '', password: '', email: '', country: '' };
     return (
         <div className="login-form-container">
             <div className="login-register-form">
