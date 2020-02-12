@@ -9,31 +9,43 @@ export const setTokens = (tokens) => {
     }
 }
 
-export const saveUser = (user, { setSubmitting, history }) => {
-    return (dispatch, getState) => {
-        setSubmitting(true);
+const dispatchedMethodForAuthentication = (dispatch, URL, user, config) => {
+    config.setSubmitting(true);
 
-        if (user && Object.keys(user).length) {
-            const URL = `${AUTH_SERVER_URL}/auth/register`;
-            Axios.post(URL, user)
-                .then(response => {
-                    const { data } = response;
-                    const tokens = {
-                        accessToken: data.access_token,
-                        refreshToken: data.refresh_token,
-                        tokenType: data.token_type,
-                    };
-                    dispatch(setTokens(tokens));
-                    history.push('/admin/home');
-                })
-                .catch(error => {
-                    if (error.response) {
-                        console.error(error.response.data.message);
-                    }
-                })
-                .finally(() => {
-                    setSubmitting(false);
-                })
-        }
+    if (user && Object.keys(user).length) {
+        Axios.post(URL, user)
+            .then(response => {
+                const { data } = response;
+                const tokens = {
+                    accessToken: data.access_token,
+                    refreshToken: data.refresh_token,
+                    tokenType: data.token_type,
+                };
+                dispatch(setTokens(tokens));
+                config.history.push('/admin/home');
+            })
+            .catch(error => {
+                if (error.response) {
+                    console.error(error.response.data.message);
+                }
+            })
+            .finally(() => {
+                config.setSubmitting(false);
+            })
     }
 }
+
+export const saveUser = (user, config) => {
+    return (dispatch, getState) => {
+        const URL = `${AUTH_SERVER_URL}/auth/register`;
+        dispatchedMethodForAuthentication.call(null, dispatch, URL, user, config)
+    }
+}
+
+export const authenticateUser = (user, config) => {
+    return (dispatch) => {
+        const URL = `${AUTH_SERVER_URL}/auth/login`;
+        dispatchedMethodForAuthentication.call(null, dispatch, URL, user, config)
+    }
+}
+

@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import TopHeader from '../TopHeader/TopHeader.jsx';
 import BrnadLogoArea from '../BrnadLogo/BrnadLogoArea.jsx';
 import Footer from '../Footer/Footer.jsx';
-import RegistrationForm from './RegistrationForm.jsx';
-
-import { Formik, Field } from 'formik';
-import Axios from 'axios';
+import RegistrationForm from './../RegistrationForm/RegistrationForm.jsx';
+import LoginForm from '../LoginForm/LoginForm.jsx';
 
 export default class AuthenticateForm extends Component {
     render() {
@@ -70,48 +68,5 @@ class AuthenticationContainer extends Component {
                 </div>
             </div>
         );
-    }
-}
-
-function LoginForm(props) {
-    const initialLoginFormValue = { username: '', password: '', rememberUser: false };
-    return (
-        <div className="login-form-container">
-            <div className="login-register-form">
-                <Formik initialValues={initialLoginFormValue} onSubmit={handleLoginAndRegistration}>
-                    {({ isSubmitting, values, handleSubmit }) => (
-                        <form onSubmit={handleSubmit}>
-                            <Field type="input" name="username" placeholder="Username" />
-                            <Field type="password" name="password" placeholder="Password" />
-                            {/* <input type="text" name="username" placeholder="Username"
-                                value={values.username} onChange={handleChange} onBlur={handleBlur} /> */}
-                            <div className="button-box">
-                                <div className="login-toggle-btn">
-                                    <Field type="checkbox" name="rememberUser" placeholder="Username" />
-                                    <label>Remember me</label>
-                                    <a href="#">Forgot Password?</a>
-                                </div>
-                                <button disabled={isSubmitting} className="default-btn" type="submit"><span>Login</span></button>
-                            </div>
-                        </form>
-                    )}
-                </Formik>
-            </div>
-        </div>
-    );
-}
-
-
-function handleLoginAndRegistration(formData, { setSubmitting }) {
-    setSubmitting(true);
-    console.log(formData);
-    if (formData && Object.keys(formData).length) {
-        const URL = `${AUTH_SERVER_URL}/users`;
-        Axios.post(URL, formData)
-            .then(response => {
-                console.log(response);
-                setSubmitting(false);
-            })
-            .catch(error => console.error(error))
     }
 }
