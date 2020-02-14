@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function FunFactArea(props) {
     return (
@@ -30,5 +31,16 @@ export default function FunFactArea(props) {
                 </div>
             </div>
         </div>
+    )
+}
+
+FunFactArea.propTypes = {
+    facts: PropTypes.arrayOf(
+        PropTypes.shape({
+            image: PropTypes.string,
+            label: PropTypes.string,
+            count: PropTypes.number,
+            className: PropTypes.string
+        })
     )
 }

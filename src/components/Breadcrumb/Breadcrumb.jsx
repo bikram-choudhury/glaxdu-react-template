@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default function Breadcrumb(props) {
     const { title, subTitle, templateName, bgImage } = props;
@@ -21,4 +22,11 @@ export default function Breadcrumb(props) {
             </div>
         </div>
     );
+}
+
+Breadcrumb.propTypes = {
+    title: PropTypes.string,
+    subTitle: PropTypes.string,
+    templateName: PropTypes.string,
+    bgImage: PropTypes.string
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import SocialButtons from '../SocialButtons/SocialButtons.jsx';
+import PropTypes from 'prop-types';
 
 export default function TeacherArea(props) {
     return (
@@ -45,5 +46,17 @@ export default function TeacherArea(props) {
                 </div>
             </div>
         </div>
+    )
+}
+
+TeacherArea.propTypes = {
+    list: PropTypes.arrayOf(
+        PropTypes.shape({
+            empId: PropTypes.number,
+            name: PropTypes.string,
+            designation: PropTypes.string,
+            description: PropTypes.string,
+            image: PropTypes.string,
+        })
     )
 }

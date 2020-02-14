@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from "react-slick";
 import { sliderSettings } from './../../glaxdu-settings';
+import PropTypes from 'prop-types';
 
 export default function AchievementArea(props) {
     return (
@@ -64,5 +65,24 @@ export default function AchievementArea(props) {
                 </div>
             </div>
         </div>
+    )
+}
+
+AchievementArea.propTypes = {
+    contentWrap: PropTypes.arrayOf(
+        PropTypes.shape({
+            imgSrc: PropTypes.string,
+            bgImg: PropTypes.string,
+            description: PropTypes.string,
+            name: PropTypes.string,
+            title: PropTypes.string,
+            iconImg: PropTypes.string,
+        })
+    ),
+    imgWrap: PropTypes.arrayOf(
+        PropTypes.shape({
+            title: PropTypes.string,
+            img: PropTypes.string
+        })
     )
 }
