@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 import Header from './Header.jsx';
 import TopHeader from '../TopHeader/TopHeader.jsx';
 
-fdescribe('Header componenent', () => {
+describe('Header componenent', () => {
     let wrapper, instance, mockFunc;
     const map = {};
     beforeEach(() => {
