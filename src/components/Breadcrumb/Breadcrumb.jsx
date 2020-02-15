@@ -25,8 +25,8 @@ export default function Breadcrumb(props) {
 }
 
 Breadcrumb.propTypes = {
-    title: PropTypes.string,
-    subTitle: PropTypes.string,
-    templateName: PropTypes.string,
-    bgImage: PropTypes.string
-}
+    title: PropTypes.string.isRequired,
+    subTitle: PropTypes.string.isRequired,
+    templateName: PropTypes.string.isRequired,
+    bgImage: PropTypes.string.isRequired
+};
