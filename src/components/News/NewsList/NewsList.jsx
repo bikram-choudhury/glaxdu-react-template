@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Pagination from '../Pagination/Pagination.jsx';
-import SingleNews from './SingleNews.jsx';
-import { fetchNewsAction } from '../../redux/actions/news.action';
-import { getNewsTag, getNewsList } from '../../redux/reducers';
+import Pagination from '../../Pagination/Pagination.jsx';
+import SingleNews from './../SingleNews.jsx';
+import { fetchNewsAction } from '../../../redux/actions/news.action';
+import { getNewsTag, getNewsList } from '../../../redux/reducers';
 
-class NewsList extends Component {
+export class NewsList extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -28,18 +28,19 @@ class NewsList extends Component {
         const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
         const currentPageItems = newsList.slice(indexOfFirstItem, indexOfLastItem);
+        
         return (
             <div className="blog-all-wrap mr-40">
                 {
                     newsTag && (
-                        <span>Result Searched for <b>{newsTag}</b></span>
+                        <span className="news-tag">Result Searched for <b>{newsTag}</b></span>
                     )
                 }
                 <div className="row">
                     {
                         currentPageItems.map((news, index) => {
                             return (
-                                <div className="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12" key={index}>
+                                <div className="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12" key={index} data-test="SingleNews">
                                     <SingleNews news={news} />
                                 </div>
                             )

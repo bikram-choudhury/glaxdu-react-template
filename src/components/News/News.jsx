@@ -1,11 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import queryString from 'query-string';
-import { connect } from 'react-redux';
 import Breadcrumb from '../Breadcrumb/Breadcrumb.jsx';
-import NewsList from './NewsList.jsx';
+import NewsList from './NewsList/NewsList.jsx';
 import BrnadLogoArea from '../BrnadLogo/BrnadLogoArea.jsx';
 import NewsSideBar from './NewsSidebar.jsx';
-import { fetchNewsAction } from '../../redux/actions/news.action';
 
 /*
 
@@ -45,7 +42,7 @@ class News extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-xl-9 col-lg-8">
-                                <NewsList searchCategory={this.props.newsCategory} />
+                                <NewsList />
                             </div>
                             <div className="col-xl-3 col-lg-4">
                                 <NewsSideBar />
