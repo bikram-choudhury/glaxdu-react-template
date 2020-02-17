@@ -72,7 +72,11 @@ server.post('/auth/login', (request, response) => {
                 response.status(400).json({ message });
             } else {
                 const accessToken = createToken(userData);
-                response.status(200).json({ access_token: accessToken });
+                response.status(200).json({
+                    access_token: accessToken,
+                    refresh_token: '',
+                    token_type: 'Bearer'
+                });
             }
         }
     })
