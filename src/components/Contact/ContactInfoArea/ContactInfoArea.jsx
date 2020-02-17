@@ -3,7 +3,7 @@ import React from 'react';
 export default function ContactInfoArea(props) {
     return (
         <div className="contact-info-area bg-img pt-180 pb-140 default-overlay"
-            style={{ backgroundImage: `url(${require('../../assets/img/bg/contact-info.jpg')})` }} >
+            style={{ backgroundImage: `url(${require('../../../assets/img/bg/contact-info.jpg')})` }} >
             <div className="container">
                 <div className="row">
                     <div className="col-lg-4 col-md-4 col-12">
