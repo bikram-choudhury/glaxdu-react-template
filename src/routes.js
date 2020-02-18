@@ -4,6 +4,7 @@ import Contact from './components/Contact/ContactUs.jsx';
 import News from './components/News/News.jsx';
 import NewsDetails from './components/News/NewsDetails.jsx';
 import ProductWrapper from './components/Products/ProductWrapper.jsx';
+import ProductDetails from './components/ProductDetails/ProductDetails.jsx';
 
 export const AdminRoutes = [{
     path: '/home',
@@ -20,6 +21,11 @@ export const AdminRoutes = [{
     layout: '/admin',
     name: 'Products',
     component: ProductWrapper
+}, {
+    path: '/product/details',
+    layout: '/admin',
+    name: '',
+    component: ProductDetails
 }, {
     path: '/news',
     layout: '/admin',

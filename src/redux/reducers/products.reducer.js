@@ -1,9 +1,10 @@
-import { SET_PRODUCTS, SET_PRODUCTS_ERROR, SET_TOTAL_PRODUCT_COUNT } from "../action.type.constants";
+import { SET_PRODUCTS, SET_PRODUCTS_ERROR, SET_TOTAL_PRODUCT_COUNT, SET_SELECT_PRODUCT_SKU } from "../action.type.constants";
 
 const initialState = {
     list: [],
     error: '',
-    totalCount: 0
+    totalCount: 0,
+    selectedProduct: ''
 }
 
 export const ProductReducer = (state = initialState, { type, payload }) => {
@@ -17,6 +18,11 @@ export const ProductReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 totalCount: payload.totalCount
+            }
+        case SET_SELECT_PRODUCT_SKU:
+            return {
+                ...state,
+                selectedProduct: payload.sku
             }
         case SET_PRODUCTS_ERROR:
             return {

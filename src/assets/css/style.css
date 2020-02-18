@@ -6204,6 +6204,7 @@ textarea:focus {
 /*--------- 14. Product style ---------*/
 .product-wrap {
     position: relative;
+    width: 270px !important; /*check how can we remove important flag*/
 }
 
 .product-wrap .product-img {
@@ -6230,7 +6231,8 @@ textarea:focus {
     pointer-events: none;
 }
 
-.product-wrap .product-img a img {
+.product-wrap .product-img a img, .product-wrap .product-img label img {
+    cursor: pointer;
     width: 100%;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -6351,11 +6353,14 @@ textarea:focus {
     margin: 0;
 }
 
-.product-wrap .product-content .pro-title-rating-wrap .product-title h3 a {
+.product-wrap .product-content .pro-title-rating-wrap .product-title h3 a,
+.product-wrap .product-content .pro-title-rating-wrap .product-title h3 label {
+    cursor: pointer;
     color: #033333;
 }
 
-.product-wrap .product-content .pro-title-rating-wrap .product-title h3 a:hover {
+.product-wrap .product-content .pro-title-rating-wrap .product-title h3 a:hover,
+.product-wrap .product-content .pro-title-rating-wrap .product-title h3 label:hover {
     color: #00a651;
 }
 

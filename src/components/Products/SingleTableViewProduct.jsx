@@ -1,15 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { Ratings } from '../Ratings/Ratings.jsx';
 import { MAXRATINGS } from '../../glaxdu-settings';
+import { setSelectedProductSku } from '../../redux/actions/products.action';
 
-export default function SingleTableViewProduct(props) {
-    const { images, name, rating, category, price } = props;
+function SingleTableViewProduct(props) {
+    const history = useHistory();
+    const { images, name, rating, category, price, sku } = props;
+
+    const saveAndNavigateToDetailsview = () => {
+        props.setSelectedProductSku(sku);
+        history.push('/admin/product/details');
+    }
     return (
         <div className="product-wrap mb-30">
             <div className="product-img">
-                <a href="single-product.html">
+                <label onClick={saveAndNavigateToDetailsview}>
                     <img src={require(`./../../assets/img/product/${images[0]}`)} alt={name} />
-                </a>
+                </label>
                 <span>Sale</span>
                 <div className="product-action">
                     <ul>
@@ -31,7 +40,7 @@ export default function SingleTableViewProduct(props) {
             <div className="product-content">
                 <div className="pro-title-rating-wrap">
                     <div className="product-title">
-                        <h3><a href="single-product.html">{name}</a></h3>
+                        <h3><label onClick={saveAndNavigateToDetailsview}>{name}</label></h3>
                     </div>
                     <Ratings rating={rating} maxRating={MAXRATINGS} />
                 </div>
@@ -43,3 +52,8 @@ export default function SingleTableViewProduct(props) {
         </div>
     )
 }
+
+const mapDispatchToProps = {
+    setSelectedProductSku: setSelectedProductSku
+}
+export default connect(null, mapDispatchToProps)(SingleTableViewProduct);
