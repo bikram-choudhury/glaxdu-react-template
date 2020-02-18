@@ -1,4 +1,4 @@
-import { SET_TOKENS } from "../action.type.constants";
+import { SET_TOKENS, LOGOUT } from "../action.type.constants";
 
 const initialState = {
     accessToken: '',
@@ -14,6 +14,12 @@ export function AuthReducer(state = initialState, { type, payload }) {
                 accessToken: payload.accessToken,
                 refreshToken: payload.refreshToken,
                 tokenType: payload.tokenType
+            };
+        case LOGOUT:
+            return {
+                accessToken: '',
+                refreshToken: '',
+                tokenType: ''
             };
         default: return state;
     }

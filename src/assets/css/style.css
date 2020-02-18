@@ -1734,25 +1734,27 @@ textarea:focus {
 .login-register ul li:last-child {
     margin-right: 0;
 }
-
-.login-register ul li a {
+.login-register ul li span {
+    cursor: pointer;
+}
+.login-register ul li a, .login-register ul li span {
     color: #fff;
     font-size: 14px;
     font-weight: 500;
 }
 
-.login-register ul li a:hover {
+.login-register ul li a:hover, .login-register ul li span:hover {
     color: #ddd;
 }
 
 @media only screen and (max-width: 767px) {
-    .login-register ul li a {
+    .login-register ul li a, .login-register ul li span {
         font-size: 12px;
     }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .login-register ul li a {
+    .login-register ul li a, .login-register ul li span {
         font-size: 14px;
     }
 }

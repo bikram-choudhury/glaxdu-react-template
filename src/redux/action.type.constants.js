@@ -10,3 +10,4 @@ export const SET_PRODUCTS_ERROR = 'SET_PRODUCTS_ERROR';
 export const SET_TOTAL_PRODUCT_COUNT = 'SET_TOTAL_PRODUCT_COUNT';
 
 export const SET_TOKENS = 'SET_TOKENS';
+export const LOGOUT = 'LOGOUT';

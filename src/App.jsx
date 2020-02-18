@@ -37,7 +37,6 @@ class App extends Component {
               )
             }
           } />
-          <Route path="/admin" component={Admin} />
           <Redirect from="/" to="/admin/home" />
         </Switch>
       </Router>

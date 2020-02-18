@@ -1,4 +1,4 @@
-import { SET_TOKENS } from "../action.type.constants";
+import { SET_TOKENS, LOGOUT } from "../action.type.constants";
 import Axios from 'axios';
 import { AUTH_SERVER_URL } from "../../glaxdu-settings";
 
@@ -8,6 +8,10 @@ export const setTokens = (tokens) => {
         payload: { ...tokens }
     }
 }
+
+export const logout = () => {
+    return { type: LOGOUT };
+};
 
 const dispatchedMethodForAuthentication = (dispatch, URL, user, config) => {
     config.setSubmitting(true);
