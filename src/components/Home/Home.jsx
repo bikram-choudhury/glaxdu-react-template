@@ -15,21 +15,21 @@ export default class Home extends Component {
 
                 <ChooseUs />
                 <AboutUs />
-                
+
                 <ErrorBoundary>
                     <CourseArea />
                 </ErrorBoundary>
-                
+
                 <ErrorBoundary>
                     <AchivementArea />
                 </ErrorBoundary>
-                
-                <RegisterArea />
-                
+
+                <FreeRegisterationForm />
+
                 <ErrorBoundary>
                     <TeacherArea />
                 </ErrorBoundary>
-                
+
                 <EventArea />
                 <BlogArea />
             </Fragment>
