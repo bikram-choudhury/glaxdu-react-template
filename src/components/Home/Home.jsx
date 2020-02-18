@@ -3,18 +3,33 @@ import { sliderSettings } from './../../glaxdu-settings';
 import OwlCarousel from 'react-owl-carousel';
 import Slider from "react-slick";
 import FreeRegisterationForm from './FreeRegisterationForm/FreeRegisterationForm.jsx';
+import ErrorBoundary from '../../error-handling/ErrorBoundary.jsx';
 
 export default class Home extends Component {
     render() {
         return (
             <Fragment>
-                <SliderArea />
+                <ErrorBoundary>
+                    <SliderArea />
+                </ErrorBoundary>
+
                 <ChooseUs />
                 <AboutUs />
-                <CourseArea />
-                <AchivementArea />
-                <FreeRegisterationForm />
-                <TeacherArea />
+                
+                <ErrorBoundary>
+                    <CourseArea />
+                </ErrorBoundary>
+                
+                <ErrorBoundary>
+                    <AchivementArea />
+                </ErrorBoundary>
+                
+                <RegisterArea />
+                
+                <ErrorBoundary>
+                    <TeacherArea />
+                </ErrorBoundary>
+                
                 <EventArea />
                 <BlogArea />
             </Fragment>

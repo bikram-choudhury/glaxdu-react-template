@@ -3,6 +3,7 @@ import Breadcrumb from '../Breadcrumb/Breadcrumb.jsx';
 import NewsList from './NewsList/NewsList.jsx';
 import BrnadLogoArea from '../BrnadLogo/BrnadLogoArea.jsx';
 import NewsSideBar from './NewsSidebar.jsx';
+import ErrorBoundary from '../../error-handling/ErrorBoundary.jsx';
 
 /*
 
@@ -42,7 +43,9 @@ class News extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-xl-9 col-lg-8">
-                                <NewsList />
+                                <ErrorBoundary>
+                                    <NewsList />
+                                </ErrorBoundary>
                             </div>
                             <div className="col-xl-3 col-lg-4">
                                 <NewsSideBar />
