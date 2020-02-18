@@ -12,7 +12,7 @@ function AxiosInterceptor(props) {
         const authInterceptor = Axios.interceptors.request.use(
             config => {
                 if (!(config.headers && config.headers.Authorization)) {
-                    config.headers['Authorization'] = auth.accessToken;
+                    config.headers['Authorization'] = `${auth.tokenType} ${auth.accessToken}`;
                 }
                 return config;
             }, error => Promise.reject(error));

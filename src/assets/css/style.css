@@ -10406,3 +10406,8 @@ h3.cart-page-title {
     margin-top: 0.2em;
     background: white;
 }
+
+/* Custom: Input Error */
+.register-form form .contact-form-style input.error, .register-form form .contact-form-style textarea.error {
+    border: 2px solid red;
+}
