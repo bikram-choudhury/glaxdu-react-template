@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Ratings } from '../Ratings/Ratings.jsx';
 import { MAXRATINGS } from '../../glaxdu-settings';
-import { setSelectedProductSku } from '../../redux/actions/products.action';
+import { setSelectedProductId } from '../../redux/actions/products.action';
 
 function SingleTableViewProduct(props) {
     const history = useHistory();
-    const { images, name, rating, category, price, sku } = props;
+    const { images, name, rating, category, price, id } = props;
 
     const saveAndNavigateToDetailsview = () => {
-        props.setSelectedProductSku(sku);
+        props.setSelectedProductId(id);
         history.push('/admin/product/details');
     }
     return (
@@ -54,6 +54,6 @@ function SingleTableViewProduct(props) {
 }
 
 const mapDispatchToProps = {
-    setSelectedProductSku: setSelectedProductSku
+    setSelectedProductId: setSelectedProductId
 }
 export default connect(null, mapDispatchToProps)(SingleTableViewProduct);

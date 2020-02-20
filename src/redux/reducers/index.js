@@ -26,17 +26,17 @@ export const getReletedNewsList = createSelector(
 
 export const getProductList = (state) => products.getProductList(state.products);
 export const getProductTotalCount = (state) => products.getProductTotalCount(state.products);
-export const getSelectedProductSku = (state) => products.getSelectedProductSku(state.products);
+export const getSelectedProductId = (state) => products.getSelectedProductId(state.products);
 export const getSelectedProduct = createSelector(
     getProductList,
-    getSelectedProductSku,
-    (productList, selectedSku) => productList.find(product => product.sku === selectedSku)
+    getSelectedProductId,
+    (productList, selectedId) => productList.find(product => product.id === selectedId)
 );
 export const getRelatedProducts = createSelector(
     getProductList,
-    getSelectedProductSku,
-    (productList, selectedSku) => {
-        const selected = productList.find(product => product.sku === selectedSku);
+    getSelectedProductId,
+    (productList, selectedId) => {
+        const selected = productList.find(product => product.id === selectedId);
         if (selected) {
             const selectedProductTags = selected.tags;
             return productList.filter(product => {

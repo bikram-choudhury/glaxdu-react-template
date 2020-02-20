@@ -1,4 +1,4 @@
-import { SET_PRODUCTS, SET_PRODUCTS_ERROR, SET_TOTAL_PRODUCT_COUNT, SET_SELECT_PRODUCT_SKU } from "../action.type.constants";
+import { SET_PRODUCTS, SET_PRODUCTS_ERROR, SET_TOTAL_PRODUCT_COUNT, SET_SELECT_PRODUCT_ID } from "../action.type.constants";
 import { getProducts, getTotalProductCount } from "../../api/products.api";
 
 export const setProducts = (products) => {
@@ -22,10 +22,10 @@ export const setProductsError = (message) => {
     }
 }
 
-export const setSelectedProductSku = (sku) => {
+export const setSelectedProductId = (id) => {
     return {
-        type: SET_SELECT_PRODUCT_SKU,
-        payload: { sku }
+        type: SET_SELECT_PRODUCT_ID,
+        payload: { id }
     }
 }
 
