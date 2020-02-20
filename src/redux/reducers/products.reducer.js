@@ -35,3 +35,4 @@ export const ProductReducer = (state = initialState, { type, payload }) => {
 
 export const getProductList = (state) => state.list;
 export const getProductTotalCount = (state) => state.totalCount;
+export const getSelectedProductSku = (state) => state.selectedProduct;

@@ -11,9 +11,14 @@ store.subscribe(() => {
     const applicationState = store.getState();
     const newsstate = applicationState && applicationState.news;
     const authState = applicationState && applicationState.auth;
+    const productState = applicationState && applicationState.products;
     saveState({
         news: {
             ...newsstate,
+            error: ''
+        },
+        products: {
+            ...productState,
             error: ''
         },
         auth: {

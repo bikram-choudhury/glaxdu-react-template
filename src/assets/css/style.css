@@ -7138,6 +7138,10 @@ textarea:focus {
     margin: 2px 0 0;
 }
 
+.ratting-form-wrapper .ratting-form form .star-box .product-rating {
+    color: #00a651;
+}
+
 .ratting-form-wrapper .ratting-form form .rating-form-style input,
 .ratting-form-wrapper .ratting-form form .rating-form-style textarea {
     padding: 2px 10px 2px 20px;

@@ -26,6 +26,30 @@ export const getReletedNewsList = createSelector(
 
 export const getProductList = (state) => products.getProductList(state.products);
 export const getProductTotalCount = (state) => products.getProductTotalCount(state.products);
+export const getSelectedProductSku = (state) => products.getSelectedProductSku(state.products);
+export const getSelectedProduct = createSelector(
+    getProductList,
+    getSelectedProductSku,
+    (productList, selectedSku) => productList.find(product => product.sku === selectedSku)
+);
+export const getRelatedProducts = createSelector(
+    getProductList,
+    getSelectedProductSku,
+    (productList, selectedSku) => {
+        const selected = productList.find(product => product.sku === selectedSku);
+        if (selected) {
+            const selectedProductTags = selected.tags;
+            return productList.filter(product => {
+                const tags = product.tags;
+                const isRelated = tags.find(tag => selectedProductTags.includes(tag));
+                return !!isRelated;
+            });
+        } else {
+            return [];
+        }
+
+    }
+);
 
 export const getAccessToken = (state) => auth.getAccessToken(state.auth);
 export const getRefreshToken = (state) => auth.getRefreshToken(state.auth);
