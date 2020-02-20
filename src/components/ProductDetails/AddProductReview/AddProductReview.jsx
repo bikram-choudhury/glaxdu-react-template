@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { connectAdvanced } from 'react-redux';
 import { Ratings } from '../../Ratings/Ratings.jsx';
 import { MAXRATINGS } from '../../../glaxdu-settings';
+import { getSelectedProductId } from '../../../redux/reducers';
+import { saveProductReview } from '../../../redux/actions/products.action';
 
-export default function AddProductReview(props) {
+function AddProductReview(props) {
     const [rating, setRating] = useState(0);
     const [reviewerName, updateReviewerName] = useState('');
     const [reviewerEmail, updateReviewerEmail] = useState('');
@@ -11,7 +13,14 @@ export default function AddProductReview(props) {
 
     const handleOnSubmit = (event) => {
         event.preventDefault();
-        // save into store & DB
+        const review = {
+            name: reviewerName,
+            email: reviewerEmail,
+            message: reviewerMessage,
+            rating: rating,
+            image: 'no-image.png'
+        };
+        props.saveReview(review, props.productId);
     }
     return (
         <div className="ratting-form-wrapper pl-50 ratting-nagative-mrg">
@@ -57,3 +66,14 @@ export default function AddProductReview(props) {
         </div>
     )
 }
+
+function selectorFactory(dispatch) {
+    const saveReview = (review, productId) => dispatch(saveProductReview(review, productId));
+
+    return (nextState) => {
+        const productId = getSelectedProductId(nextState);
+        return { productId, saveReview };
+    }
+}
+
+export default connectAdvanced(selectorFactory)(AddProductReview);

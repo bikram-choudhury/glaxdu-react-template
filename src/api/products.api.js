@@ -19,3 +19,12 @@ export const getTotalProductCount = () => {
             .catch(error => reject(error));
     })
 }
+
+export const saveReviewForProduct = (productWithReview, productId) => {
+    return new Promise((resolve, reject) => {
+        const url = `${AUTH_SERVER_URL}/products/${productId}`;
+        Axios.put(url, productWithReview)
+            .then(response => resolve(response.data))
+            .catch(error => reject(error));
+    })
+}

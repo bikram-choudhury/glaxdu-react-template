@@ -2,7 +2,7 @@ import React from 'react';
 import { MAXRATINGS } from '../../glaxdu-settings';
 
 export const Ratings = (props) => {
-    const { rating, maxRating, handleClick } = props;
+    const { rating, maxRating, handleClick, className } = props;
     const children = Array(maxRating).fill(null)
         .map((_, i) => i + 1)
         .map((count, index) => {
@@ -13,7 +13,7 @@ export const Ratings = (props) => {
             }
         });
     return (
-        <div className="product-rating">
+        <div className={className}>
             {children}
         </div>
     )
@@ -22,5 +22,6 @@ export const Ratings = (props) => {
 Ratings.defaultProps = {
     rating: 0,
     maxRating: MAXRATINGS,
+    className: "product-rating",
     handleClick: () => { }
 }

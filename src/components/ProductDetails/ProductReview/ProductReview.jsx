@@ -4,27 +4,28 @@ import { MAXRATINGS } from '../../../glaxdu-settings';
 import { Ratings } from '../../Ratings/Ratings.jsx';
 
 export default function ProductReview(props) {
-    const { reviewerImage, reviewerName, review, rating } = props;
+    
+    const { image, name, message, rating } = props;
     return (
         <div className="review-wrapper">
             <div className="single-review">
                 <div className="review-img">
-                    <img src={require(`./../../../assets/img/${reviewerImage}`)} alt="reviewer image" />
+                    <img src={require(`./../../../assets/img/blog/${image}`)} alt="reviewer image" />
                 </div>
-                <div className="review-content">
+                <div className="review-content w-100">
                     <div className="review-top-wrap">
                         <div className="review-left">
                             <div className="review-name">
-                                <h4>{reviewerName}</h4>
+                                <h4>{name}</h4>
                             </div>
-                            <Ratings rating={rating} maxRating={MAXRATINGS} />
+                            <Ratings className="review-rating" rating={rating} maxRating={MAXRATINGS} />
                         </div>
                         <div className="review-left">
                             <a href="#">Reply</a>
                         </div>
                     </div>
                     <div className="review-bottom">
-                        <p>{review}</p>
+                        <p>{message}</p>
                     </div>
                 </div>
             </div>
@@ -33,8 +34,9 @@ export default function ProductReview(props) {
 }
 
 ProductReview.propTypes = {
-    reviewerImage: PropTypes.string.isRequired,
-    reviewerName: PropTypes.string.isRequired,
-    review: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
     rating: PropTypes.number.isRequired
 }

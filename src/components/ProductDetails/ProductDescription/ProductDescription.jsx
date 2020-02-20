@@ -53,7 +53,9 @@ export default function ProductDescription(props) {
                                     {
                                         info.reviews &&
                                             info.reviews.length ? (
-                                                <ProductReview {...info.reviews} />
+                                                info.reviews.map(
+                                                    (review, index) => <ProductReview key={index} {...review} />
+                                                )
                                             ) : (
                                                 <h1>Be the first one to give feedback on our product</h1>
                                             )
@@ -74,9 +76,10 @@ ProductDescription.propTypes = {
     info: PropTypes.shape({
         reviews: PropTypes.arrayOf(
             PropTypes.shape({
-                reviewerImage: PropTypes.string.isRequired,
-                reviewerName: PropTypes.string.isRequired,
-                review: PropTypes.string.isRequired,
+                image: PropTypes.string.isRequired,
+                name: PropTypes.string.isRequired,
+                email: PropTypes.string.isRequired,
+                message: PropTypes.string.isRequired,
                 rating: PropTypes.number.isRequired
             })
         ),

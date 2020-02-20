@@ -7039,6 +7039,10 @@ textarea:focus {
     flex: 0 0 90px;
     margin: 0 15px 0 0;
 }
+.single-review .review-img img {
+    width: 93px;
+    height: 90px;
+}
 
 @media only screen and (max-width: 767px) {
     .single-review .review-img {
@@ -7084,7 +7088,6 @@ textarea:focus {
 }
 
 .single-review .review-top-wrap .review-left .review-rating i {
-    font-size: 12px;
     margin-right: 1px;
     color: #00a651;
 }
