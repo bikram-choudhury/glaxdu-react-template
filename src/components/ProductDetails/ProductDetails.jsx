@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { connectAdvanced } from 'react-redux';
 import Breadcrumb from '../Breadcrumb/Breadcrumb.jsx';
 import BrnadLogoArea from '../BrnadLogo/BrnadLogoArea.jsx';
@@ -8,8 +8,14 @@ import ProductDescription from './ProductDescription/ProductDescription.jsx';
 import RelatedProducts from './RelatedProducts/RelatedProducts.jsx';
 import { shallowEqual } from '@babel/types';
 import { getSelectedProduct, getRelatedProducts } from '../../redux/reducers';
+import { setSelectedProductId } from '../../redux/actions/products.action';
 
 function ProductDetails(props) {
+    useEffect(() => {
+        return () => {
+            props.removeProductId();
+        }
+    }, [])
     const { productDetails, relatedProducts } = props;
     const descriptionInfo = {
         reviews: productDetails.reviews,
@@ -46,11 +52,11 @@ function ProductDetails(props) {
 
 function selectorFactory(dispatch) {
     let result = {}
-
+    const removeProductId = () => dispatch(setSelectedProductId(''));
     return (nextState, nextOwnProps) => { // mapStateToProps
         const productDetails = getSelectedProduct(nextState);
         const relatedProducts = getRelatedProducts(nextState);
-        const nextResult = { ...nextOwnProps, productDetails, relatedProducts };
+        const nextResult = { ...nextOwnProps, productDetails, relatedProducts, removeProductId };
         if (!shallowEqual(result, nextResult)) result = nextResult;
         return result;
     }
