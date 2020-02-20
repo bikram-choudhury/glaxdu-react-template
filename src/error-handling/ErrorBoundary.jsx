@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 export function ErrorComponent() {
     return <h1>Something went wrong!</h1>;
@@ -23,8 +22,4 @@ export default class ErrorBoundary extends Component {
         }
         return this.props.children;
     }
-}
-
-ErrorBoundary.propTypes = {
-    children: PropTypes.arrayOf(PropTypes.element).isRequired
 }
