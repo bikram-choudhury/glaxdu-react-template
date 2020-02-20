@@ -3,8 +3,20 @@ import { createSelector } from 'reselect';
 import * as news from "./news.reducer";
 import * as products from "./products.reducer";
 import * as auth from "./auth.reducer";
+import { LOGOUT } from "../action.type.constants";
 
-export const reducers = combineReducers({ news: news.NewsReducer, products: products.ProductReducer, auth: auth.AuthReducer });
+const appReducers = combineReducers({
+    news: news.NewsReducer,
+    products: products.ProductReducer,
+    auth: auth.AuthReducer
+});
+
+export const reducers = (state, action) => {
+    if (action.type === LOGOUT) {
+        return {};
+    }
+    return appReducers(state, action);
+}
 
 const getSelectedNewsTitle = (state) => news.getSelectedNewsTitle(state.news);
 

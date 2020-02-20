@@ -15,16 +15,10 @@ export function AuthReducer(state = initialState, { type, payload }) {
                 refreshToken: payload.refreshToken,
                 tokenType: payload.tokenType
             };
-        case LOGOUT:
-            return {
-                accessToken: '',
-                refreshToken: '',
-                tokenType: ''
-            };
         default: return state;
     }
 }
 
-export const getAccessToken = (state) => state.accessToken;
-export const getRefreshToken = (state) => state.refreshToken;
-export const getTokenType = (state) => state.tokenType;
+export const getAccessToken = (state) => state && state.accessToken || initialState.accessToken;
+export const getRefreshToken = (state) => state && state.refreshToken || initialState.refreshToken;
+export const getTokenType = (state) => state && state.tokenType || initialState.tokenType;
