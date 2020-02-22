@@ -17,7 +17,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
       "availableColors": [
         "blue",
-        "maroon active",
+        "maroon",
         "gray",
         "green",
         "yellow",
@@ -61,7 +61,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
       "availableColors": [
         "blue",
-        "maroon active",
+        "maroon",
         "gray",
         "green",
         "yellow",
@@ -91,7 +91,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
       "availableColors": [
         "blue",
-        "maroon active",
+        "maroon",
         "gray",
         "green",
         "yellow",
@@ -121,7 +121,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
       "availableColors": [
         "blue",
-        "maroon active",
+        "maroon",
         "gray",
         "green",
         "yellow",
@@ -289,7 +289,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
       "availableColors": [
         "blue",
-        "maroon active",
+        "maroon",
         "gray",
         "green",
         "yellow",
@@ -333,7 +333,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
       "availableColors": [
         "blue",
-        "maroon active",
+        "maroon",
         "gray",
         "green",
         "yellow",
@@ -363,7 +363,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
       "availableColors": [
         "blue",
-        "maroon active",
+        "maroon",
         "gray",
         "green",
         "yellow",
@@ -393,7 +393,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna.",
       "availableColors": [
         "blue",
-        "maroon active",
+        "maroon",
         "gray",
         "green",
         "yellow",
@@ -545,5 +545,7 @@
       "otherInfo": "American heirloom jean shorts pug seitan letterpress"
     }
   ],
-  "registrations": []
+  "registrations": [],
+  "cartItems": [],
+  "paidItems": []
 }
