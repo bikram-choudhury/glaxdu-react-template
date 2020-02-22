@@ -4,7 +4,7 @@ import {
     SET_TOTAL_PRODUCT_COUNT,
     SET_SELECT_PRODUCT_ID
 } from "../action.type.constants";
-import { getProducts, getTotalProductCount, saveReviewForProduct } from "../../api/products.api";
+import { getProducts, getTotalProductCount, saveReviewForProduct, addProductToCart } from "../../api/products.api";
 import { getProductList, getSelectedProduct } from "../reducers";
 
 
@@ -57,6 +57,16 @@ export const saveProductReview = (reviews, productId) => {
                 const productsList = getProductList(getState());
                 dispatch(setProducts(productsList));
 
+            })
+            .catch(error => dispatch(setProductsError(error.message)))
+    }
+}
+
+export const addToCart = (payload) => {
+    return (dispatch) => {
+        addProductToCart(payload)
+            .then(response => {
+                console.log(response);
             })
             .catch(error => dispatch(setProductsError(error.message)))
     }

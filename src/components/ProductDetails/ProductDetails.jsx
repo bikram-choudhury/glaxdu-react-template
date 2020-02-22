@@ -36,7 +36,7 @@ function ProductDetails(props) {
         <Fragment>
             <ErrorBoundary>
                 <Breadcrumb {...breadcrumbConfig} />
-                <SingleProduct />
+                <SingleProduct {...productDetails} />
                 <ProductDescription info={descriptionInfo} />
                 {
                     relatedProducts &&

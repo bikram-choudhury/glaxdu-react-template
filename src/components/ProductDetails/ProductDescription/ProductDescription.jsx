@@ -41,8 +41,16 @@ export default function ProductDescription(props) {
                             <div className="product-anotherinfo-wrapper">
                                 <ul>
                                     <li><span>Weight</span> {info.weight + ' g'} </li>
-                                    <li><span>Dimensions</span>{info.dimensions} </li>
-                                    <li><span>Materials</span> {info.materials}</li>
+                                    {
+                                        info.dimensions && (
+                                            <li><span>Dimensions</span>{info.dimensions} </li>
+                                        )
+                                    }
+                                    {
+                                        info.materials && (
+                                            <li><span>Materials</span> {info.materials.join(',')}</li>
+                                        )
+                                    }
                                     <li><span>Other Info</span> {info.otherInfo}</li>
                                 </ul>
                             </div>
@@ -85,8 +93,8 @@ ProductDescription.propTypes = {
         ),
         description: PropTypes.string.isRequired,
         weight: PropTypes.number.isRequired,
-        dimensions: PropTypes.string.isRequired,
-        materials: PropTypes.arrayOf(PropTypes.string).isRequired,
+        dimensions: PropTypes.string,
+        materials: PropTypes.arrayOf(PropTypes.string),
         otherInfo: PropTypes.string.isRequired
     })
 };

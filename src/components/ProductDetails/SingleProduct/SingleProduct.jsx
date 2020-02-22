@@ -1,14 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connectAdvanced } from 'react-redux';
 import Slider from "react-slick";
-import { sliderSettings } from '../../../glaxdu-settings';
+import { sliderSettings, MAXRATINGS } from '../../../glaxdu-settings';
+import { Ratings } from '../../Ratings/Ratings.jsx';
+import SocialButtons from '../../SocialButtons/SocialButtons.jsx';
+import { addToCart } from '../../../redux/actions/products.action';
 
-export default function SingleProduct(props) {
+function SingleProduct(props) {
     const settings = {
         ...sliderSettings.SingleProductImageSlider,
         nextArrow: '<button class="product-dec-icon product-dec-prev"><i class="fa fa-angle-left"></i></button>',
         prevArrow: '<div class="product-dec-icon product-dec-next"><i class="fa fa-angle-right"></i></div>'
     };
 
+    const {
+        rating,
+        reviews,
+        price,
+        name,
+        description,
+        availableColors,
+        availableSizes,
+        like,
+        sku,
+        categories,
+        tags,
+        id
+    } = props;
+
+    const [selectedColor, setSelectedColor] = useState('');
+    const [selectedSize, setSelectedSize] = useState('');
+    const [itemQty, updateItemQty] = useState(0);
+    const [isLiked, updateIsLiked] = useState(!!like);
+
+    const addItemToCart = () => {
+        if (itemQty) {
+            const itemToAdd = {
+                productId: id,
+                qty: itemQty,
+                size: selectedSize,
+                color: selectedColor
+            };
+            props.addItem(itemToAdd);
+        }
+    }
     return (
         <div className="single-product-area pt-130 pb-130">
             <div className="container">
@@ -60,92 +95,172 @@ export default function SingleProduct(props) {
                     </div>
                     <div className="col-lg-6 col-md-7">
                         <div className="product-details-content pl-30">
-                            <h2>Product Name</h2>
+                            <h2>{name}</h2>
                             <div className="pro-details-rating-wrap">
-                                <div className="pro-details-rating">
-                                    <i className="zmdi zmdi-star"></i>
-                                    <i className="zmdi zmdi-star"></i>
-                                    <i className="zmdi zmdi-star"></i>
-                                    <i className="zmdi zmdi-star"></i>
-                                    <i className="zmdi zmdi-star"></i>
-                                </div>
-                                <span>(1 customer review)</span>
+                                <Ratings
+                                    maxRating={MAXRATINGS}
+                                    rating={rating}
+                                    className="pro-details-rating"
+                                />
+                                <span className="ml-10">
+                                    ({reviews ? reviews.length : 0} customer review)
+                                </span>
                             </div>
-                            <h3>$329</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna. </p>
+                            <h3>{'$' + price}</h3>
+                            <p>{description}</p>
                             <div className="pro-details-size-color2 mt-30">
-                                <div className="pro-details-color2-wrap">
-                                    <span>Color</span>
-                                    <div className="pro-details-color2-content">
-                                        <ul>
-                                            <li className="blue"></li>
-                                            <li className="maroon active"></li>
-                                            <li className="gray"></li>
-                                            <li className="green"></li>
-                                            <li className="yellow"></li>
-                                            <li className="white"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="pro-details-size2">
-                                    <span>Size</span>
-                                    <div className="pro-details-size2-content">
-                                        <ul>
-                                            <li><a href="#">s</a></li>
-                                            <li><a href="#">m</a></li>
-                                            <li><a href="#">l</a></li>
-                                            <li><a href="#">xl</a></li>
-                                            <li><a href="#">xxl</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                {
+                                    availableColors && availableColors.length && (
+                                        <div className="pro-details-color2-wrap">
+                                            <span>Color</span>
+                                            <div className="pro-details-color2-content">
+                                                <ul>
+                                                    {
+                                                        availableColors.map(
+                                                            (color, index) => {
+                                                                let className = color;
+                                                                if (selectedColor === color)
+                                                                    className += ' active';
+                                                                return (
+                                                                    <li
+                                                                        key={index}
+                                                                        className={className}
+                                                                        onClick={() => setSelectedColor(color)}
+                                                                    ></li>
+                                                                )
+                                                            }
+                                                        )
+                                                    }
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+
+                                {
+                                    availableSizes && availableSizes.length && (
+                                        <div className="pro-details-size2">
+                                            <span>Size</span>
+                                            <div className="pro-details-size2-content">
+                                                <ul>
+                                                    {
+                                                        availableSizes.map(
+                                                            (size, index) => {
+                                                                let className = '';
+                                                                if (selectedSize === size)
+                                                                    className += 'active';
+                                                                return (
+                                                                    <li
+                                                                        key={index}
+                                                                        onClick={() => setSelectedSize(size)}
+                                                                    >
+                                                                        <span className={className}>{size}</span>
+                                                                    </li>
+                                                                )
+                                                            }
+                                                        )
+                                                    }
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    )
+                                }
                             </div>
                             <div className="pro-details-quality mt-50 mb-45">
                                 <div className="cart-plus-minus">
-                                    <input className="cart-plus-minus-box" type="text" name="qtybutton" defaultValue="2" />
+
+                                    <div
+                                        className={`dec qtybutton ${itemQty === 0 ? 'disabled' : ''}`}
+                                        disabled={itemQty === 0}
+                                        onClick={() => {
+                                            if (itemQty > 0) {
+                                                updateItemQty(itemQty - 1);
+                                            }
+                                        }}
+                                    >-</div>
+                                    <input
+                                        className="cart-plus-minus-box"
+                                        type="text"
+                                        name="qtybutton"
+                                        value={itemQty}
+                                        onChange={
+                                            (e) => {
+                                                const qty = parseInt(e.target.value);
+                                                if (!isNaN(qty)) {
+                                                    updateItemQty(qty);
+                                                }
+                                            }
+                                        }
+                                    />
+                                    <div
+                                        className="inc qtybutton"
+                                        onClick={() => updateItemQty(itemQty + 1)}
+                                    >+</div>
                                 </div>
                                 <div className="pro-details-cart">
-                                    <a className="default-btn btn-hover" href="#">Add To Cart</a>
+                                    <span
+                                        className="default-btn btn-hover"
+                                        onClick={addItemToCart}
+                                    >Add To Cart</span>
                                 </div>
                                 <div className="pro-details-wishlist">
-                                    <a className=" btn-hover" href="#"><i className="fa fa-heart-o"></i></a>
+                                    <span
+                                        className={`btn-hover${isLiked ? ' active' : ''}`}
+                                        onClick={() => updateIsLiked(!isLiked)}
+                                    ><i className="fa fa-heart-o"></i></span>
                                 </div>
                             </div>
                             <div className="pro-details-info-wrap">
                                 <div className="pro-details-info-list">
                                     <ul>
                                         <li className="pro-details-info-title">SKU</li>
-                                        <li>00010002</li>
+                                        <li>{sku}</li>
                                     </ul>
                                 </div>
-                                <div className="pro-details-info-list">
-                                    <ul>
-                                        <li className="pro-details-info-title">Categories</li>
-                                        <li><a href="#">Women,</a></li>
-                                        <li><a href="#">Dress</a></li>
-                                    </ul>
-                                </div>
-                                <div className="pro-details-info-list">
-                                    <ul>
-                                        <li className="pro-details-info-title">Tags</li>
-                                        <li><a href="#">Clothing,</a></li>
-                                        <li><a href="#">Summer</a></li>
-                                    </ul>
-                                </div>
+                                {
+                                    categories && categories.length && (
+                                        <div className="pro-details-info-list">
+                                            <ul>
+                                                <li className="pro-details-info-title">Categories</li>
+                                                <li>{categories.join(', ')}</li>
+                                            </ul>
+                                        </div>
+                                    )
+                                }
+                                {
+                                    tags && tags.length && (
+                                        <div className="pro-details-info-list">
+                                            <ul>
+                                                <li className="pro-details-info-title">Tags</li>
+                                                <li>{tags.join(', ')}</li>
+                                            </ul>
+                                        </div>
+                                    )
+                                }
+
                             </div>
-                            <div className="pro-details-social">
-                                <ul>
-                                    <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a></li>
-                                    <li><a className="youtube" href="#"><i className="fa fa-youtube-play"></i></a></li>
-                                    <li><a className="twitter" href="#"><i className="fa fa-twitter"></i></a></li>
-                                    <li><a className="google" href="#"><i className="fa fa-google-plus"></i></a></li>
-                                </ul>
-                            </div>
+                            <SocialButtons
+                                sharedUrl={location.href}
+                                title={name}
+                                description={description}
+                                sourceName={location.host}
+                                className="pro-details-social"
+                            />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     )
 }
+
+function selectorFactory(dispatch) {
+    const addItem = (product) => dispatch(addToCart(product));
+
+    return (state, ownProps) => {
+        return {...ownProps, addItem };
+    }
+}
+
+export default connectAdvanced(selectorFactory)(SingleProduct);

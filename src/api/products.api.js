@@ -28,3 +28,12 @@ export const saveReviewForProduct = (productWithReview, productId) => {
             .catch(error => reject(error));
     })
 }
+
+export const addProductToCart = (product) => {
+    return new Promise((resolve, reject) => {
+        const url = `${AUTH_SERVER_URL}/cartItems`;
+        Axios.post(url, product)
+            .then(response => resolve(response.data))
+            .catch(error => reject(error));
+    })
+}

@@ -15,11 +15,11 @@ import {
 } from 'react-share';
 
 export default function SocialButtons(props) {
-    const { sharedUrl, title, description, sourceName } = props;
+    const { sharedUrl, title, description, sourceName, className } = props;
     const iconSize = 25;
     const iconRadius = 10;
     return (
-        <div className="blog-social">
+        <div className={className}>
             <ul>
                 <li>
                     <FacebookShareButton
@@ -78,4 +78,8 @@ export default function SocialButtons(props) {
             </ul>
         </div>
     )
+}
+
+SocialButtons.defaultProps = {
+    className: "blog-social"
 }

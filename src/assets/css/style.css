@@ -9132,7 +9132,8 @@ textarea:focus {
     margin: 0 2px 0 0;
 }
 
-.product-details-content .pro-details-size-color2 .pro-details-size2 .pro-details-size2-content ul li a {
+.product-details-content .pro-details-size-color2 .pro-details-size2 .pro-details-size2-content ul li span {
+    cursor: pointer;
     background-color: #f1f2f6;
     color: #15273e;
     display: inline-block;
@@ -9142,7 +9143,8 @@ textarea:focus {
     text-transform: uppercase;
 }
 
-.product-details-content .pro-details-size-color2 .pro-details-size2 .pro-details-size2-content ul li a:hover {
+.product-details-content .pro-details-size-color2 .pro-details-size2 .pro-details-size2-content ul li span.active,
+.product-details-content .pro-details-size-color2 .pro-details-size2 .pro-details-size2-content ul li span:hover {
     background-color: #00a651;
     color: #fff;
 }
@@ -9226,6 +9228,12 @@ textarea:focus {
     margin: 0 15px;
 }
 
+.cart-plus-minus .qtybutton[disabled],
+.cart-plus-minus .qtybutton.disabled {
+    background-color: #dee0e4;
+    pointer-events: none;
+}
+
 @media only screen and (max-width: 767px) {
     .pro-details-quality .pro-details-cart {
         margin: 10px 0px 20px;
@@ -9238,12 +9246,14 @@ textarea:focus {
     }
 }
 
-.pro-details-quality .pro-details-cart a.default-btn {
+.pro-details-quality .pro-details-cart span.default-btn {
+    cursor: pointer;
     padding: 17px 30px 17px;
     font-size: 12px;
 }
 
-.pro-details-quality .pro-details-wishlist a {
+.pro-details-quality .pro-details-wishlist span {
+    cursor: pointer;
     border: 1px solid #dfe1e5;
     color: #15273e;
     display: inline-block;
@@ -9252,7 +9262,8 @@ textarea:focus {
     padding: 15px 16px;
 }
 
-.pro-details-quality .pro-details-wishlist a:hover {
+.pro-details-quality .pro-details-wishlist span:hover,
+.pro-details-quality .pro-details-wishlist span.active {
     background-color: #00a651;
     border: 1px solid #00a651;
     color: #fff;
