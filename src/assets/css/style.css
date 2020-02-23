@@ -2100,6 +2100,9 @@ textarea:focus {
     width: 340px;
     z-index: 9999;
 }
+.cart-wrap .shopping-cart-content.active {
+    display: block;
+}
 
 @media only screen and (max-width: 767px) {
     .cart-wrap .shopping-cart-content {
@@ -2144,6 +2147,10 @@ textarea:focus {
     flex: 0 0 82px;
     margin-right: 15px;
 }
+.cart-wrap .shopping-cart-content ul li .shopping-cart-img img {
+    width: 82px;
+    height: 82px;
+}
 
 .cart-wrap .shopping-cart-content ul li .shopping-cart-title h4 {
     color: #033333;
@@ -2171,6 +2178,7 @@ textarea:focus {
 }
 
 .cart-wrap .shopping-cart-content ul li .shopping-cart-delete {
+    cursor: pointer;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2182,12 +2190,12 @@ textarea:focus {
     justify-content: flex-end;
 }
 
-.cart-wrap .shopping-cart-content ul li .shopping-cart-delete a {
+.cart-wrap .shopping-cart-content ul li .shopping-cart-delete span {
     font-size: 16px;
     color: #00a651;
 }
 
-.cart-wrap .shopping-cart-content ul li .shopping-cart-delete a:hover {
+.cart-wrap .shopping-cart-content ul li .shopping-cart-delete span:hover {
     color: #333;
 }
 

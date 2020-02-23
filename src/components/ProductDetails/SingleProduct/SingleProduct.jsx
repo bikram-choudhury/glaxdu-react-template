@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import { sliderSettings, MAXRATINGS } from '../../../glaxdu-settings';
 import { Ratings } from '../../Ratings/Ratings.jsx';
 import SocialButtons from '../../SocialButtons/SocialButtons.jsx';
-import { addToCart } from '../../../redux/actions/products.action';
+import { addToCart } from '../../../redux/actions/cart.action';
 
 function SingleProduct(props) {
     const settings = {
@@ -25,6 +25,7 @@ function SingleProduct(props) {
         sku,
         categories,
         tags,
+        images,
         id
     } = props;
 
@@ -36,7 +37,9 @@ function SingleProduct(props) {
     const addItemToCart = () => {
         if (itemQty) {
             const itemToAdd = {
-                productId: id,
+                productDetail: {
+                    images, id, name, price, sku
+                },
                 qty: itemQty,
                 size: selectedSize,
                 color: selectedColor
@@ -259,7 +262,7 @@ function selectorFactory(dispatch) {
     const addItem = (product) => dispatch(addToCart(product));
 
     return (state, ownProps) => {
-        return {...ownProps, addItem };
+        return { ...ownProps, addItem };
     }
 }
 

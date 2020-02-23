@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import TopHeader from "./../TopHeader/TopHeader.jsx";
 import { AdminRoutes } from './../../routes.js';
+import { getCartItems } from '../../redux/reducers';
 
-export default class Header extends Component {
-    constructor() {
+export class Header extends Component {
+    constructor(props) {
         super();
         this.stickyHeaderRef = React.createRef();
+        this.state = {
+            showCartPanel: false
+        }
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll)
@@ -23,6 +28,11 @@ export default class Header extends Component {
         }
     }
     render() {
+        const { showCartPanel } = this.state;
+        const { cartItems } = this.props;
+
+        let cartItemCount = cartItems.length;
+        let totalCartItemAmount = 0;
 
         return (
             <header className="header-area">
@@ -60,48 +70,60 @@ export default class Header extends Component {
                                     </div>
                                     <div className="cart-search-wrap">
                                         <div className="cart-wrap">
-                                            <button className="icon-cart">
+                                            <button
+                                                className="icon-cart"
+                                                onClick={
+                                                    () => this.setState({ showCartPanel: !showCartPanel })
+                                                }
+                                            >
                                                 <i className="fa fa-cart-plus"></i>
-                                                <span className="count-style">02</span>
+                                                <span className="count-style">{cartItemCount}</span>
                                             </button>
-                                            <div className="shopping-cart-content">
-                                                <ul>
-                                                    <li className="single-shopping-cart">
-                                                        <div className="shopping-cart-img">
-                                                            <a href="#"><img alt="" src={require('./../../assets/img/cart/cart-1.png')} /></a>
+                                            {
+                                                cartItems && cartItems.length && (
+                                                    <div
+                                                        className={`shopping-cart-content ${showCartPanel ? 'active' : ''}`}
+                                                    >
+                                                        <ul>
+                                                            {
+                                                                cartItems.map(
+                                                                    (item, index) => {
+                                                                        const { productDetail } = item;
+                                                                        totalCartItemAmount += (item.qty * productDetail.price)
+                                                                        return (
+                                                                            <li className="single-shopping-cart" key={index}>
+                                                                                <div className="shopping-cart-img">
+                                                                                    <a href="#">
+                                                                                        <img alt="" src={require(`./../../assets/img/product/${productDetail.images[0]}`)} />
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div className="shopping-cart-title">
+                                                                                    <h4>
+                                                                                        <span>{productDetail.name}</span>
+                                                                                    </h4>
+                                                                                    <h6>Qty: {item.qty}</h6>
+                                                                                    <span>${productDetail.price}</span>
+                                                                                </div>
+                                                                                <div className="shopping-cart-delete">
+                                                                                    <span><i className="fa fa-times-circle"></i></span>
+                                                                                </div>
+                                                                            </li>
+                                                                        )
+                                                                    }
+                                                                )
+                                                            }
+                                                        </ul>
+                                                        <div className="shopping-cart-total">
+                                                            <h4>Shipping : <span>$0.00</span></h4>
+                                                            <h4>Total : <span className="shop-total">${totalCartItemAmount}</span></h4>
                                                         </div>
-                                                        <div className="shopping-cart-title">
-                                                            <h4><a href="#">Color Box </a></h4>
-                                                            <h6>Qty: 02</h6>
-                                                            <span>$260.00</span>
+                                                        <div className="shopping-cart-btn">
+                                                            <Link className="default-btn btn-hover" to="cart">view cart</Link>
+                                                            <Link className="default-btn btn-hover" to="checkout">checkout</Link>
                                                         </div>
-                                                        <div className="shopping-cart-delete">
-                                                            <a href="#"><i className="fa fa-times-circle"></i></a>
-                                                        </div>
-                                                    </li>
-                                                    <li className="single-shopping-cart">
-                                                        <div className="shopping-cart-img">
-                                                            <a href="#"><img alt="" src={require('./../../assets/img/cart/cart-2.png')} /></a>
-                                                        </div>
-                                                        <div className="shopping-cart-title">
-                                                            <h4><a href="#">Color Box </a></h4>
-                                                            <h6>Qty: 02</h6>
-                                                            <span>$260.00</span>
-                                                        </div>
-                                                        <div className="shopping-cart-delete">
-                                                            <a href="#"><i className="fa fa-times-circle"></i></a>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                                <div className="shopping-cart-total">
-                                                    <h4>Shipping : <span>$20.00</span></h4>
-                                                    <h4>Total : <span className="shop-total">$260.00</span></h4>
-                                                </div>
-                                                <div className="shopping-cart-btn">
-                                                    <a className="default-btn btn-hover" href="cart.html">view cart</a>
-                                                    <a className="default-btn btn-hover" href="checkout.html">checkout</a>
-                                                </div>
-                                            </div>
+                                                    </div>
+                                                )
+                                            }
                                         </div>
                                         <div className="header-search">
                                             <button className="search-toggle">
@@ -204,8 +226,14 @@ export default class Header extends Component {
                         </div>
                     </div>
                 </div>
-
             </header>
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        cartItems: getCartItems(state)
+    }
+}
+export default connect(mapStateToProps)(Header);

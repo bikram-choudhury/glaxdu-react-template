@@ -61,13 +61,3 @@ export const saveProductReview = (reviews, productId) => {
             .catch(error => dispatch(setProductsError(error.message)))
     }
 }
-
-export const addToCart = (payload) => {
-    return (dispatch) => {
-        addProductToCart(payload)
-            .then(response => {
-                console.log(response);
-            })
-            .catch(error => dispatch(setProductsError(error.message)))
-    }
-}

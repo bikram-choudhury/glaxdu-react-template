@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Header from './Header.jsx';
+import { Header } from './Header.jsx';
 import TopHeader from '../TopHeader/TopHeader.jsx';
 
 describe('Header componenent', () => {
@@ -8,9 +8,9 @@ describe('Header componenent', () => {
     const map = {};
     beforeEach(() => {
         mockFunc = jest.fn();
-        wrapper = shallow(<Header />);
+        wrapper = shallow(<Header cartItems={[]} />);
         instance = wrapper.instance();
-        
+
         window.addEventListener = jest.fn((event, cb) => {
             map[event] = cb;
         });
@@ -53,7 +53,7 @@ describe('Header componenent', () => {
     it('should call handleScroll method', () => {
         instance.handleScroll = jest.fn();
         instance.componentDidMount();
-        map.scroll({});        
+        map.scroll({});
         expect(instance.handleScroll).toHaveBeenCalled();
     });
     it('should render route list', () => {

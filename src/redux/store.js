@@ -12,17 +12,11 @@ store.subscribe(() => {
     const newsstate = applicationState && applicationState.news;
     const authState = applicationState && applicationState.auth;
     const productState = applicationState && applicationState.products;
+    const cartState = applicationState && applicationState.cart;
     saveState({
-        news: {
-            ...newsstate,
-            error: ''
-        },
-        products: {
-            ...productState,
-            error: ''
-        },
-        auth: {
-            ...authState
-        }
+        news: { ...newsstate, error: '' },
+        products: { ...productState, error: '' },
+        cart: { ...cartState, error: '' },
+        auth: { ...authState }
     });
 });

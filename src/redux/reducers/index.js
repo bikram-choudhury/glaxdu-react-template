@@ -2,13 +2,15 @@ import { combineReducers } from "redux";
 import { createSelector } from 'reselect';
 import * as news from "./news.reducer";
 import * as products from "./products.reducer";
+import * as cart from "./cart.reducer";
 import * as auth from "./auth.reducer";
 import { LOGOUT } from "../action.type.constants";
 
 const appReducers = combineReducers({
     news: news.NewsReducer,
     products: products.ProductReducer,
-    auth: auth.AuthReducer
+    auth: auth.AuthReducer,
+    cart: cart.cartReducer
 });
 
 export const reducers = (state, action) => {
@@ -66,3 +68,5 @@ export const getRelatedProducts = createSelector(
 export const getAccessToken = (state) => auth.getAccessToken(state.auth);
 export const getRefreshToken = (state) => auth.getRefreshToken(state.auth);
 export const getTokenType = (state) => auth.getTokenType(state.auth);
+
+export const getCartItems = (state) => cart.getCartItems(state.cart);
