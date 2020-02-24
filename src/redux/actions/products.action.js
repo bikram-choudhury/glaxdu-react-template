@@ -4,7 +4,7 @@ import {
     SET_TOTAL_PRODUCT_COUNT,
     SET_SELECT_PRODUCT_ID
 } from "../action.type.constants";
-import { getProducts, getTotalProductCount, saveReviewForProduct, addProductToCart } from "../../api/products.api";
+import { getProducts, getTotalProductCount, saveReviewForProduct } from "../../api/products.api";
 import { getProductList, getSelectedProduct } from "../reducers";
 
 

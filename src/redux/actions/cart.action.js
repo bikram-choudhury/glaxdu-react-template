@@ -1,4 +1,5 @@
 import { UPDATE_CART, SET_CART_ERROR } from "../action.type.constants";
+import { addProductToCart } from "../../api/products.api";
 
 export const updateCartItems = (item) => {
     return {
