@@ -1,4 +1,4 @@
-import { UPDATE_CART, SET_CART_ERROR } from "../action.type.constants";
+import { UPDATE_CART, SET_CART_ERROR, REPLACE_CART } from "../action.type.constants";
 
 const initialState = {
     items: [],
@@ -7,6 +7,11 @@ const initialState = {
 
 export const cartReducer = (state = initialState, { type, payload }) => {
     switch (type) {
+        case REPLACE_CART:
+            return {
+                items: [...payload],
+                error: ''
+            }
         case UPDATE_CART:
             return {
                 items: [...state.items, payload],

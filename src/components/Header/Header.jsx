@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import TopHeader from "./../TopHeader/TopHeader.jsx";
 import { AdminRoutes } from './../../routes.js';
 import { getCartItems } from '../../redux/reducers';
+import { removeItem } from '../../redux/actions/cart.action';
 
 export class Header extends Component {
     constructor(props) {
@@ -107,7 +108,12 @@ export class Header extends Component {
                                                                                     <h6>Qty: {item.qty}</h6>
                                                                                     <span>${productDetail.price}</span>
                                                                                 </div>
-                                                                                <div className="shopping-cart-delete">
+                                                                                <div
+                                                                                    className="shopping-cart-delete"
+                                                                                    onClick={
+                                                                                        () => this.props.removeItem(item.id)
+                                                                                    }
+                                                                                >
                                                                                     <span><i className="fa fa-times-circle"></i></span>
                                                                                 </div>
                                                                             </li>
@@ -241,8 +247,9 @@ export class Header extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {
-        cartItems: getCartItems(state)
-    }
+    const cartItems = getCartItems(state);
+    cartItems.sort((prev, next) => next.id - prev.id);
+    return { cartItems };
 }
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = { removeItem };
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
