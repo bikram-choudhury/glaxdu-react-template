@@ -2102,6 +2102,8 @@ textarea:focus {
 }
 .cart-wrap .shopping-cart-content.active {
     display: block;
+    max-height: 500px;
+    overflow-y: auto;
 }
 
 @media only screen and (max-width: 767px) {

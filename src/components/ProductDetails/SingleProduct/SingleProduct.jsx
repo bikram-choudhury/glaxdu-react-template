@@ -42,7 +42,8 @@ function SingleProduct(props) {
                 },
                 qty: itemQty,
                 size: selectedSize,
-                color: selectedColor
+                color: selectedColor,
+                shipping: 0
             };
             props.addItem(itemToAdd);
         }

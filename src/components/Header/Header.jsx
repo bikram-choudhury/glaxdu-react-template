@@ -33,6 +33,7 @@ export class Header extends Component {
 
         let cartItemCount = cartItems.length;
         let totalCartItemAmount = 0;
+        let shippingTotal = 0;
 
         return (
             <header className="header-area">
@@ -80,7 +81,7 @@ export class Header extends Component {
                                                 <span className="count-style">{cartItemCount}</span>
                                             </button>
                                             {
-                                                cartItems && cartItems.length && (
+                                                cartItems && cartItems.length ? (
                                                     <div
                                                         className={`shopping-cart-content ${showCartPanel ? 'active' : ''}`}
                                                     >
@@ -89,7 +90,9 @@ export class Header extends Component {
                                                                 cartItems.map(
                                                                     (item, index) => {
                                                                         const { productDetail } = item;
-                                                                        totalCartItemAmount += (item.qty * productDetail.price)
+                                                                        totalCartItemAmount += (item.qty * productDetail.price);
+                                                                        shippingTotal += item.shipping;
+
                                                                         return (
                                                                             <li className="single-shopping-cart" key={index}>
                                                                                 <div className="shopping-cart-img">
@@ -114,7 +117,13 @@ export class Header extends Component {
                                                             }
                                                         </ul>
                                                         <div className="shopping-cart-total">
-                                                            <h4>Shipping : <span>$0.00</span></h4>
+                                                            {/* To enable Shipping charges choose type of 
+                                                                Shipping at full cart view */}
+                                                            {
+                                                                shippingTotal ? (
+                                                                    <h4>Shipping : <span>${shippingTotal}</span></h4>
+                                                                ) : null
+                                                            }
                                                             <h4>Total : <span className="shop-total">${totalCartItemAmount}</span></h4>
                                                         </div>
                                                         <div className="shopping-cart-btn">
@@ -122,7 +131,7 @@ export class Header extends Component {
                                                             <Link className="default-btn btn-hover" to="checkout">checkout</Link>
                                                         </div>
                                                     </div>
-                                                )
+                                                ) : null
                                             }
                                         </div>
                                         <div className="header-search">
