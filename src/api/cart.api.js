@@ -18,3 +18,12 @@ export const removeProductFromCart = (cartItemId) => {
             .catch(error => reject(error));
     })
 }
+
+export const getSavedProducts = (cartItemId) => {
+    return new Promise((resolve, reject) => {
+        const url = `${AUTH_SERVER_URL}/cartItems?_sort=id&_order=desc`;
+        Axios.get(url)
+            .then(response => resolve(response.data))
+            .catch(error => reject(error));
+    })
+}

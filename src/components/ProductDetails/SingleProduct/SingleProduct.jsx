@@ -43,7 +43,7 @@ function SingleProduct(props) {
                 qty: itemQty,
                 size: selectedSize,
                 color: selectedColor,
-                shipping: 0
+                shipping: { type: '', amount: 0 }
             };
             props.addItem(itemToAdd);
         }

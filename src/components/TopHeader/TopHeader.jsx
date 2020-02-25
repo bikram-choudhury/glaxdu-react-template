@@ -5,7 +5,7 @@ import headershape from './../../assets/img/icon-img/header-shape.png';
 import { getAccessToken } from '../../redux/reducers';
 import { logout } from '../../redux/actions/auth.action';
 
-function TopHeader(props) {
+export function TopHeader(props) {
     
     const bgImg = { backgroundImage: `url(${headershape})` };
     return (
@@ -25,15 +25,15 @@ function TopHeader(props) {
                             <ul>
                                 {
                                     props.accessToken ? (
-                                        <li>
+                                        <li className="logout">
                                             <span onClick={() => props.logout()}>Logout</span>
                                         </li>
                                     ) : (
                                             <Fragment>
-                                                <li>
+                                                <li className="login">
                                                     <Link to="/sign-in">Login</Link>
                                                 </li>
-                                                <li>
+                                                <li className="register">
                                                     <Link to="/sign-up">Register</Link>
                                                 </li>
                                             </Fragment>

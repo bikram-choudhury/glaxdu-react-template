@@ -92,7 +92,7 @@ export class Header extends Component {
                                                                     (item, index) => {
                                                                         const { productDetail } = item;
                                                                         totalCartItemAmount += (item.qty * productDetail.price);
-                                                                        shippingTotal += item.shipping;
+                                                                        shippingTotal += item.shipping.amount;
 
                                                                         return (
                                                                             <li className="single-shopping-cart" key={index}>
@@ -128,13 +128,13 @@ export class Header extends Component {
                                                             {
                                                                 shippingTotal ? (
                                                                     <h4>Shipping : <span>${shippingTotal}</span></h4>
-                                                                ) : null
+                                                                ) : (<h4>Shipping : <span>Free shipping</span></h4>)
                                                             }
                                                             <h4>Total : <span className="shop-total">${totalCartItemAmount}</span></h4>
                                                         </div>
                                                         <div className="shopping-cart-btn">
-                                                            <Link className="default-btn btn-hover" to="cart">view cart</Link>
-                                                            <Link className="default-btn btn-hover" to="checkout">checkout</Link>
+                                                            <Link className="default-btn btn-hover" to="/admin/cart">view cart</Link>
+                                                            <Link className="default-btn btn-hover" to="/admin/checkout">checkout</Link>
                                                         </div>
                                                     </div>
                                                 ) : null
@@ -248,7 +248,6 @@ export class Header extends Component {
 
 const mapStateToProps = (state) => {
     const cartItems = getCartItems(state);
-    cartItems.sort((prev, next) => next.id - prev.id);
     return { cartItems };
 }
 const mapDispatchToProps = { removeItem };

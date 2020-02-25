@@ -1,5 +1,5 @@
 import { UPDATE_CART, SET_CART_ERROR, REPLACE_CART } from "../action.type.constants";
-import { addProductToCart, removeProductFromCart } from "../../api/cart.api";
+import { addProductToCart, removeProductFromCart, getSavedProducts } from "../../api/cart.api";
 import { getCartItems } from "../reducers";
 
 export const updateCartItems = (item) => {
@@ -40,6 +40,16 @@ export const removeItem = (cartItemId) => {
                 const cartItems = getCartItems(getState());
                 const modifiedCartItems = cartItems.filter(item => item.id != cartItemId);
                 dispatch(replaceCartItems(modifiedCartItems));
+            })
+            .catch(error => dispatch(setCartError(error.message)))
+    }
+}
+
+export const getSavedProductsFromCart = () => {
+    return (dispatch) => {
+        getSavedProducts()
+            .then(response => {
+                response && (response instanceof Array) && dispatch(replaceCartItems(response));
             })
             .catch(error => dispatch(setCartError(error.message)))
     }

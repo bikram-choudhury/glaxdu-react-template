@@ -9783,17 +9783,25 @@ h3.cart-page-title {
 .cart-table-content table tbody>tr td.product-thumbnail {
     width: 150px;
 }
+.cart-table-content table tbody>tr td.product-thumbnail img {
+    cursor: pointer;
+    width: 100px;
+    height: 130px;
+}
 
 .cart-table-content table tbody>tr td.product-name {
     width: 435px;
 }
 
-.cart-table-content table tbody>tr td.product-name a {
+.cart-table-content table tbody>tr td.product-name span {
+    cursor: pointer;
     color: #033333;
     font-size: 15px;
     font-weight: 500;
 }
-
+.cart-table-content table tbody>tr td.product-name span:hover {
+    color: #00a651;
+}
 .cart-table-content table tbody>tr td.product-price-cart {
     width: 435px;
 }
@@ -9868,13 +9876,14 @@ h3.cart-page-title {
     width: 100px;
 }
 
-.cart-table-content table tbody>tr td.product-remove a {
+.cart-table-content table tbody>tr td.product-remove span {
+    cursor: pointer;
     color: #666;
     font-size: 17px;
     margin: 0 13px;
 }
 
-.cart-table-content table tbody>tr td.product-remove a:hover {
+.cart-table-content table tbody>tr td.product-remove span:hover {
     color: #00a651;
 }
 
@@ -9896,7 +9905,7 @@ h3.cart-page-title {
 .cart-table-content table tbody>tr td {
     color: #333;
     font-size: 15px;
-    padding: 30px 0;
+    padding: 0;
     text-align: center;
 }
 
@@ -10219,6 +10228,14 @@ h3.cart-page-title {
     margin: 0 0 27px;
     padding: 28px 0;
 }
+.grand-totall .coupon-code {
+    color: #4CAF50;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 0;
+    border-bottom: 1px solid #ebebeb;
+    margin: 0 0 27px;
+}
 
 .grand-totall .total-shipping h5 {
     font-size: 14px;
@@ -10253,8 +10270,12 @@ h3.cart-page-title {
     width: 13px;
 }
 
-.grand-totall .total-shipping ul li span {
+.grand-totall .total-shipping ul li span,
+.grand-totall .coupon-code ul li span {
     float: right;
+}
+.grand-totall .coupon-code ul li span {
+    font-weight: 900;
 }
 
 .grand-totall h4.grand-totall-title {
@@ -10287,6 +10308,23 @@ h3.cart-page-title {
 
 .discount-code-wrapper {
     margin: 30px 0;
+}
+
+.container.empty-cart {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.container.empty-cart a{
+    background-color: #f2f2f2;
+    border-radius: 50px;
+    color: #363f4d;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 18px 63px 17px;
+    text-transform: uppercase;
 }
 
 .login-register-wrapper .login-register-tab-list {

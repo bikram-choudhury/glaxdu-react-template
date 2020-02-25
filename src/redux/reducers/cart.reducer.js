@@ -14,7 +14,7 @@ export const cartReducer = (state = initialState, { type, payload }) => {
             }
         case UPDATE_CART:
             return {
-                items: [...state.items, payload],
+                items: [payload, ...state.items],
                 error: ''
             }
         case SET_CART_ERROR:

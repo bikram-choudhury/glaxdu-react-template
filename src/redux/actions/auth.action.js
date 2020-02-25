@@ -1,6 +1,7 @@
 import { SET_TOKENS, LOGOUT } from "../action.type.constants";
 import Axios from 'axios';
 import { AUTH_SERVER_URL } from "../../glaxdu-settings";
+import { getSavedProductsFromCart } from "./cart.action";
 
 export const setTokens = (tokens) => {
     return {
@@ -26,6 +27,7 @@ const dispatchedMethodForAuthentication = (dispatch, URL, user, config) => {
                     tokenType: data.token_type,
                 };
                 dispatch(setTokens(tokens));
+                dispatch(getSavedProductsFromCart());
                 config.history.push('/admin/home');
             })
             .catch(error => {
