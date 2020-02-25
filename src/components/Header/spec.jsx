@@ -5,6 +5,15 @@ import TopHeader from '../TopHeader/TopHeader.jsx';
 
 describe('Header componenent', () => {
     let wrapper, instance, mockFunc;
+    const cartItems = [{
+        productDetail: {
+            images: ['pro-1.jpg'], id: 1, name: 'name', price: 10, sku: '0019'
+        },
+        qty: 1,
+        size: '',
+        color: '',
+        shipping: 0
+    }]
     const map = {};
     beforeEach(() => {
         mockFunc = jest.fn();
@@ -59,5 +68,40 @@ describe('Header componenent', () => {
     it('should render route list', () => {
         const element = wrapper.find(".main-menu nav ul li");
         expect(element.length).toEqual(5);
+    });
+    it('showCartPanel should update on click of `icon-cart` button', () => {
+        expect(instance.state.showCartPanel).toBeFalsy();
+        const element = wrapper.find(".icon-cart");
+        element.simulate('click');
+        expect(instance.state.showCartPanel).toBeTruthy();
+    });
+    it('should show `shopping-cart-content` ', () => {
+        wrapper = shallow(<Header cartItems={cartItems} />);
+        const element = wrapper.find(".icon-cart");
+        element.simulate('click');
+        const cartElem = wrapper.find('.shopping-cart-content');
+        expect(cartElem).toHaveClassName('active');
+        const singleShoppingElems = cartElem.find('ul li');
+        expect(singleShoppingElems).toHaveLength(cartItems.length);
+    });
+    it('should `removeItem` get called on cart item delete', () => {
+        wrapper = shallow(<Header cartItems={cartItems} removeItem={mockFunc} />);
+        const localInstance = wrapper.instance();
+        localInstance.setState({ showCartPanel: true });
+        const singleCartElem = wrapper.find('.shopping-cart-delete');
+        singleCartElem.simulate('click');
+        expect(mockFunc).toHaveBeenCalledTimes(1);
+        expect(mockFunc).toHaveBeenCalledWith(cartItems[0].id);
+    });
+    it('should `shop-total` have total cart amount', () => {
+        wrapper = shallow(<Header cartItems={cartItems} removeItem={mockFunc} />);
+        const localInstance = wrapper.instance();
+        localInstance.setState({ showCartPanel: true });
+        const expectedTotal = cartItems.reduce(
+            (accumulator, currentValue) => {
+                return accumulator + (currentValue.qty * currentValue.productDetail.price);
+            }, 0); // 0: initialValue for accumulator if not provides then accumulator initialValue will be array's 1st value
+        const shopTotalElem = wrapper.find('.shop-total');
+        expect(shopTotalElem.text()).toBe(`$${expectedTotal}`);
     });
 })
