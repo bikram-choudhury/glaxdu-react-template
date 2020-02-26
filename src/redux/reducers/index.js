@@ -4,13 +4,15 @@ import * as news from "./news.reducer";
 import * as products from "./products.reducer";
 import * as cart from "./cart.reducer";
 import * as auth from "./auth.reducer";
+import * as checkout from "./checkout.reducer";
 import { LOGOUT } from "../action.type.constants";
 
 const appReducers = combineReducers({
     news: news.NewsReducer,
     products: products.ProductReducer,
     auth: auth.AuthReducer,
-    cart: cart.cartReducer
+    cart: cart.cartReducer,
+    orderForCheckout: checkout.checkoutReducer
 });
 
 export const reducers = (state, action) => {
@@ -70,3 +72,5 @@ export const getRefreshToken = (state) => auth.getRefreshToken(state.auth);
 export const getTokenType = (state) => auth.getTokenType(state.auth);
 
 export const getCartItems = (state) => cart.getCartItems(state.cart);
+
+export const getOrderForCheckout = state => checkout.getOrderForCheckout(state.orderForCheckout);

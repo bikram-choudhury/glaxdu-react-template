@@ -6,6 +6,7 @@ import Breadcrumb from '../Breadcrumb/Breadcrumb.jsx';
 import BrnadLogoArea from '../BrnadLogo/BrnadLogoArea.jsx';
 import { getCartItems } from '../../redux/reducers';
 import { removeItem } from '../../redux/actions/cart.action';
+import { processOrderForCheckout } from '../../redux/actions/checkout.action';
 
 function Cart(props) {
 
@@ -50,6 +51,17 @@ function Cart(props) {
         updateCoupon({ ...prevCoupon, isValid: true });
         alert(`'${coupon.value}' is successfully validated`);
         // Do a POST request to server to check coupon validation 
+    }
+
+    const proceedToCheckout = (event) => {
+        event.preventDefault();
+        const orderForCheckout = {
+            items: cartItems,
+            coupon: coupon.value,
+            shipping: shippingInfo
+        }
+        props.processOrderForCheckout(orderForCheckout);
+        props.history.push('/admin/checkout');
     }
 
     return (
@@ -266,7 +278,7 @@ function Cart(props) {
                                                         ${totalCartItemAmount + shippingTotal + shippingInfo.amount}
                                                     </span>
                                                 </h4>
-                                                <a href="#">Proceed to Checkout</a>
+                                                <span className="checkout-btn" onClick={proceedToCheckout}>Proceed to Checkout</span>
                                             </div>
                                         </div>
                                     </div>
@@ -293,5 +305,5 @@ const mapStateToProps = (state) => {
     const cartItems = getCartItems(state);
     return { cartItems };
 }
-const mapDispatchToProps = { removeItem };
+const mapDispatchToProps = { removeItem, processOrderForCheckout };
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
