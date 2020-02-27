@@ -9702,7 +9702,8 @@ textarea:focus {
     margin: 0;
 }
 
-.your-order-area .payment-accordion h4 a {
+.your-order-area .payment-accordion h4.panel-title span {
+    cursor: pointer;
     color: #212121;
     position: relative;
     display: block;
@@ -10289,7 +10290,8 @@ h3.cart-page-title {
     float: right;
 }
 
-.grand-totall a {
+.grand-totall span.checkout-btn {
+    cursor: pointer;
     background-color: #00a651;
     border-radius: 50px;
     color: #fff;
@@ -10302,7 +10304,7 @@ h3.cart-page-title {
     text-transform: uppercase;
 }
 
-.grand-totall a:hover {
+.grand-totall span.checkout-btn:hover {
     background-color: #333;
 }
 

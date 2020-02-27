@@ -58,7 +58,8 @@ function Cart(props) {
         const orderForCheckout = {
             items: cartItems,
             coupon: coupon.value,
-            shipping: shippingInfo
+            shipping: shippingInfo,
+            grossTotal: totalCartItemAmount
         }
         props.processOrderForCheckout(orderForCheckout);
         props.history.push('/admin/checkout');

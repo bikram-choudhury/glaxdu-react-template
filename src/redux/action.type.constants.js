@@ -14,5 +14,7 @@ export const UPDATE_CART = 'UPDATE_CART';
 export const SET_CART_ERROR = 'SET_CART_ERROR';
 export const REPLACE_CART = 'REPLACE_CART';
 
+export const SAVE_ORDER_FOR_CHECKOUT = 'SAVE_ORDER_FOR_CHECKOUT';
+
 export const SET_TOKENS = 'SET_TOKENS';
 export const LOGOUT = 'LOGOUT';

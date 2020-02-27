@@ -6,6 +6,7 @@ import NewsDetails from './components/News/NewsDetails.jsx';
 import ProductWrapper from './components/Products/ProductWrapper.jsx';
 import ProductDetails from './components/ProductDetails/ProductDetails.jsx';
 import Cart from './components/Cart/Cart.jsx';
+import Checkout from './components/Checkout/Checkout.jsx';
 
 export const AdminRoutes = [{
     path: '/home',
@@ -32,6 +33,11 @@ export const AdminRoutes = [{
     layout: '/admin',
     name: '',
     component: Cart
+}, {
+    path: '/checkout',
+    layout: '/admin',
+    name: '',
+    component: Checkout
 }, {
     path: '/news',
     layout: '/admin',
