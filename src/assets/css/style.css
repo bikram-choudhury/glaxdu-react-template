@@ -9560,7 +9560,7 @@ textarea:focus {
     padding: 17px 20px;
 }
 
-.billing-info-wrap .different-address {
+.billing-info-wrap .different-address.hidden {
     display: none;
 }
 
@@ -9719,7 +9719,8 @@ textarea:focus {
     color: #333;
 }
 
-.your-order-area .Place-order>a {
+.your-order-area .Place-order>span {
+    cursor: pointer;
     background-color: #00a651;
     color: #fff;
     display: block;
@@ -9733,7 +9734,7 @@ textarea:focus {
     z-index: 9;
 }
 
-.your-order-area .Place-order>a:hover {
+.your-order-area .Place-order>span:hover {
     background-color: #333;
 }
 

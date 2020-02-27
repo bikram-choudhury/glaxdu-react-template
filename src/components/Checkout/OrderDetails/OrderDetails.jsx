@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { connect } from "react-redux";
-import { getOrderForCheckout } from '../../../redux/reducers';
 
 const OrderDetails = props => {
 
@@ -123,7 +121,7 @@ const OrderDetails = props => {
                     </div>
                 </div>
                 <div className="Place-order mt-25">
-                    <a className="btn-hover" href="#">Place Order</a>
+                    <span className="btn-hover" onClick={() => props.submitBillingDetailForm(paymentType)}>Place Order</span>
                 </div>
             </div>
         )
@@ -133,6 +131,4 @@ const OrderDetails = props => {
 
 }
 
-const mapStateToProps = state => ({ order: getOrderForCheckout(state) });
-
-export default connect(mapStateToProps)(OrderDetails);
+export default OrderDetails;
