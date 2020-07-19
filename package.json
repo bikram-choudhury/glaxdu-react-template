@@ -15,10 +15,13 @@
     "eject": "react-scripts eject",
     "test": "react-scripts test -- --config=jest.config.js",
     "test:watch": "react-scripts test -- --config jest.config.js --watch",
-    "test:coverage": "react-scripts test -- --config jest.config.js --coverage --colors"
+    "test:coverage": "react-scripts test -- --config jest.config.js --coverage --colors",
+    "postinstall": "npm start"
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "formik": "^2.0.8",
     "history": "^4.10.1",
     "jquery": "^3.5.1",

@@ -134,4 +134,5 @@ export const NEWSAPI_KEY = 'ba634665e5fc4a9ba409bacb1ef1f862';
 
 // server
 export const PORT = 8000;
-export const AUTH_SERVER_URL = `http://localhost:${PORT}`;
+// export const AUTH_SERVER_URL = `http://localhost:${PORT}/api`;
+export const AUTH_SERVER_URL = window.location.origin + '/api';
