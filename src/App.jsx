@@ -9,9 +9,6 @@ import { getAccessToken } from './redux/reducers';
 const browserHistory = createBrowserHistory();
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <Router history={browserHistory}>

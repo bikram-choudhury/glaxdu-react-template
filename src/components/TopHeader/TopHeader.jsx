@@ -16,7 +16,7 @@ export function TopHeader(props) {
                         <div className="header-contact">
                             <ul>
                                 <li><i className="fa fa-phone"></i> +98 558 547 589</li>
-                                <li><i className="fa fa-envelope-o"></i><a href="#">education@email.com</a></li>
+                                <li><i className="fa fa-envelope-o"></i><span>education@email.com</span></li>
                             </ul>
                         </div>
                     </div>

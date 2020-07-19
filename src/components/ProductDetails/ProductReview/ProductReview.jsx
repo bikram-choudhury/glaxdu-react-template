@@ -10,7 +10,7 @@ export default function ProductReview(props) {
         <div className="review-wrapper">
             <div className="single-review">
                 <div className="review-img">
-                    <img src={require(`./../../../assets/img/blog/${image}`)} alt="reviewer image" />
+                    <img src={require(`./../../../assets/img/blog/${image}`)} alt="reviewer" />
                 </div>
                 <div className="review-content w-100">
                     <div className="review-top-wrap">
@@ -21,7 +21,7 @@ export default function ProductReview(props) {
                             <Ratings className="review-rating" rating={rating} maxRating={MAXRATINGS} />
                         </div>
                         <div className="review-left">
-                            <a href="#">Reply</a>
+                            <span>Reply</span>
                         </div>
                     </div>
                     <div className="review-bottom">

@@ -27,4 +27,4 @@ export const cartReducer = (state = initialState, { type, payload }) => {
     }
 }
 
-export const getCartItems = (state) => state && state.items || [];
+export const getCartItems = (state) => state ? state.items : initialState.items;

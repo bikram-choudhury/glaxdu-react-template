@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { connect } from 'react-redux';
 import Axios from 'axios';
 
@@ -8,7 +8,7 @@ function AxiosInterceptor(props) {
     const [errorInterceptor, setErrorInterceptor] = useState(null);
 
     // Request Interceptor
-    const addAuthInterceptor = () => {
+    const addAuthInterceptor = useCallback(() => {
         const authInterceptor = Axios.interceptors.request.use(
             config => {
                 if (!(config.headers && config.headers.Authorization)) {
@@ -18,39 +18,41 @@ function AxiosInterceptor(props) {
             }, error => Promise.reject(error));
 
         setAuthInterceptor(authInterceptor);
-    }
-    const removeAuthInterceptor = () => {
+    }, [auth.tokenType, auth.accessToken]);
+
+    const removeAuthInterceptor = useCallback(() => {
         Axios.interceptors.request.eject(authInterceptor);
         setAuthInterceptor(null);
-    }
+    }, [authInterceptor]);
 
     // Response Interceptor
-    const addErrorInterceptor = () => {
+    const addErrorInterceptor = useCallback(() => {
         const errorInterceptor = Axios.interceptors.response.use(
-            response => response, 
+            response => response,
             error => {
-                if(error.response) {
+                if (error.response) {
                     let message = "Something went wrong.";
-                    const {status} = error.response;
-                    if(status === 401) {
+                    const { status } = error.response;
+                    if (status === 401) {
                         // prompt for login
-                    } else if(status === 403) {
+                    } else if (status === 403) {
                         message = "You’re not authorized to do that.";
                     } else {
                         message = error.message;
                     }
+                    return Promise.reject({ status, message });
                 } else {
                     return Promise.reject(error);
                 }
             }
         );
         setErrorInterceptor(errorInterceptor);
-    }; 
-    
-    const removeErrorInterceptor = () => {
+    }, []);
+
+    const removeErrorInterceptor = useCallback(() => {
         Axios.interceptors.response.eject(errorInterceptor);
         setErrorInterceptor(null);
-    }
+    }, [errorInterceptor]);
 
     useEffect(() => {
         addAuthInterceptor();
@@ -59,7 +61,7 @@ function AxiosInterceptor(props) {
             removeAuthInterceptor();
             removeErrorInterceptor();
         }
-    }, [])
+    }, [addAuthInterceptor, addErrorInterceptor]);
     return null;
 }
 

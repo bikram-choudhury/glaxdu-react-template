@@ -12,4 +12,4 @@ export const checkoutReducer = (state = initialState, { type, payload }) => {
     }
 }
 
-export const getOrderForCheckout = (state) => state && state.order || {};
+export const getOrderForCheckout = (state) => state ? state.order : {};

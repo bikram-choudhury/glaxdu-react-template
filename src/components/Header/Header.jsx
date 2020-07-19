@@ -44,9 +44,9 @@ export class Header extends Component {
                         <div className="row">
                             <div className="col-lg-2 col-md-6 col-4">
                                 <div className="logo">
-                                    <a href="index.html">
+                                    <Link to="/">
                                         <img alt="" src={require('./../../assets/img/logo/logo.png')} />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="col-lg-10 col-md-6 col-8">
@@ -97,9 +97,9 @@ export class Header extends Component {
                                                                         return (
                                                                             <li className="single-shopping-cart" key={index}>
                                                                                 <div className="shopping-cart-img">
-                                                                                    <a href="#">
+                                                                                    <span>
                                                                                         <img alt="" src={require(`./../../assets/img/product/${productDetail.images[0]}`)} />
-                                                                                    </a>
+                                                                                    </span>
                                                                                 </div>
                                                                                 <div className="shopping-cart-title">
                                                                                     <h4>
@@ -133,8 +133,8 @@ export class Header extends Component {
                                                             <h4>Total : <span className="shop-total">${totalCartItemAmount}</span></h4>
                                                         </div>
                                                         <div className="shopping-cart-btn">
-                                                            <Link className="default-btn btn-hover" to="/admin/cart">view cart</Link>
-                                                            <Link className="default-btn btn-hover" to="/admin/checkout">checkout</Link>
+                                                            <Link className="default-btn btn-hover" to="cart">view cart</Link>
+                                                            {/* <Link className="default-btn btn-hover" to="checkout">checkout</Link> */}
                                                         </div>
                                                     </div>
                                                 ) : null
@@ -161,80 +161,80 @@ export class Header extends Component {
                             <div className="mobile-menu">
                                 <nav id="mobile-menu-active">
                                     <ul className="menu-overflow">
-                                        <li><a href="index.html">HOME</a>
+                                        <li><Link to="/">HOME</Link>
                                             <ul>
-                                                <li><a href="index.html">home version 1</a></li>
-                                                <li><a href="index-2.html">home version 2</a></li>
-                                                <li><a href="index-3.html">home version 3</a></li>
+                                                <li><Link to="/">home version 1</Link></li>
+                                                <li><span>home version 2</span></li>
+                                                <li><span>home version 3</span></li>
                                             </ul>
                                         </li>
-                                        <li><a href="about-us.html">About</a></li>
-                                        <li><a href="shop.html">Shop</a>
+                                        <li><Link to="/about-us">About</Link></li>
+                                        <li><Link to="/products">Shop</Link>
                                             <ul>
-                                                <li><a href="#">Categories 01</a>
+                                                <li><span>Categories 01</span>
                                                     <ul>
-                                                        <li><a href="shop.html">bag</a></li>
-                                                        <li><a href="shop.html">Pen</a></li>
-                                                        <li><a href="shop.html">Erasers</a></li>
-                                                        <li><a href="shop.html">Glue sticks</a></li>
-                                                        <li><a href="shop.html">Lunchbox </a></li>
-                                                        <li><a href="shop.html">Pencil box </a></li>
+                                                        <li><Link to="/products">bag</Link></li>
+                                                        <li><Link to="/products">Pen</Link></li>
+                                                        <li><Link to="/products">Erasers</Link></li>
+                                                        <li><Link to="/products">Glue sticks</Link></li>
+                                                        <li><Link to="/products">Lunchbox </Link></li>
+                                                        <li><Link to="/products">Pencil box </Link></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="#">Categories 02</a>
+                                                <li><span>Categories 02</span>
                                                     <ul>
-                                                        <li><a href="shop.html">bag</a></li>
-                                                        <li><a href="shop.html">Pen</a></li>
-                                                        <li><a href="shop.html">Erasers</a></li>
-                                                        <li><a href="shop.html">Glue sticks</a></li>
-                                                        <li><a href="shop.html">Lunchbox </a></li>
-                                                        <li><a href="shop.html">Pencil box </a></li>
+                                                        <li><Link to="/products">bag</Link></li>
+                                                        <li><Link to="/products">Pen</Link></li>
+                                                        <li><Link to="/products">Erasers</Link></li>
+                                                        <li><Link to="/products">Glue sticks</Link></li>
+                                                        <li><Link to="/products">Lunchbox </Link></li>
+                                                        <li><Link to="/products">Pencil box </Link></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="#">Categories 03</a>
+                                                <li><span>Categories 03</span>
                                                     <ul>
-                                                        <li><a href="shop.html">bag</a></li>
-                                                        <li><a href="shop.html">Pen</a></li>
-                                                        <li><a href="shop.html">Erasers</a></li>
-                                                        <li><a href="shop.html">Glue sticks</a></li>
-                                                        <li><a href="shop.html">Lunchbox </a></li>
-                                                        <li><a href="shop.html">Pencil box </a></li>
+                                                        <li><Link to="/products">bag</Link></li>
+                                                        <li><Link to="/products">Pen</Link></li>
+                                                        <li><Link to="/products">Erasers</Link></li>
+                                                        <li><Link to="/products">Glue sticks</Link></li>
+                                                        <li><Link to="/products">Lunchbox </Link></li>
+                                                        <li><Link to="/products">Pencil box </Link></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="#">Categories 04</a>
+                                                <li><span>Categories 04</span>
                                                     <ul>
-                                                        <li><a href="shop.html">bag</a></li>
-                                                        <li><a href="shop.html">Pen</a></li>
-                                                        <li><a href="shop.html">Erasers</a></li>
-                                                        <li><a href="shop.html">Glue sticks</a></li>
-                                                        <li><a href="shop.html">Lunchbox </a></li>
-                                                        <li><a href="shop.html">Pencil box </a></li>
+                                                        <li><Link to="/products">bag</Link></li>
+                                                        <li><Link to="/products">Pen</Link></li>
+                                                        <li><Link to="/products">Erasers</Link></li>
+                                                        <li><Link to="/products">Glue sticks</Link></li>
+                                                        <li><Link to="/products">Lunchbox </Link></li>
+                                                        <li><Link to="/products">Pencil box </Link></li>
                                                     </ul>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Pages</a>
+                                        <li><span>Pages</span>
                                             <ul>
-                                                <li><a href="course.html">course page</a></li>
-                                                <li><a href="event.html">event page</a></li>
-                                                <li><a href="shop.html">shop page</a></li>
-                                                <li><a href="course-details.html">course details</a></li>
-                                                <li><a href="event-details.html">event details</a></li>
-                                                <li><a href="single-product.html">single product</a></li>
-                                                <li><a href="cart.html">cart page</a></li>
-                                                <li><a href="checkout.html">checkout</a></li>
-                                                <li><a href="wishlist.html">wishlist</a></li>
-                                                <li><a href="login-register.html">login / register</a></li>
+                                                <li><span>course page</span></li>
+                                                <li><span>event page</span></li>
+                                                <li><span>shop page</span></li>
+                                                <li><span>course details</span></li>
+                                                <li><span>event details</span></li>
+                                                <li><span>single product</span></li>
+                                                <li><span>cart page</span></li>
+                                                <li><span>checkout</span></li>
+                                                <li><span>wishlist</span></li>
+                                                <li><span>login / register</span></li>
                                             </ul>
                                         </li>
-                                        <li><a href="about-us.html">About us</a></li>
-                                        <li><a href="blog.html">Blog</a>
+                                        <li><Link to="/about-us">About us</Link></li>
+                                        <li><Link to="/news">News</Link>
                                             <ul>
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="blog-details.html">blog details</a></li>
+                                                <li><Link to="/news">blog</Link></li>
+                                                <li><span>blog details</span></li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><Link to="/contact-us">Contact</Link></li>
                                     </ul>
                                 </nav>
                             </div>

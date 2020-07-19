@@ -21,6 +21,7 @@ export default function RelatedProducts(props) {
             case 3:
                 settings.responsive[0].settings.slidesToShow = 3;
                 break;
+            default: break;
         }
     }
     updateProductSlideTOShow(products.length)

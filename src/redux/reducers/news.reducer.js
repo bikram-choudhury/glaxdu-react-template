@@ -38,6 +38,6 @@ export const NewsReducer = (state = initialState, { type, payload }) => {
     }
 }
 
-export const getNewsTag = (state) => state && state.tag || initialState.tag;
-export const getNewsList = (state) => state && state.list || initialState.list;
-export const getSelectedNewsTitle = (state) => state && state.selctedNewsTitle || initialState.selctedNewsTitle;
+export const getNewsTag = (state) => state ? state.tag : initialState.tag;
+export const getNewsList = (state) => state ? state.list : initialState.list;
+export const getSelectedNewsTitle = (state) => state ? state.selctedNewsTitle : initialState.selctedNewsTitle;

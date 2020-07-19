@@ -15,7 +15,7 @@ function ProductDetails(props) {
         return () => {
             props.removeProductId();
         }
-    }, [])
+    });
     const { productDetails, relatedProducts } = props;
     const descriptionInfo = {
         reviews: productDetails.reviews,

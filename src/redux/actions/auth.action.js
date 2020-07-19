@@ -34,8 +34,6 @@ const dispatchedMethodForAuthentication = (dispatch, URL, user, config) => {
                 if (error.response) {
                     console.error(error.response.data.message);
                 }
-            })
-            .finally(() => {
                 config.setSubmitting(false);
             })
     }

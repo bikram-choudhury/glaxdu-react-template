@@ -20,6 +20,10 @@ const Checkout = props => {
         billingDetailsRef.current.submitBillingDetailForm(paymentType);
     }
 
+    if(!(props.order && Object.keys(props.order).length)) {
+        props.history.push('cart');
+        return null;
+    }
     return (
         <ErrorBoundary>
             <Breadcrumb {...breadcrumbConfig} />

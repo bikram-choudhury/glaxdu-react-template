@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import bg4 from './../../assets/img/bg/bg-4.jpg';
+import { Link } from 'react-router-dom';
 
 export default class Footer extends Component {
     render() {
@@ -23,7 +24,7 @@ export default class Footer extends Component {
                                             </div>
                                             <div className="single-f-contact-info">
                                                 <i className="fa fa-envelope-o"></i>
-                                                <span><a href="#">education@email.com</a></span>
+                                                <span><span>education@email.com</span></span>
                                             </div>
                                             <div className="single-f-contact-info">
                                                 <i className="fa fa-phone"></i>
@@ -40,11 +41,11 @@ export default class Footer extends Component {
                                     </div>
                                     <div className="footer-list">
                                         <ul>
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about-us.html">About Us</a></li>
-                                            <li><a href="course.html">Courses</a></li>
-                                            <li><a href="#">Admission</a></li>
-                                            <li><a href="#">Terms & Conditions</a></li>
+                                            <li><Link to="/">Home</Link></li>
+                                            <li><Link to="/about-us">About Us</Link></li>
+                                            <li><Link to="/news">News</Link></li>
+                                            <li><Link to="/products">Products</Link></li>
+                                            <li><span>Terms & Conditions</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -56,11 +57,11 @@ export default class Footer extends Component {
                                     </div>
                                     <div className="footer-list">
                                         <ul>
-                                            <li><a href="#">Under Graduate Programmes </a></li>
-                                            <li><a href="#">Graduate Programmes </a></li>
-                                            <li><a href="#">Diploma Courses</a></li>
-                                            <li><a href="#">Others Programmes</a></li>
-                                            <li><a href="#">Short Courses</a></li>
+                                            <li><span>Under Graduate Programmes </span></li>
+                                            <li><span>Graduate Programmes </span></li>
+                                            <li><span>Diploma Courses</span></li>
+                                            <li><span>Others Programmes</span></li>
+                                            <li><span>Short Courses</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -72,10 +73,10 @@ export default class Footer extends Component {
                                     </div>
                                     <div className="footer-gallery">
                                         <ul>
-                                            <li><a href="#"><img src={require('./../../assets/img/gallery/gallery-1.png')} alt="" /></a></li>
-                                            <li><a href="#"><img src={require('./../../assets/img/gallery/gallery-2.png')} alt="" /></a></li>
-                                            <li><a href="#"><img src={require('./../../assets/img/gallery/gallery-3.png')} alt="" /></a></li>
-                                            <li><a href="#"><img src={require('./../../assets/img/gallery/gallery-4.png')} alt="" /></a></li>
+                                            <li><span><img src={require('./../../assets/img/gallery/gallery-1.png')} alt="" /></span></li>
+                                            <li><span><img src={require('./../../assets/img/gallery/gallery-2.png')} alt="" /></span></li>
+                                            <li><span><img src={require('./../../assets/img/gallery/gallery-3.png')} alt="" /></span></li>
+                                            <li><span><img src={require('./../../assets/img/gallery/gallery-4.png')} alt="" /></span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -112,7 +113,7 @@ export default class Footer extends Component {
                             <div className="col-lg-4 col-md-12">
                                 <div className="copyright">
                                     <p>
-                                        Copyright © <a href="#">GLAXDU</a>. All Right Reserved.
+                                        Copyright © <span>GLAXDU</span>. All Right Reserved.
                                     </p>
                                 </div>
                             </div>
@@ -120,16 +121,16 @@ export default class Footer extends Component {
                                 <div className="footer-menu-social">
                                     <div className="footer-menu">
                                         <ul>
-                                            <li><a href="#">Privecy & Policy</a></li>
-                                            <li><a href="#">Terms & Conditions of Use</a></li>
+                                            <li><span>Privecy & Policy</span></li>
+                                            <li><span>Terms & Conditions of Use</span></li>
                                         </ul>
                                     </div>
                                     <div className="footer-social">
                                         <ul>
-                                            <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a></li>
-                                            <li><a className="youtube" href="#"><i className="fa fa-youtube-play"></i></a></li>
-                                            <li><a className="twitter" href="#"><i className="fa fa-twitter"></i></a></li>
-                                            <li><a className="google-plus" href="#"><i className="fa fa-google-plus"></i></a></li>
+                                            <li><span className="facebook"><i className="fa fa-facebook"></i></span></li>
+                                            <li><span className="youtube"><i className="fa fa-youtube-play"></i></span></li>
+                                            <li><span className="twitter"><i className="fa fa-twitter"></i></span></li>
+                                            <li><span className="google-plus"><i className="fa fa-google-plus"></i></span></li>
                                         </ul>
                                     </div>
                                 </div>

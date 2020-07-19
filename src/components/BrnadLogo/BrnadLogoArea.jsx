@@ -25,25 +25,25 @@ export default function BrnadLogoArea() {
                     }}
                 >
                     <div className="single-brand-logo">
-                        <a href="#"><img src={require('./../../assets/img/brand-logo/1.png')} alt="" /></a>
+                        <span><img src={require('./../../assets/img/brand-logo/1.png')} alt="" /></span>
                     </div>
                     <div className="single-brand-logo">
-                        <a href="#"><img src={require('./../../assets/img/brand-logo/2.png')} alt="" /></a>
+                        <span><img src={require('./../../assets/img/brand-logo/2.png')} alt="" /></span>
                     </div>
                     <div className="single-brand-logo">
-                        <a href="#"><img src={require('./../../assets/img/brand-logo/3.png')} alt="" /></a>
+                        <span><img src={require('./../../assets/img/brand-logo/3.png')} alt="" /></span>
                     </div>
                     <div className="single-brand-logo">
-                        <a href="#"><img src={require('./../../assets/img/brand-logo/4.png')} alt="" /></a>
+                        <span><img src={require('./../../assets/img/brand-logo/4.png')} alt="" /></span>
                     </div>
                     <div className="single-brand-logo">
-                        <a href="#"><img src={require('./../../assets/img/brand-logo/5.png')} alt="" /></a>
+                        <span><img src={require('./../../assets/img/brand-logo/5.png')} alt="" /></span>
                     </div>
                     <div className="single-brand-logo">
-                        <a href="#"><img src={require('./../../assets/img/brand-logo/6.png')} alt="" /></a>
+                        <span><img src={require('./../../assets/img/brand-logo/6.png')} alt="" /></span>
                     </div>
                     <div className="single-brand-logo">
-                        <a href="#"><img src={require('./../../assets/img/brand-logo/2.png')} alt="" /></a>
+                        <span><img src={require('./../../assets/img/brand-logo/2.png')} alt="" /></span>
                     </div>
                 </OwlCarousel>
             </div>

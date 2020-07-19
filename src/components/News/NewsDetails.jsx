@@ -57,7 +57,7 @@ function EventArea(props) {
                     <div className="col-xl-9 col-lg-8">
                         <div className="blog-details-wrap mr-40">
                             <div className="blog-details-top">
-                                <img src={urlToImage} alt="news-bg-image" />
+                                <img src={urlToImage} alt="news-bg" />
                                 <div className="blog-details-content-wrap">
                                     <div className="b-details-meta-wrap">
                                         <div className="b-details-meta">
@@ -92,9 +92,9 @@ function EventArea(props) {
                                     <div className="blog-share-tags">
                                         <div className="blog-share">
                                             <div className="blog-btn">
-                                                <a href="#">
+                                                <span>
                                                     <i className="fa fa-share-alt"></i>
-                                                </a>
+                                                </span>
                                             </div>
                                             <SocialButtons
                                                 title={title}
@@ -106,7 +106,9 @@ function EventArea(props) {
                                         <div className="blog-tag">
                                             <ul>
                                                 <li>
-                                                    <a target="_blank" href={url}>Go to Source >></a>
+                                                    <a rel="noopener noreferrer" target="_blank" href={url}>
+                                                        {'Go to Source >>'}
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -134,9 +136,9 @@ function EventArea(props) {
                                             return (
                                                 <div className="single-blog" key={`report-${index}`}>
                                                     <div className="blog-img">
-                                                        <a href="#">
-                                                            <img src={reportImage} alt="" />
-                                                        </a>
+                                                        <span>
+                                                            <img src={reportImage} alt={reportTitle} />
+                                                        </span>
                                                     </div>
                                                     <div className="blog-content-wrap">
                                                         <div className="blog-content">
@@ -147,23 +149,23 @@ function EventArea(props) {
                                                             <div className="blog-meta">
                                                                 <ul>
                                                                     <li>
-                                                                        <a href="#">
+                                                                        <span>
                                                                             <i className="fa fa-user"></i>
                                                                             {author}
-                                                                        </a>
+                                                                        </span>
                                                                     </li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                         <div className="blog-date">
-                                                            <a href="#">
+                                                            <span>
                                                                 <i className="fa fa-calendar-o"></i>
                                                                 {new Intl.DateTimeFormat('en-US', {
                                                                     year: 'numeric',
                                                                     month: 'long',
                                                                     day: '2-digit'
                                                                 }).format(new Date(reportPublishedDate))}
-                                                            </a>
+                                                            </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -176,7 +178,7 @@ function EventArea(props) {
                             </div>
                             <div className="blog-comment">
                                 <div className="blog-comment-btn mb-80 commrnt-toggle">
-                                    <a href="#">VIEW COMMENT</a>
+                                    <span>VIEW COMMENT</span>
                                 </div>
                                 <div className="blog-comment-content-wrap">
                                     <h4>COMMENT</h4>
@@ -188,7 +190,7 @@ function EventArea(props) {
                                             <h5>AYESHA HOQUE</h5>
                                             <p>Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit, sed do eiusm od tempor incidi
                                         dunt ut laboperspiciatis und.</p>
-                                            <a href="#">Reply</a>
+                                            <span>Reply</span>
                                         </div>
                                     </div>
                                     <div className="single-blog-comment child-comment">
@@ -199,7 +201,7 @@ function EventArea(props) {
                                             <h5>AYESHA HOQUE</h5>
                                             <p>Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit, sed do eiusm od tempor incidi
                                         dunt ut laboperspiciatis und.</p>
-                                            <a href="#">Reply</a>
+                                            <span>Reply</span>
                                         </div>
                                     </div>
                                     <div className="single-blog-comment">
@@ -210,7 +212,7 @@ function EventArea(props) {
                                             <h5>AYESHA HOQUE</h5>
                                             <p>Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit, sed do eiusm od tempor incidi
                                         dunt ut laboperspiciatis und.</p>
-                                            <a href="#">Reply</a>
+                                            <span>Reply</span>
                                         </div>
                                     </div>
                                 </div>

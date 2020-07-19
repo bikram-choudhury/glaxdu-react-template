@@ -35,7 +35,7 @@ export default function ContactInfoArea(props) {
                             <div className="contact-info-icon">
                                 <span><i className="fa fa-calendar-o"></i></span>
                             </div>
-                            <a href="#">education@email.com</a>
+                            <span>education@email.com</span>
                         </div>
                     </div>
                 </div>

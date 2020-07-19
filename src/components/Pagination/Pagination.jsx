@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export default function Pagination(props) {
     const { currentPage, totalPageCount } = props;
@@ -6,7 +6,7 @@ export default function Pagination(props) {
     for (let i = 1; i <= totalPageCount; i++) {
         const pageNumberLi = (
             <li key={i}>
-                <span onClick={() => props.changePageNumber(i)} className={currentPage == i ? 'active' : ''}>{i}</span>
+                <span onClick={() => props.changePageNumber(i)} className={currentPage === i ? 'active' : ''}>{i}</span>
             </li>
         );
         renderPageCount.push(pageNumberLi);

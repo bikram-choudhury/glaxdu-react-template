@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import { sliderSettings } from './../../glaxdu-settings';
+import { Link } from 'react-router-dom';
+import './../../jquery-loader';
 import OwlCarousel from 'react-owl-carousel';
 import Slider from "react-slick";
+import { sliderSettings } from './../../glaxdu-settings';
 import FreeRegisterationForm from './FreeRegisterationForm/FreeRegisterationForm.jsx';
 import ErrorBoundary from '../../error-handling/ErrorBoundary.jsx';
 
@@ -72,8 +74,8 @@ class SliderArea extends Component {
                                         <h1 className="animated">MakeYour Own World</h1>
                                         <p className="animated">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
                                         <div className="slider-btn">
-                                            <a className="animated default-btn btn-green-color" href="about-us.html">ABOUT US</a>
-                                            <a className="animated default-btn btn-white-color" href="contact.html">CONTACT US</a>
+                                            <Link className="animated default-btn btn-green-color" to="about-us">ABOUT US</Link>
+                                            <Link className="animated default-btn btn-white-color" to="contact-us">CONTACT US</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +85,7 @@ class SliderArea extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="single-slider slider-height-1 bg-img" style={{ backgroundImage: `url(${require('./../../assets/img/slider/slider-1.jpg')})` }}>
+                    <div className="single-slider slider-height-1 bg-img" style={{ backgroundImage: `url(${require('./../../assets/img/slider/slider-2.jpg')})` }}>
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-9 col-md-7 col-12 col-sm-12">
@@ -91,14 +93,14 @@ class SliderArea extends Component {
                                         <h1 className="animated">MakeYour Own World</h1>
                                         <p className="animated">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
                                         <div className="slider-btn">
-                                            <a className="animated default-btn btn-green-color" href="about-us.html">ABOUT US</a>
-                                            <a className="animated default-btn btn-white-color" href="contact.html">CONTACT US</a>
+                                            <Link className="animated default-btn btn-green-color" to="about-us">ABOUT US</Link>
+                                            <Link className="animated default-btn btn-white-color" to="contact-us">CONTACT US</Link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="slider-single-img slider-animated-1">
-                                <img className="animated" src={require('./../../assets/img/slider/single-slide-1.png')} alt="" />
+                                <img className="animated" src={require('./../../assets/img/slider/single-slide-2.png')} alt="" />
                             </div>
                         </div>
                     </div>
@@ -181,7 +183,7 @@ class AboutUs extends Component {
                                 </div>
                                 <p>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven  iam, quis nostrud exer citation ullamco laboris nisi ut perspiciatis unde omnis iste natus error sit voluptate.</p>
                                 <div className="about-btn mt-45">
-                                    <a className="default-btn" href="about-us.html">ABOUT US</a>
+                                    <Link className="default-btn" to="about-us">ABOUT US</Link>
                                 </div>
                             </div>
                         </div>
@@ -237,11 +239,13 @@ class CourseArea extends Component {
                     >
                         <div className="single-course">
                             <div className="course-img">
-                                <a href="course-details.html"><img className="animated" src={require('./../../assets/img/course/course-1.jpg')} alt="" /></a>
+                                <Link to="/news">
+                                    <img className="animated" src={require('./../../assets/img/course/course-1.jpg')} alt="news" />
+                                </Link>
                                 <span>Addmission Going On</span>
                             </div>
                             <div className="course-content">
-                                <h4><a href="course-details.html">Apparel Manufacturing</a></h4>
+                                <h4><span>Apparel Manufacturing</span></h4>
                                 <p>magna aliqua. Ut enim ad minim veniam, nisi ut aliquiptempor incid.</p>
                             </div>
                             <div className="course-position-content">
@@ -256,16 +260,18 @@ class CourseArea extends Component {
                                     </div>
                                 </div>
                                 <div className="course-btn">
-                                    <a className="default-btn" href="#">APPLY NOW</a>
+                                    <span className="default-btn">APPLY NOW</span>
                                 </div>
                             </div>
                         </div>
                         <div className="single-course">
                             <div className="course-img">
-                                <a href="course-details.html"><img className="animated" src={require('./../../assets/img/course/course-2.jpg')} alt="" /></a>
+                                <span>
+                                    <img className="animated" src={require('./../../assets/img/course/course-2.jpg')} alt="course-2" />
+                                </span>
                             </div>
                             <div className="course-content">
-                                <h4><a href="course-details.html">Grphic Design & Multimedia</a></h4>
+                                <h4><span>Grphic Design & Multimedia</span></h4>
                                 <p>magna aliqua. Ut enim ad minim veniam, nisi ut aliquiptempor incid.</p>
                             </div>
                             <div className="course-position-content">
@@ -280,16 +286,18 @@ class CourseArea extends Component {
                                     </div>
                                 </div>
                                 <div className="course-btn">
-                                    <a className="default-btn" href="#">APPLY NOW</a>
+                                    <span className="default-btn">APPLY NOW</span>
                                 </div>
                             </div>
                         </div>
                         <div className="single-course">
                             <div className="course-img">
-                                <a href="course-details.html"><img className="animated" src={require('./../../assets/img/course/course-3.jpg')} alt="" /></a>
+                                <span>
+                                    <img className="animated" src={require('./../../assets/img/course/course-3.jpg')} alt="course-3" />
+                                </span>
                             </div>
                             <div className="course-content">
-                                <h4><a href="course-details.html">Computer Engineering</a></h4>
+                                <h4><span>Computer Engineering</span></h4>
                                 <p>magna aliqua. Ut enim ad minim veniam, nisi ut aliquiptempor incid.</p>
                             </div>
                             <div className="course-position-content">
@@ -304,17 +312,19 @@ class CourseArea extends Component {
                                     </div>
                                 </div>
                                 <div className="course-btn">
-                                    <a className="default-btn" href="#">APPLY NOW</a>
+                                    <span className="default-btn">APPLY NOW</span>
                                 </div>
                             </div>
                         </div>
                         <div className="single-course">
                             <div className="course-img">
-                                <a href="course-details.html"><img className="animated" src={require('./../../assets/img/course/course-4.jpg')} alt="" /></a>
+                                <span>
+                                    <img className="animated" src={require('./../../assets/img/course/course-4.jpg')} alt="course-4" />
+                                </span>
                                 <span>Post Graduation Course</span>
                             </div>
                             <div className="course-content">
-                                <h4><a href="course-details.html">Fashion & Technology</a></h4>
+                                <h4><span>Fashion & Technology</span></h4>
                                 <p>magna aliqua. Ut enim ad minim veniam, nisi ut aliquiptempor incid.</p>
                             </div>
                             <div className="course-position-content">
@@ -329,16 +339,18 @@ class CourseArea extends Component {
                                     </div>
                                 </div>
                                 <div className="course-btn">
-                                    <a className="default-btn" href="#">APPLY NOW</a>
+                                    <span className="default-btn">APPLY NOW</span>
                                 </div>
                             </div>
                         </div>
                         <div className="single-course">
                             <div className="course-img">
-                                <a href="course-details.html"><img className="animated" src={require('./../../assets/img/course/course-2.jpg')} alt="" /></a>
+                                <span>
+                                    <img className="animated" src={require('./../../assets/img/course/course-2.jpg')} alt="course-2" />
+                                </span>
                             </div>
                             <div className="course-content">
-                                <h4><a href="course-details.html">Apparel Manufacturing</a></h4>
+                                <h4><span>Apparel Manufacturing</span></h4>
                                 <p>magna aliqua. Ut enim ad minim veniam, nisi ut aliquiptempor incid.</p>
                             </div>
                             <div className="course-position-content">
@@ -353,7 +365,7 @@ class CourseArea extends Component {
                                     </div>
                                 </div>
                                 <div className="course-btn">
-                                    <a className="default-btn" href="#">APPLY NOW</a>
+                                    <span className="default-btn">APPLY NOW</span>
                                 </div>
                             </div>
                         </div>
@@ -576,10 +588,10 @@ class TeacherArea extends Component {
                                         <p>Tempor incididunt magna aliqua.</p>
                                         <div className="teacher-social">
                                             <ul>
-                                                <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a></li>
-                                                <li><a className="youtube-play" href="#"><i className="fa fa-youtube-play"></i></a></li>
-                                                <li><a className="twitter" href="#"><i className="fa fa-twitter"></i></a></li>
-                                                <li><a className="google-plus" href="#"><i className="fa fa-google-plus"></i></a></li>
+                                                <li><span className="facebook"><i className="fa fa-facebook"></i></span></li>
+                                                <li><span className="youtube-play"><i className="fa fa-youtube-play"></i></span></li>
+                                                <li><span className="twitter"><i className="fa fa-twitter"></i></span></li>
+                                                <li><span className="google-plus"><i className="fa fa-google-plus"></i></span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -602,10 +614,10 @@ class TeacherArea extends Component {
                                         <p>Tempor incididunt magna aliqua.</p>
                                         <div className="teacher-social">
                                             <ul>
-                                                <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a></li>
-                                                <li><a className="youtube-play" href="#"><i className="fa fa-youtube-play"></i></a></li>
-                                                <li><a className="twitter" href="#"><i className="fa fa-twitter"></i></a></li>
-                                                <li><a className="google-plus" href="#"><i className="fa fa-google-plus"></i></a></li>
+                                                <li><span className="facebook"><i className="fa fa-facebook"></i></span></li>
+                                                <li><span className="youtube-play"><i className="fa fa-youtube-play"></i></span></li>
+                                                <li><span className="twitter"><i className="fa fa-twitter"></i></span></li>
+                                                <li><span className="google-plus"><i className="fa fa-google-plus"></i></span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -628,10 +640,10 @@ class TeacherArea extends Component {
                                         <p>Tempor incididunt magna aliqua.</p>
                                         <div className="teacher-social">
                                             <ul>
-                                                <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a></li>
-                                                <li><a className="youtube-play" href="#"><i className="fa fa-youtube-play"></i></a></li>
-                                                <li><a className="twitter" href="#"><i className="fa fa-twitter"></i></a></li>
-                                                <li><a className="google-plus" href="#"><i className="fa fa-google-plus"></i></a></li>
+                                                <li><span className="facebook"><i className="fa fa-facebook"></i></span></li>
+                                                <li><span className="youtube-play"><i className="fa fa-youtube-play"></i></span></li>
+                                                <li><span className="twitter"><i className="fa fa-twitter"></i></span></li>
+                                                <li><span className="google-plus"><i className="fa fa-google-plus"></i></span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -654,10 +666,10 @@ class TeacherArea extends Component {
                                         <p>Tempor incididunt magna aliqua.</p>
                                         <div className="teacher-social">
                                             <ul>
-                                                <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a></li>
-                                                <li><a className="youtube-play" href="#"><i className="fa fa-youtube-play"></i></a></li>
-                                                <li><a className="twitter" href="#"><i className="fa fa-twitter"></i></a></li>
-                                                <li><a className="google-plus" href="#"><i className="fa fa-google-plus"></i></a></li>
+                                                <li><span className="facebook"><i className="fa fa-facebook"></i></span></li>
+                                                <li><span className="youtube-play"><i className="fa fa-youtube-play"></i></span></li>
+                                                <li><span className="twitter"><i className="fa fa-twitter"></i></span></li>
+                                                <li><span className="google-plus"><i className="fa fa-google-plus"></i></span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -680,10 +692,10 @@ class TeacherArea extends Component {
                                         <p>Tempor incididunt magna aliqua.</p>
                                         <div className="teacher-social">
                                             <ul>
-                                                <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a></li>
-                                                <li><a className="youtube-play" href="#"><i className="fa fa-youtube-play"></i></a></li>
-                                                <li><a className="twitter" href="#"><i className="fa fa-twitter"></i></a></li>
-                                                <li><a className="google-plus" href="#"><i className="fa fa-google-plus"></i></a></li>
+                                                <li><span className="facebook"><i className="fa fa-facebook"></i></span></li>
+                                                <li><span className="youtube-play"><i className="fa fa-youtube-play"></i></span></li>
+                                                <li><span className="twitter"><i className="fa fa-twitter"></i></span></li>
+                                                <li><span className="google-plus"><i className="fa fa-google-plus"></i></span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -735,14 +747,14 @@ class EventArea extends Component {
                     >
                         <div className="single-event event-white-bg">
                             <div className="event-img">
-                                <a href="event-details.html"><img src={require('./../../assets/img/event/event-1.jpg')} alt="" /></a>
+                                <span><img src={require('./../../assets/img/event/event-1.jpg')} alt="event-1" /></span>
                                 <div className="event-date-wrap">
                                     <span className="event-date">1st</span>
                                     <span>Dec</span>
                                 </div>
                             </div>
                             <div className="event-content">
-                                <h3><a href="event-details.html">Aempor incididunt ut labore ejam.</a></h3>
+                                <h3><span>Aempor incididunt ut labore ejam.</span></h3>
                                 <p>Pvolupttem accusantium doloremque laudantium, totam erspiciatis unde omnis iste natus error .</p>
                                 <div className="event-meta-wrap">
                                     <div className="event-meta">
@@ -758,14 +770,14 @@ class EventArea extends Component {
                         </div>
                         <div className="single-event event-white-bg">
                             <div className="event-img">
-                                <a href="event-details.html"><img src={require('./../../assets/img/event/event-2.jpg')} alt="" /></a>
+                                <span><img src={require('./../../assets/img/event/event-2.jpg')} alt="event-2" /></span>
                                 <div className="event-date-wrap">
                                     <span className="event-date">10th</span>
                                     <span>Dec</span>
                                 </div>
                             </div>
                             <div className="event-content">
-                                <h3><a href="event-details.html">Global Conference on Business.</a></h3>
+                                <h3><span>Global Conference on Business.</span></h3>
                                 <p>Pvolupttem accusantium doloremque laudantium, totam erspiciatis unde omnis iste natus error .</p>
                                 <div className="event-meta-wrap">
                                     <div className="event-meta">
@@ -781,14 +793,14 @@ class EventArea extends Component {
                         </div>
                         <div className="single-event event-white-bg">
                             <div className="event-img">
-                                <a href="event-details.html"><img src={require('./../../assets/img/event/event-3.jpg')} alt="" /></a>
+                                <span><img src={require('./../../assets/img/event/event-3.jpg')} alt="event-3" /></span>
                                 <div className="event-date-wrap">
                                     <span className="event-date">1st</span>
                                     <span>Dec</span>
                                 </div>
                             </div>
                             <div className="event-content">
-                                <h3><a href="event-details.html">Academic Conference Maui.</a></h3>
+                                <h3><span>Academic Conference Maui.</span></h3>
                                 <p>Pvolupttem accusantium doloremque laudantium, totam erspiciatis unde omnis iste natus error .</p>
                                 <div className="event-meta-wrap">
                                     <div className="event-meta">
@@ -804,14 +816,14 @@ class EventArea extends Component {
                         </div>
                         <div className="single-event event-white-bg">
                             <div className="event-img">
-                                <a href="event-details.html"><img src={require('./../../assets/img/event/event-2.jpg')} alt="" /></a>
+                                <span><img src={require('./../../assets/img/event/event-2.jpg')} alt="event-2" /></span>
                                 <div className="event-date-wrap">
                                     <span className="event-date">1st</span>
                                     <span>Dec</span>
                                 </div>
                             </div>
                             <div className="event-content">
-                                <h3><a href="event-details.html">Social Sciences & Education.</a></h3>
+                                <h3><span>Social Sciences & Education.</span></h3>
                                 <p>Pvolupttem accusantium doloremque laudantium, totam erspiciatis unde omnis iste natus error .</p>
                                 <div className="event-meta-wrap">
                                     <div className="event-meta">
@@ -846,22 +858,22 @@ class BlogArea extends Component {
                         <div className="col-lg-3 col-md-6">
                             <div className="single-blog mb-30">
                                 <div className="blog-img">
-                                    <a href="blog-details.html"><img src={require('./../../assets/img/blog/blog-1.jpg')} alt="" /></a>
+                                    <span><img src={require('./../../assets/img/blog/blog-1.jpg')} alt="blog-1" /></span>
                                 </div>
                                 <div className="blog-content-wrap">
                                     <span>Education</span>
                                     <div className="blog-content">
-                                        <h4><a href="blog-details.html">Testing is a great thing.</a></h4>
+                                        <h4><span>Testing is a great thing.</span></h4>
                                         <p>doloremque laudan tium, totam ersps uns iste natus</p>
                                         <div className="blog-meta">
                                             <ul>
-                                                <li><a href="#"><i className="fa fa-user"></i> Adrin Azra</a></li>
-                                                <li><a href="#"><i className="fa fa-comments-o"></i> 15</a></li>
+                                                <li><span><i className="fa fa-user"></i> Adrin Azra</span></li>
+                                                <li><span><i className="fa fa-comments-o"></i> 15</span></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div className="blog-date">
-                                        <a href="#"><i className="fa fa-calendar-o"></i> Jun, 24th 2018</a>
+                                        <span><i className="fa fa-calendar-o"></i> Jun, 24th 2018</span>
                                     </div>
                                 </div>
                             </div>
@@ -869,22 +881,22 @@ class BlogArea extends Component {
                         <div className="col-lg-3 col-md-6">
                             <div className="single-blog mb-30">
                                 <div className="blog-img">
-                                    <a href="blog-details.html"><img src={require('./../../assets/img/blog/blog-2.jpg')} alt="" /></a>
+                                    <span><img src={require('./../../assets/img/blog/blog-2.jpg')} alt="blog-2" /></span>
                                 </div>
                                 <div className="blog-content-wrap">
                                     <span>Education</span>
                                     <div className="blog-content">
-                                        <h4><a href="blog-details.html">A variation of the ordinary.</a></h4>
+                                        <h4><span>A variation of the ordinary.</span></h4>
                                         <p>doloremque laudan tium, totam ersps uns iste natus</p>
                                         <div className="blog-meta">
                                             <ul>
-                                                <li><a href="#"><i className="fa fa-user"></i> Tayeb Jon</a></li>
-                                                <li><a href="#"><i className="fa fa-comments-o"></i> 12</a></li>
+                                                <li><span><i className="fa fa-user"></i> Tayeb Jon</span></li>
+                                                <li><span><i className="fa fa-comments-o"></i> 12</span></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div className="blog-date">
-                                        <a href="#"><i className="fa fa-calendar-o"></i> Feb, 18th 2017</a>
+                                        <span><i className="fa fa-calendar-o"></i> Feb, 18th 2017</span>
                                     </div>
                                 </div>
                             </div>
@@ -892,22 +904,22 @@ class BlogArea extends Component {
                         <div className="col-lg-3 col-md-6">
                             <div className="single-blog mb-30">
                                 <div className="blog-img">
-                                    <a href="blog-details.html"><img src={require('./../../assets/img/blog/blog-3.jpg')} alt="" /></a>
+                                    <span><img src={require('./../../assets/img/blog/blog-3.jpg')} alt="blog-3" /></span>
                                 </div>
                                 <div className="blog-content-wrap">
                                     <span>Education</span>
                                     <div className="blog-content">
-                                        <h4><a href="blog-details.html">In publishing and graphic.</a></h4>
+                                        <h4><span>In publishing and graphic.</span></h4>
                                         <p>doloremque laudan tium, totam ersps uns iste natus</p>
                                         <div className="blog-meta">
                                             <ul>
-                                                <li><a href="#"><i className="fa fa-user"></i> Rifat Al</a></li>
-                                                <li><a href="#"><i className="fa fa-comments-o"></i> 20</a></li>
+                                                <li><span><i className="fa fa-user"></i> Rifat Al</span></li>
+                                                <li><span><i className="fa fa-comments-o"></i> 20</span></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div className="blog-date">
-                                        <a href="#"><i className="fa fa-calendar-o"></i> Oct, 14th 2018</a>
+                                        <span><i className="fa fa-calendar-o"></i> Oct, 14th 2018</span>
                                     </div>
                                 </div>
                             </div>
@@ -915,22 +927,22 @@ class BlogArea extends Component {
                         <div className="col-lg-3 col-md-6">
                             <div className="single-blog mb-30">
                                 <div className="blog-img">
-                                    <a href="blog-details.html"><img src={require('./../../assets/img/blog/blog-4.jpg')} alt="" /></a>
+                                    <span><img src={require('./../../assets/img/blog/blog-4.jpg')} alt="blog-4" /></span>
                                 </div>
                                 <div className="blog-content-wrap">
                                     <span>Education</span>
                                     <div className="blog-content">
-                                        <h4><a href="blog-details.html">Learn English in ease.</a></h4>
+                                        <h4><span>Learn English in ease.</span></h4>
                                         <p>doloremque laudan tium, totam ersps uns iste natus</p>
                                         <div className="blog-meta">
                                             <ul>
-                                                <li><a href="#"><i className="fa fa-user"></i>Md Tamim</a></li>
-                                                <li><a href="#"><i className="fa fa-comments-o"></i> 08</a></li>
+                                                <li><span><i className="fa fa-user"></i>Md Tamim</span></li>
+                                                <li><span><i className="fa fa-comments-o"></i> 08</span></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div className="blog-date">
-                                        <a href="#"><i className="fa fa-calendar-o"></i> Jun, 21th 2017</a>
+                                        <span><i className="fa fa-calendar-o"></i> Jun, 21th 2017</span>
                                     </div>
                                 </div>
                             </div>

@@ -46,7 +46,7 @@ function ConnectWithUs(props) {
     const image = 'banner/banner-4.jpg';
 
     const title = document.title;
-    const origin = location.origin;
+    const origin = window.location.origin;
 
     return (
         <div className="sidebar-about mb-40">
@@ -54,7 +54,7 @@ function ConnectWithUs(props) {
                 <h4>About Us</h4>
             </div>
             <p>{introduction}</p>
-            <a href="#"><img src={require(`./../../assets/img/${image}`)} alt="glaxdu" /></a>
+            <span><img src={require(`./../../assets/img/${image}`)} alt="glaxdu" /></span>
             <div className="sidebar-social">
                 <SocialButtons
                     title={title}
@@ -76,20 +76,20 @@ function RecentNews(props) {
             <div className="recent-post-wrap">
                 <div className="single-recent-post">
                     <div className="recent-post-img">
-                        <a href="#"><img src={require('./../../assets/img/blog/recent-post-1.jpg')} alt="" /></a>
+                        <span><img src={require('./../../assets/img/blog/recent-post-1.jpg')} alt="" /></span>
                     </div>
                     <div className="recent-post-content">
-                        <h5><a href="#">Blog title will be here.</a></h5>
+                        <h5><span>Blog title will be here.</span></h5>
                         <span>Blog Category</span>
                         <p>Datat non proident qui offici.hafw adec qart.</p>
                     </div>
                 </div>
                 <div className="single-recent-post">
                     <div className="recent-post-img">
-                        <a href="#"><img src={require('./../../assets/img/blog/recent-post-2.jpg')} alt="" /></a>
+                        <span><img src={require('./../../assets/img/blog/recent-post-2.jpg')} alt="" /></span>
                     </div>
                     <div className="recent-post-content">
-                        <h5><a href="#">Blog title will be here.</a></h5>
+                        <h5><span>Blog title will be here.</span></h5>
                         <span>Blog Category</span>
                         <p>Datat non proident qui offici.hafw adec qart.</p>
                     </div>

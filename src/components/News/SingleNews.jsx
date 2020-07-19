@@ -33,24 +33,24 @@ function SingleNews(props) {
                     <div className="blog-meta">
                         <ul>
                             <li>
-                                <a href="#"><i className="fa fa-user"></i>
+                                <span><i className="fa fa-user"></i>
                                     {
                                         report.author ? report.author : report.source.name
                                     }
-                                </a>
+                                </span>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div className="blog-date">
-                    <a href="#">
+                    <span>
                         <i className="fa fa-calendar-o"></i>
                         {new Intl.DateTimeFormat('en-US', {
                             year: 'numeric',
                             month: 'long',
                             day: '2-digit'
                         }).format(new Date(report.publishedAt))}
-                    </a>
+                    </span>
                 </div>
             </div>
         </div>

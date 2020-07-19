@@ -12,24 +12,24 @@ export default function ProductDescription(props) {
             <div className="container">
                 <div className="description-review-wrapper">
                     <div className="description-review-topbar nav">
-                        <a
+                        <span
                             className={tabView === 'description' ? 'active' : ''}
                             onClick={() => updateTabView('description')}
                         >
                             Description
-                        </a>
-                        <a
+                        </span>
+                        <span
                             className={tabView === 'additional-information' ? 'active' : ''}
                             onClick={() => updateTabView('additional-information')}
                         >
                             Additional information
-                        </a>
-                        <a
+                        </span>
+                        <span
                             className={tabView === 'reviews' ? 'active' : ''}
                             onClick={() => updateTabView('reviews')}
                         >
                             Reviews
-                        </a>
+                        </span>
                     </div>
                     <div className="tab-content description-review-bottom">
                         <div className={`tab-pane ${tabView === 'description' ? 'active' : ''}`}>

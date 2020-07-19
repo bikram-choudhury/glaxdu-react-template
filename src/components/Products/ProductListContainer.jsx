@@ -10,15 +10,15 @@ import { PRODUCTS_PER_PAGE } from "../../glaxdu-settings";
 function ProductListContainer(props) {
     const [productTabView, changeProductTabView] = useState('table-view');
     const [currentPageNumber, updateCurrentPageNumber] = useState(1);
-    const { productList, productTotalCount } = props;
+    const { productList, productTotalCount, getProductList } = props;
 
     const totalPageCount = Math.ceil(productTotalCount / PRODUCTS_PER_PAGE);
     const productListShowsUpTo = currentPageNumber * PRODUCTS_PER_PAGE;
     const productListShowsFrom = productListShowsUpTo - PRODUCTS_PER_PAGE + 1;
 
     useEffect(() => {
-        props.getProductList(currentPageNumber);
-    }, [currentPageNumber])
+        getProductList(currentPageNumber);
+    }, [getProductList, currentPageNumber])
     return (
         <div className="event-area pt-130 pb-130">
             <div className="container">
@@ -27,19 +27,19 @@ function ProductListContainer(props) {
                         <div className="shop-top-bar">
                             <div className="shop-tab-wrap">
                                 <div className="shop-tab nav">
-                                    <a
+                                    <span
                                         className={`${productTabView === 'table-view' ? 'active' : ''}`}
                                         onClick={() => changeProductTabView('table-view')}
                                         data-toggle="tab"
                                     >
                                         <i className="fa fa-table"></i>
-                                    </a>
-                                    <a
+                                    </span>
+                                    <span
                                         className={`${productTabView === 'list-view' ? 'active' : ''}`}
                                         onClick={() => changeProductTabView('list-view')}
                                         data-toggle="tab">
                                         <i className="fa fa-list-ul"></i>
-                                    </a>
+                                    </span>
                                 </div>
                                 <p>
                                     {

@@ -547,5 +547,6 @@
   ],
   "registrations": [],
   "cartItems": [],
-  "paidItems": []
+  "paidItems": [],
+  "processedOrder": {}
 }

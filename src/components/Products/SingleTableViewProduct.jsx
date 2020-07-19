@@ -23,16 +23,18 @@ function SingleTableViewProduct(props) {
                 <div className="product-action">
                     <ul>
                         <li>
-                            <a title="Add To Cart" href="#"><i className="fa fa-cart-arrow-down"></i></a>
+                            <span title="Add To Cart"><i className="fa fa-cart-arrow-down"></i></span>
                         </li>
                         <li>
-                            <a title="Compare" href="#"><i className="fa fa-random"></i></a>
+                            <span title="Compare"><i className="fa fa-random"></i></span>
                         </li>
                         <li>
-                            <a title="Wishlist" href="#"><i className="fa fa-heart-o"></i></a>
+                            <span title="Wishlist"><i className="fa fa-heart-o"></i></span>
                         </li>
                         <li>
-                            <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i className="fa fa-eye"></i></a>
+                            <span title="Quick View" data-toggle="modal" data-target="#exampleModal">
+                                <i className="fa fa-eye"></i>
+                            </span>
                         </li>
                     </ul>
                 </div>

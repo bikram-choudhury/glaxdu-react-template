@@ -26,9 +26,7 @@ import ErrorBoundary from '../../error-handling/ErrorBoundary.jsx';
 */
 
 class News extends Component {
-    constructor(props) {
-        super(props);
-    }
+    
     render() {
         const breadcrumbConfig = {
             title: 'News Grid',

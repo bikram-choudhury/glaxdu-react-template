@@ -38,7 +38,7 @@ export const removeItem = (cartItemId) => {
         removeProductFromCart(cartItemId)
             .then(response => {
                 const cartItems = getCartItems(getState());
-                const modifiedCartItems = cartItems.filter(item => item.id != cartItemId);
+                const modifiedCartItems = cartItems.filter(item => item.id !== cartItemId);
                 dispatch(replaceCartItems(modifiedCartItems));
             })
             .catch(error => dispatch(setCartError(error.message)))

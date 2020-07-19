@@ -62,37 +62,37 @@ function SingleProduct(props) {
                             />
 
                             <Slider {...settings} id="gallery">
-                                <a
+                                <span
                                     className="active"
                                     data-image={require('./../../../assets/img/product-details/product-detalis-l2.jpg')}
                                     data-zoom-image={require('./../../../assets/img/product-details/single-product-bl2.jpg')}
                                 >
                                     <img src={require('./../../../assets/img/product-details/product-detalis-s1.jpg')} alt="" />
-                                </a>
-                                <a
+                                </span>
+                                <span
                                     data-image={require('./../../../assets/img/product-details/product-detalis-l2.jpg')}
                                     data-zoom-image={require('./../../../assets/img/product-details/single-product-bl3.jpg')}
                                 >
                                     <img src={require('./../../../assets/img/product-details/product-detalis-s2.jpg')} alt="" />
-                                </a>
-                                <a
+                                </span>
+                                <span
                                     data-image={require('./../../../assets/img/product-details/product-detalis-l2.jpg')}
                                     data-zoom-image={require('./../../../assets/img/product-details/single-product-bl1.jpg')}
                                 >
                                     <img src={require('./../../../assets/img/product-details/product-detalis-s3.jpg')} alt="" />
-                                </a>
-                                <a
+                                </span>
+                                <span
                                     data-image={require('./../../../assets/img/product-details/product-detalis-l2.jpg')}
                                     data-zoom-image={require('./../../../assets/img/product-details/single-product-bl2.jpg')}
                                 >
                                     <img src={require('./../../../assets/img/product-details/product-detalis-s1.jpg')} alt="" />
-                                </a>
-                                <a
+                                </span>
+                                <span
                                     data-image={require('./../../../assets/img/product-details/product-detalis-l2.jpg')}
                                     data-zoom-image={require('./../../../assets/img/product-details/single-product-bl3.jpg')}
                                 >
                                     <img src={require('./../../../assets/img/product-details/product-detalis-s2.jpg')} alt="" />
-                                </a>
+                                </span>
                             </Slider>
 
                         </div>
@@ -245,10 +245,10 @@ function SingleProduct(props) {
 
                             </div>
                             <SocialButtons
-                                sharedUrl={location.href}
+                                sharedUrl={window.location.href}
                                 title={name}
                                 description={description}
-                                sourceName={location.host}
+                                sourceName={window.location.host}
                                 className="pro-details-social"
                             />
                         </div>

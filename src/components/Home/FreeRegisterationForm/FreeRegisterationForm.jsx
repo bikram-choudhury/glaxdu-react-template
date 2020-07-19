@@ -7,7 +7,7 @@ import * as actions from '../../../redux/actions/landing.action';
 
 class FreeRegisterationForm extends Component {
     render() {
-        const { values, handleSubmit, isSubmitting, handleReset, errors, touched } = this.props;
+        const { values, handleSubmit, isSubmitting, errors, touched } = this.props;
         return (
             <div className="register-area bg-img pt-130 pb-130" style={{ backgroundImage: `url(${require('./../../../assets/img/bg/bg-2.jpg')})` }}>
                 <div className="container">

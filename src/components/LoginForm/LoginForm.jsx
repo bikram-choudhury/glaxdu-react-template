@@ -28,7 +28,7 @@ function LoginForm(props) {
                                     <div className="login-toggle-btn">
                                         <Field type="checkbox" name="rememberUser" placeholder="Username" />
                                         <label>Remember me</label>
-                                        <a href="#">Forgot Password?</a>
+                                        {/* <span>Forgot Password?</span> */}
                                     </div>
                                     <button disabled={isSubmitting} className="default-btn" type="submit"><span>Login</span></button>
                                 </div>

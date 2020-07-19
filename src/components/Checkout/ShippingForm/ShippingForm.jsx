@@ -1,4 +1,4 @@
-import React, { forwardRef, createRef, useImperativeHandle, Fragment } from 'react';
+import React, { forwardRef, createRef, useImperativeHandle } from 'react';
 import { useForm } from 'react-hook-form';
 
 const ShippingForm = forwardRef((props, ref) => {
@@ -8,6 +8,7 @@ const ShippingForm = forwardRef((props, ref) => {
     const { register, handleSubmit, errors } = useForm();
 
     const validateEmail = email => {
+        // eslint-disable-next-line
         var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return regex.test(email);
     };
