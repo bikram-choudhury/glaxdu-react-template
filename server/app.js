@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 const server = express();
 
@@ -9,13 +9,13 @@ server.use(cors());
 
 server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
-server.use(express.static(path.join(__dirname, 'build')));
+server.use(express.static(path.join(__dirname, 'client-bundle', 'build')));
 
 const apiRouter = require('./routes/api');
 server.use('/api', apiRouter);
 
 server.get('/*', (req, res) => {
-    const filePath = path.join(__dirname, 'build', 'index.html');
+    const filePath = path.join(__dirname, 'client-bundle', 'build', 'index.html');
     res.sendFile(filePath);
 });
 

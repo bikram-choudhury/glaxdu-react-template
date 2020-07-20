@@ -1,0 +1,25 @@
+{
+  "name": "glaxdu-react-template",
+  "version": "0.1.0",
+  "private": true,
+  "author": {
+    "name": "Bikram Choudhury",
+    "url": "https://github.com/bikram-choudhury/glaxdu-react-template.git"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "client": "npm run start --prefix ../client",
+    "server": "nodemon app.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "json-server": "^0.15.1",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.2"
+  }
+}

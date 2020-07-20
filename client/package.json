@@ -7,26 +7,19 @@
     "url": "https://github.com/bikram-choudhury/glaxdu-react-template.git"
   },
   "scripts": {
-    "start": "node server/app.js",
-    "start:dev": "concurrently \"npm run start:server\" \"npm run start:client\"",
-    "start:client": "react-scripts start",
-    "start:server": "nodemon server/app.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "test": "react-scripts test -- --config=jest.config.js",
     "test:watch": "react-scripts test -- --config jest.config.js --watch",
     "test:coverage": "react-scripts test -- --config jest.config.js --coverage --colors",
-    "postinstall": "npm start"
+    "postbuild": "node postbuild.js ./build ../server/client-bundle"
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
     "formik": "^2.0.8",
     "history": "^4.10.1",
     "jquery": "^3.5.1",
-    "json-server": "^0.15.1",
-    "jsonwebtoken": "^8.5.1",
     "prop-types": "^15.7.2",
     "query-string": "^6.9.0",
     "react": "^16.13.1",
@@ -46,9 +39,7 @@
     "yup": "^0.28.0"
   },
   "devDependencies": {
-    "check-prop-types": "^1.1.2",
-    "concurrently": "^5.2.0",
-    "nodemon": "^2.0.2"
+    "check-prop-types": "^1.1.2"
   },
   "browserslist": {
     "production": [
