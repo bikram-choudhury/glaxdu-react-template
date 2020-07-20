@@ -6,6 +6,7 @@ import NewsSideBar from './NewsSidebar.jsx';
 import Breadcrumb from '../Breadcrumb/Breadcrumb.jsx';
 import SocialButtons from '../SocialButtons/SocialButtons.jsx';
 import { getSelectedNews, getReletedNewsList } from '../../redux/reducers';
+import { setNewsTitleAction } from '../../redux/actions/news.action.js';
 
 class NewsDetails extends Component {
     constructor() {
@@ -42,14 +43,23 @@ const mapStateToProps = (state, ownProps) => {
     const relatedNews = getReletedNewsList(state);
     return { newsDetail, relatedNews };
 }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setNewsTitle: (title) => dispatch(setNewsTitleAction(title))
+    }
+}
 
-export default connect(mapStateToProps)(NewsDetails);
+export default connect(mapStateToProps, mapDispatchToProps)(NewsDetails);
 
 function EventArea(props) {
 
-    const { newsDetail, relatedNews } = props;
+    const { newsDetail, relatedNews, setNewsTitle } = props;
     const { urlToImage, publishedAt, source, title, description, content, url } = newsDetail;
-
+    const goToNewsDetail = (title) => {
+        if (title) {
+            setNewsTitle(title);
+        }
+    }
     return (
         <div className="event-area pt-130 pb-130">
             <div className="container">
@@ -57,7 +67,9 @@ function EventArea(props) {
                     <div className="col-xl-9 col-lg-8">
                         <div className="blog-details-wrap mr-40">
                             <div className="blog-details-top">
-                                <img src={urlToImage} alt="news-bg" />
+                                <div className="img-holder">
+                                    <img src={urlToImage} alt="news-bg" />
+                                </div>
                                 <div className="blog-details-content-wrap">
                                     <div className="b-details-meta-wrap">
                                         <div className="b-details-meta">
@@ -143,7 +155,9 @@ function EventArea(props) {
                                                     <div className="blog-content-wrap">
                                                         <div className="blog-content">
                                                             <h4>
-                                                                <Link to={`/admin/news-details/${encodedReportTitle}`}>{reportTitle}</Link>
+                                                                <Link to={`#`} onClick={() => { goToNewsDetail(reportTitle) }}>
+                                                                    {reportTitle}
+                                                                </Link>
                                                             </h4>
                                                             <p className="block-with-text">{reportDesc}</p>
                                                             <div className="blog-meta">

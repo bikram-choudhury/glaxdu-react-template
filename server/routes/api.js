@@ -35,6 +35,9 @@ const authMiddleware = (request, response, next) => {
     }
 };
 
+const newsRouter = require('./news');
+router.use('/news', authMiddleware, newsRouter);
+
 router.use(authMiddleware, jsonServerDbMiddleware);
 
 

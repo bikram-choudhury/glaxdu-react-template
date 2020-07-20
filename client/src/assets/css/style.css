@@ -5538,6 +5538,7 @@ textarea:focus {
 .single-blog .blog-img {
     position: relative;
     overflow: hidden;
+    max-height: 200px;
 }
 
 .single-blog .blog-img img {
@@ -8249,7 +8250,7 @@ textarea:focus {
     box-shadow: 0 0px 12px 0.8px rgba(225, 225, 225, 0.3);
 }
 
-.blog-details-top>img {
+.blog-details-top .img-holder > img {
     width: 100%;
 }
 
